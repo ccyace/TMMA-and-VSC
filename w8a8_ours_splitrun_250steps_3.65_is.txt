@@ -1,0 +1,2 @@
+{'inception_score_mean': 9.46908711542603, 'inception_score_std': 0.12149146696010944}
+IS mean=9.469087 std=0.121491

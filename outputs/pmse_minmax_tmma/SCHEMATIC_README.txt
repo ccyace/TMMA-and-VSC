@@ -1,0 +1,1 @@
+pmse_vs_timestep_schematic_teaching.png/pdf\nThis figure is a TEACHING SCHEMATIC with idealized curves.\nIt is NOT derived from measured PMSE values and must NOT be used as an experimental result in a paper.\nFor real measurements, use pmse_vs_timestep.png and pmse_summary.json.\n

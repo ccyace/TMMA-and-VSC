@@ -1,0 +1,19 @@
+2026-06-15 13:47:39,699 - INFO - __main__ - logdir: bedroom_w8_lite_brecq\samples\2026-06-15-13-47-39
+2026-06-15 13:47:43,031 - INFO - __main__ - Loading FP32 checkpoint: C:\Users\wsh/.cache\diffusion_models_converted\ema_diffusion_lsun_bedroom_model/model-2388000.ckpt
+2026-06-15 13:48:14,493 - INFO - qdiff.utils - Selected 20 steps from 100 sampling steps
+2026-06-15 13:48:16,266 - INFO - __main__ - Loading BRECQ ckpt (AdaRound): bedroom_w8_lite_brecq\samples\2026-06-15-13-40-38\ckpt.pth
+2026-06-15 13:48:57,866 - INFO - qdiff.quant_layer - split at 512!
+2026-06-15 13:48:58,755 - INFO - qdiff.quant_layer - split at 256!
+2026-06-15 13:48:59,642 - INFO - qdiff.quant_layer - split at 256!
+2026-06-15 13:49:00,746 - INFO - qdiff.quant_layer - split at 256!
+2026-06-15 13:49:01,693 - INFO - qdiff.quant_layer - split at 256!
+2026-06-15 13:49:02,672 - INFO - qdiff.quant_layer - split at 256!
+2026-06-15 13:49:03,641 - INFO - qdiff.quant_layer - split at 256!
+2026-06-15 13:49:04,148 - INFO - qdiff.quant_layer - split at 128!
+2026-06-15 13:49:04,636 - INFO - qdiff.quant_layer - split at 128!
+2026-06-15 13:49:05,317 - INFO - qdiff.quant_layer - split at 128!
+2026-06-15 13:49:05,910 - INFO - qdiff.quant_layer - split at 128!
+2026-06-15 13:49:06,448 - INFO - qdiff.quant_layer - split at 128!
+2026-06-15 13:49:07,662 - INFO - __main__ - mode: w8 a32 (BRECQ AdaRound ckpt)
+2026-06-16 04:54:55,103 - INFO - __main__ - Saved 10000 images to bedroom_w8_lite_brecq\samples\2026-06-15-13-47-39\img
+2026-06-16 04:54:55,104 - INFO - __main__ - Done.

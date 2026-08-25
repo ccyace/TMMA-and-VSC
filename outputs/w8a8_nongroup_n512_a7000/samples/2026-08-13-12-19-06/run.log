@@ -1,0 +1,1285 @@
+08/13/2026 12:19:06 - INFO - __main__ -   ===========================================================================
+08/13/2026 12:19:06 - INFO - __main__ -   logging to:
+08/13/2026 12:19:06 - INFO - __main__ -   C:\Users\ASUS\Desktop\q-diffusion-master\outputs\w8a8_nongroup_n512_a7000\samples\2026-08-13-12-19-06
+08/13/2026 12:19:06 - INFO - __main__ -   ===========================================================================
+08/13/2026 12:19:07 - INFO - __main__ -   Loading checkpoint C:\Users\ASUS/.cache\diffusion_models_converted\ema_diffusion_cifar10_model/model-790000.ckpt
+08/13/2026 12:19:07 - INFO - __main__ -   Sampling data from 8 timesteps for calibration
+08/13/2026 12:19:57 - INFO - qdiff.utils -   Selected 9 steps from 100 sampling steps
+08/13/2026 12:19:58 - INFO - __main__ -   Calibration data shape: torch.Size([4608, 3, 32, 32]) torch.Size([4608])
+08/13/2026 12:19:58 - INFO - __main__ -   Initializing weight quantization parameters
+08/13/2026 12:20:04 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:05 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:05 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:06 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:07 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:07 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:08 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:09 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:10 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:11 - INFO - qdiff.quant_layer -   split at 256!
+08/13/2026 12:20:11 - INFO - qdiff.quant_layer -   split at 128!
+08/13/2026 12:20:12 - INFO - qdiff.quant_layer -   split at 128!
+08/13/2026 12:20:12 - INFO - __main__ -   Initializing has done!
+08/13/2026 12:20:12 - INFO - __main__ -   Doing weight calibration
+08/13/2026 12:20:12 - INFO - __main__ -   model False
+08/13/2026 12:20:12 - INFO - __main__ -   model.temb False
+08/13/2026 12:20:12 - INFO - __main__ -   model.temb.dense False
+08/13/2026 12:20:12 - INFO - __main__ -   model.temb.dense.0 False
+08/13/2026 12:20:12 - INFO - __main__ -   Reconstruction for layer model.temb.dense.0
+08/13/2026 12:20:24 - INFO - qdiff.utils -   in shape: torch.Size([4608, 128])
+08/13/2026 12:20:24 - INFO - qdiff.utils -   out shape: torch.Size([4608, 512])
+08/13/2026 12:20:25 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=500
+08/13/2026 12:20:26 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=1000
+08/13/2026 12:20:27 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=1500
+08/13/2026 12:20:28 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=2000
+08/13/2026 12:20:29 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=2500
+08/13/2026 12:20:30 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=3000
+08/13/2026 12:20:31 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=3500
+08/13/2026 12:20:31 - INFO - qdiff.layer_recon -   Total loss:	623.829 (rec:0.000, round:623.829)	b=20.00	count=4000
+08/13/2026 12:20:33 - INFO - qdiff.layer_recon -   Total loss:	244.692 (rec:0.000, round:244.692)	b=19.44	count=4500
+08/13/2026 12:20:34 - INFO - qdiff.layer_recon -   Total loss:	218.405 (rec:0.000, round:218.405)	b=18.88	count=5000
+08/13/2026 12:20:36 - INFO - qdiff.layer_recon -   Total loss:	205.536 (rec:0.000, round:205.536)	b=18.31	count=5500
+08/13/2026 12:20:37 - INFO - qdiff.layer_recon -   Total loss:	195.076 (rec:0.000, round:195.076)	b=17.75	count=6000
+08/13/2026 12:20:38 - INFO - qdiff.layer_recon -   Total loss:	185.207 (rec:0.000, round:185.207)	b=17.19	count=6500
+08/13/2026 12:20:40 - INFO - qdiff.layer_recon -   Total loss:	175.721 (rec:0.000, round:175.721)	b=16.62	count=7000
+08/13/2026 12:20:41 - INFO - qdiff.layer_recon -   Total loss:	165.377 (rec:0.000, round:165.377)	b=16.06	count=7500
+08/13/2026 12:20:42 - INFO - qdiff.layer_recon -   Total loss:	154.710 (rec:0.000, round:154.710)	b=15.50	count=8000
+08/13/2026 12:20:44 - INFO - qdiff.layer_recon -   Total loss:	143.630 (rec:0.000, round:143.630)	b=14.94	count=8500
+08/13/2026 12:20:45 - INFO - qdiff.layer_recon -   Total loss:	131.508 (rec:0.000, round:131.508)	b=14.38	count=9000
+08/13/2026 12:20:46 - INFO - qdiff.layer_recon -   Total loss:	118.594 (rec:0.000, round:118.594)	b=13.81	count=9500
+08/13/2026 12:20:48 - INFO - qdiff.layer_recon -   Total loss:	104.447 (rec:0.000, round:104.447)	b=13.25	count=10000
+08/13/2026 12:20:49 - INFO - qdiff.layer_recon -   Total loss:	90.016 (rec:0.000, round:90.016)	b=12.69	count=10500
+08/13/2026 12:20:50 - INFO - qdiff.layer_recon -   Total loss:	75.127 (rec:0.000, round:75.127)	b=12.12	count=11000
+08/13/2026 12:20:52 - INFO - qdiff.layer_recon -   Total loss:	61.018 (rec:0.000, round:61.018)	b=11.56	count=11500
+08/13/2026 12:20:53 - INFO - qdiff.layer_recon -   Total loss:	47.646 (rec:0.000, round:47.646)	b=11.00	count=12000
+08/13/2026 12:20:54 - INFO - qdiff.layer_recon -   Total loss:	36.030 (rec:0.000, round:36.030)	b=10.44	count=12500
+08/13/2026 12:20:56 - INFO - qdiff.layer_recon -   Total loss:	26.698 (rec:0.000, round:26.698)	b=9.88	count=13000
+08/13/2026 12:20:57 - INFO - qdiff.layer_recon -   Total loss:	17.943 (rec:0.000, round:17.943)	b=9.31	count=13500
+08/13/2026 12:20:58 - INFO - qdiff.layer_recon -   Total loss:	11.794 (rec:0.000, round:11.794)	b=8.75	count=14000
+08/13/2026 12:21:00 - INFO - qdiff.layer_recon -   Total loss:	7.156 (rec:0.000, round:7.156)	b=8.19	count=14500
+08/13/2026 12:21:01 - INFO - qdiff.layer_recon -   Total loss:	4.034 (rec:0.000, round:4.034)	b=7.62	count=15000
+08/13/2026 12:21:02 - INFO - qdiff.layer_recon -   Total loss:	2.185 (rec:0.000, round:2.185)	b=7.06	count=15500
+08/13/2026 12:21:04 - INFO - qdiff.layer_recon -   Total loss:	1.188 (rec:0.000, round:1.188)	b=6.50	count=16000
+08/13/2026 12:21:05 - INFO - qdiff.layer_recon -   Total loss:	0.733 (rec:0.000, round:0.733)	b=5.94	count=16500
+08/13/2026 12:21:06 - INFO - qdiff.layer_recon -   Total loss:	0.433 (rec:0.000, round:0.432)	b=5.38	count=17000
+08/13/2026 12:21:08 - INFO - qdiff.layer_recon -   Total loss:	0.214 (rec:0.000, round:0.214)	b=4.81	count=17500
+08/13/2026 12:21:09 - INFO - qdiff.layer_recon -   Total loss:	0.116 (rec:0.000, round:0.115)	b=4.25	count=18000
+08/13/2026 12:21:10 - INFO - qdiff.layer_recon -   Total loss:	0.032 (rec:0.000, round:0.032)	b=3.69	count=18500
+08/13/2026 12:21:12 - INFO - qdiff.layer_recon -   Total loss:	0.002 (rec:0.000, round:0.001)	b=3.12	count=19000
+08/13/2026 12:21:13 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=2.56	count=19500
+08/13/2026 12:21:14 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=2.00	count=20000
+08/13/2026 12:21:14 - INFO - __main__ -   model.temb.dense.1 False
+08/13/2026 12:21:14 - INFO - __main__ -   Reconstruction for layer model.temb.dense.1
+08/13/2026 12:21:26 - INFO - qdiff.utils -   in shape: torch.Size([4608, 512])
+08/13/2026 12:21:26 - INFO - qdiff.utils -   out shape: torch.Size([4608, 512])
+08/13/2026 12:21:27 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=500
+08/13/2026 12:21:28 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=1000
+08/13/2026 12:21:29 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=1500
+08/13/2026 12:21:30 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=2000
+08/13/2026 12:21:31 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=2500
+08/13/2026 12:21:32 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=3000
+08/13/2026 12:21:33 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=3500
+08/13/2026 12:21:34 - INFO - qdiff.layer_recon -   Total loss:	2496.009 (rec:0.000, round:2496.009)	b=20.00	count=4000
+08/13/2026 12:21:35 - INFO - qdiff.layer_recon -   Total loss:	1005.954 (rec:0.000, round:1005.954)	b=19.44	count=4500
+08/13/2026 12:21:37 - INFO - qdiff.layer_recon -   Total loss:	918.061 (rec:0.000, round:918.061)	b=18.88	count=5000
+08/13/2026 12:21:38 - INFO - qdiff.layer_recon -   Total loss:	864.952 (rec:0.000, round:864.952)	b=18.31	count=5500
+08/13/2026 12:21:40 - INFO - qdiff.layer_recon -   Total loss:	820.928 (rec:0.000, round:820.928)	b=17.75	count=6000
+08/13/2026 12:21:41 - INFO - qdiff.layer_recon -   Total loss:	781.239 (rec:0.000, round:781.239)	b=17.19	count=6500
+08/13/2026 12:21:42 - INFO - qdiff.layer_recon -   Total loss:	742.341 (rec:0.000, round:742.341)	b=16.62	count=7000
+08/13/2026 12:21:44 - INFO - qdiff.layer_recon -   Total loss:	704.278 (rec:0.000, round:704.278)	b=16.06	count=7500
+08/13/2026 12:21:45 - INFO - qdiff.layer_recon -   Total loss:	665.551 (rec:0.000, round:665.551)	b=15.50	count=8000
+08/13/2026 12:21:47 - INFO - qdiff.layer_recon -   Total loss:	626.077 (rec:0.000, round:626.077)	b=14.94	count=8500
+08/13/2026 12:21:48 - INFO - qdiff.layer_recon -   Total loss:	586.849 (rec:0.000, round:586.849)	b=14.38	count=9000
+08/13/2026 12:21:49 - INFO - qdiff.layer_recon -   Total loss:	545.454 (rec:0.000, round:545.454)	b=13.81	count=9500
+08/13/2026 12:21:51 - INFO - qdiff.layer_recon -   Total loss:	503.007 (rec:0.000, round:503.007)	b=13.25	count=10000
+08/13/2026 12:21:52 - INFO - qdiff.layer_recon -   Total loss:	460.432 (rec:0.000, round:460.432)	b=12.69	count=10500
+08/13/2026 12:21:54 - INFO - qdiff.layer_recon -   Total loss:	417.726 (rec:0.000, round:417.726)	b=12.12	count=11000
+08/13/2026 12:21:55 - INFO - qdiff.layer_recon -   Total loss:	374.088 (rec:0.000, round:374.088)	b=11.56	count=11500
+08/13/2026 12:21:57 - INFO - qdiff.layer_recon -   Total loss:	329.191 (rec:0.000, round:329.191)	b=11.00	count=12000
+08/13/2026 12:21:58 - INFO - qdiff.layer_recon -   Total loss:	286.406 (rec:0.000, round:286.405)	b=10.44	count=12500
+08/13/2026 12:22:00 - INFO - qdiff.layer_recon -   Total loss:	243.654 (rec:0.000, round:243.654)	b=9.88	count=13000
+08/13/2026 12:22:01 - INFO - qdiff.layer_recon -   Total loss:	204.056 (rec:0.000, round:204.056)	b=9.31	count=13500
+08/13/2026 12:22:02 - INFO - qdiff.layer_recon -   Total loss:	164.863 (rec:0.000, round:164.863)	b=8.75	count=14000
+08/13/2026 12:22:04 - INFO - qdiff.layer_recon -   Total loss:	129.458 (rec:0.000, round:129.458)	b=8.19	count=14500
+08/13/2026 12:22:05 - INFO - qdiff.layer_recon -   Total loss:	97.524 (rec:0.000, round:97.524)	b=7.62	count=15000
+08/13/2026 12:22:06 - INFO - qdiff.layer_recon -   Total loss:	71.016 (rec:0.000, round:71.015)	b=7.06	count=15500
+08/13/2026 12:22:08 - INFO - qdiff.layer_recon -   Total loss:	48.957 (rec:0.000, round:48.956)	b=6.50	count=16000
+08/13/2026 12:22:09 - INFO - qdiff.layer_recon -   Total loss:	31.064 (rec:0.000, round:31.063)	b=5.94	count=16500
+08/13/2026 12:22:10 - INFO - qdiff.layer_recon -   Total loss:	17.216 (rec:0.000, round:17.216)	b=5.38	count=17000
+08/13/2026 12:22:12 - INFO - qdiff.layer_recon -   Total loss:	7.831 (rec:0.000, round:7.831)	b=4.81	count=17500
+08/13/2026 12:22:13 - INFO - qdiff.layer_recon -   Total loss:	2.753 (rec:0.001, round:2.753)	b=4.25	count=18000
+08/13/2026 12:22:15 - INFO - qdiff.layer_recon -   Total loss:	0.544 (rec:0.001, round:0.543)	b=3.69	count=18500
+08/13/2026 12:22:16 - INFO - qdiff.layer_recon -   Total loss:	0.038 (rec:0.001, round:0.038)	b=3.12	count=19000
+08/13/2026 12:22:17 - INFO - qdiff.layer_recon -   Total loss:	0.001 (rec:0.001, round:0.000)	b=2.56	count=19500
+08/13/2026 12:22:19 - INFO - qdiff.layer_recon -   Total loss:	0.001 (rec:0.001, round:0.000)	b=2.00	count=20000
+08/13/2026 12:22:19 - INFO - __main__ -   model.conv_in False
+08/13/2026 12:22:19 - INFO - __main__ -   Reconstruction for layer model.conv_in
+08/13/2026 12:22:35 - INFO - qdiff.utils -   in shape: torch.Size([4608, 3, 32, 32])
+08/13/2026 12:22:35 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 32, 32])
+08/13/2026 12:22:38 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=500
+08/13/2026 12:22:41 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=1000
+08/13/2026 12:22:44 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=1500
+08/13/2026 12:22:47 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=2000
+08/13/2026 12:22:50 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=2500
+08/13/2026 12:22:53 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=3000
+08/13/2026 12:22:55 - INFO - qdiff.layer_recon -   Total loss:	0.000 (rec:0.000, round:0.000)	b=0.00	count=3500
+08/13/2026 12:22:58 - INFO - qdiff.layer_recon -   Total loss:	32.830 (rec:0.000, round:32.830)	b=20.00	count=4000
+08/13/2026 12:23:01 - INFO - qdiff.layer_recon -   Total loss:	15.368 (rec:0.001, round:15.367)	b=19.44	count=4500
+08/13/2026 12:23:04 - INFO - qdiff.layer_recon -   Total loss:	15.003 (rec:0.001, round:15.003)	b=18.88	count=5000
+08/13/2026 12:23:08 - INFO - qdiff.layer_recon -   Total loss:	14.585 (rec:0.001, round:14.584)	b=18.31	count=5500
+08/13/2026 12:23:11 - INFO - qdiff.layer_recon -   Total loss:	14.291 (rec:0.001, round:14.290)	b=17.75	count=6000
+08/13/2026 12:23:14 - INFO - qdiff.layer_recon -   Total loss:	14.053 (rec:0.001, round:14.052)	b=17.19	count=6500
+08/13/2026 12:23:17 - INFO - qdiff.layer_recon -   Total loss:	13.714 (rec:0.001, round:13.713)	b=16.62	count=7000
+08/13/2026 12:23:20 - INFO - qdiff.layer_recon -   Total loss:	13.159 (rec:0.001, round:13.158)	b=16.06	count=7500
+08/13/2026 12:23:23 - INFO - qdiff.layer_recon -   Total loss:	12.610 (rec:0.001, round:12.610)	b=15.50	count=8000
+08/13/2026 12:23:26 - INFO - qdiff.layer_recon -   Total loss:	12.200 (rec:0.001, round:12.199)	b=14.94	count=8500
+08/13/2026 12:23:29 - INFO - qdiff.layer_recon -   Total loss:	11.770 (rec:0.001, round:11.769)	b=14.38	count=9000
+08/13/2026 12:23:32 - INFO - qdiff.layer_recon -   Total loss:	11.191 (rec:0.001, round:11.190)	b=13.81	count=9500
+08/13/2026 12:23:35 - INFO - qdiff.layer_recon -   Total loss:	10.590 (rec:0.001, round:10.589)	b=13.25	count=10000
+08/13/2026 12:23:38 - INFO - qdiff.layer_recon -   Total loss:	10.040 (rec:0.001, round:10.039)	b=12.69	count=10500
+08/13/2026 12:23:42 - INFO - qdiff.layer_recon -   Total loss:	9.569 (rec:0.001, round:9.568)	b=12.12	count=11000
+08/13/2026 12:23:45 - INFO - qdiff.layer_recon -   Total loss:	9.108 (rec:0.001, round:9.107)	b=11.56	count=11500
+08/13/2026 12:23:48 - INFO - qdiff.layer_recon -   Total loss:	8.431 (rec:0.002, round:8.429)	b=11.00	count=12000
+08/13/2026 12:23:51 - INFO - qdiff.layer_recon -   Total loss:	7.723 (rec:0.002, round:7.722)	b=10.44	count=12500
+08/13/2026 12:23:54 - INFO - qdiff.layer_recon -   Total loss:	7.037 (rec:0.002, round:7.035)	b=9.88	count=13000
+08/13/2026 12:23:57 - INFO - qdiff.layer_recon -   Total loss:	6.358 (rec:0.002, round:6.355)	b=9.31	count=13500
+08/13/2026 12:24:00 - INFO - qdiff.layer_recon -   Total loss:	5.758 (rec:0.002, round:5.756)	b=8.75	count=14000
+08/13/2026 12:24:03 - INFO - qdiff.layer_recon -   Total loss:	4.942 (rec:0.001, round:4.940)	b=8.19	count=14500
+08/13/2026 12:24:06 - INFO - qdiff.layer_recon -   Total loss:	4.227 (rec:0.003, round:4.223)	b=7.62	count=15000
+08/13/2026 12:24:09 - INFO - qdiff.layer_recon -   Total loss:	3.483 (rec:0.003, round:3.480)	b=7.06	count=15500
+08/13/2026 12:24:12 - INFO - qdiff.layer_recon -   Total loss:	2.603 (rec:0.004, round:2.599)	b=6.50	count=16000
+08/13/2026 12:24:15 - INFO - qdiff.layer_recon -   Total loss:	1.828 (rec:0.003, round:1.826)	b=5.94	count=16500
+08/13/2026 12:24:18 - INFO - qdiff.layer_recon -   Total loss:	1.114 (rec:0.004, round:1.111)	b=5.38	count=17000
+08/13/2026 12:24:22 - INFO - qdiff.layer_recon -   Total loss:	0.553 (rec:0.003, round:0.550)	b=4.81	count=17500
+08/13/2026 12:24:25 - INFO - qdiff.layer_recon -   Total loss:	0.219 (rec:0.003, round:0.216)	b=4.25	count=18000
+08/13/2026 12:24:28 - INFO - qdiff.layer_recon -   Total loss:	0.085 (rec:0.004, round:0.081)	b=3.69	count=18500
+08/13/2026 12:24:31 - INFO - qdiff.layer_recon -   Total loss:	0.020 (rec:0.004, round:0.016)	b=3.12	count=19000
+08/13/2026 12:24:34 - INFO - qdiff.layer_recon -   Total loss:	0.004 (rec:0.004, round:0.000)	b=2.56	count=19500
+08/13/2026 12:24:37 - INFO - qdiff.layer_recon -   Total loss:	0.003 (rec:0.003, round:0.000)	b=2.00	count=20000
+08/13/2026 12:24:37 - INFO - __main__ -   model.down False
+08/13/2026 12:24:37 - INFO - __main__ -   model.down.0 False
+08/13/2026 12:24:37 - INFO - __main__ -   model.down.0.block False
+08/13/2026 12:24:37 - INFO - __main__ -   model.down.0.block.0 True
+08/13/2026 12:24:37 - INFO - __main__ -   Reconstruction for block model.down.0.block.0
+08/13/2026 12:24:58 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 128, 32, 32]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 12:24:58 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 32, 32])
+08/13/2026 12:25:13 - INFO - qdiff.block_recon -   Total loss:	1.384 (rec:1.384, round:0.000)	b=0.00	count=500
+08/13/2026 12:25:26 - INFO - qdiff.block_recon -   Total loss:	1.557 (rec:1.557, round:0.000)	b=0.00	count=1000
+08/13/2026 12:25:40 - INFO - qdiff.block_recon -   Total loss:	1.446 (rec:1.446, round:0.000)	b=0.00	count=1500
+08/13/2026 12:25:53 - INFO - qdiff.block_recon -   Total loss:	1.498 (rec:1.498, round:0.000)	b=0.00	count=2000
+08/13/2026 12:26:07 - INFO - qdiff.block_recon -   Total loss:	1.360 (rec:1.360, round:0.000)	b=0.00	count=2500
+08/13/2026 12:26:20 - INFO - qdiff.block_recon -   Total loss:	1.574 (rec:1.574, round:0.000)	b=0.00	count=3000
+08/13/2026 12:26:34 - INFO - qdiff.block_recon -   Total loss:	1.417 (rec:1.417, round:0.000)	b=0.00	count=3500
+08/13/2026 12:26:47 - INFO - qdiff.block_recon -   Total loss:	2849.734 (rec:1.488, round:2848.247)	b=20.00	count=4000
+08/13/2026 12:27:01 - INFO - qdiff.block_recon -   Total loss:	1124.351 (rec:1.419, round:1122.933)	b=19.44	count=4500
+08/13/2026 12:27:16 - INFO - qdiff.block_recon -   Total loss:	997.411 (rec:1.634, round:995.777)	b=18.88	count=5000
+08/13/2026 12:27:30 - INFO - qdiff.block_recon -   Total loss:	904.517 (rec:1.492, round:903.024)	b=18.31	count=5500
+08/13/2026 12:27:44 - INFO - qdiff.block_recon -   Total loss:	824.612 (rec:1.553, round:823.058)	b=17.75	count=6000
+08/13/2026 12:27:58 - INFO - qdiff.block_recon -   Total loss:	753.076 (rec:1.525, round:751.552)	b=17.19	count=6500
+08/13/2026 12:28:12 - INFO - qdiff.block_recon -   Total loss:	688.017 (rec:1.600, round:686.417)	b=16.62	count=7000
+08/13/2026 12:28:27 - INFO - qdiff.block_recon -   Total loss:	630.368 (rec:1.453, round:628.915)	b=16.06	count=7500
+08/13/2026 12:28:41 - INFO - qdiff.block_recon -   Total loss:	578.820 (rec:1.357, round:577.464)	b=15.50	count=8000
+08/13/2026 12:28:55 - INFO - qdiff.block_recon -   Total loss:	530.195 (rec:1.476, round:528.719)	b=14.94	count=8500
+08/13/2026 12:29:09 - INFO - qdiff.block_recon -   Total loss:	484.603 (rec:1.489, round:483.114)	b=14.38	count=9000
+08/13/2026 12:29:23 - INFO - qdiff.block_recon -   Total loss:	441.333 (rec:1.541, round:439.793)	b=13.81	count=9500
+08/13/2026 12:29:38 - INFO - qdiff.block_recon -   Total loss:	400.518 (rec:1.460, round:399.058)	b=13.25	count=10000
+08/13/2026 12:29:52 - INFO - qdiff.block_recon -   Total loss:	363.475 (rec:1.457, round:362.018)	b=12.69	count=10500
+08/13/2026 12:30:06 - INFO - qdiff.block_recon -   Total loss:	329.132 (rec:1.505, round:327.628)	b=12.12	count=11000
+08/13/2026 12:30:20 - INFO - qdiff.block_recon -   Total loss:	295.905 (rec:1.583, round:294.322)	b=11.56	count=11500
+08/13/2026 12:30:34 - INFO - qdiff.block_recon -   Total loss:	264.524 (rec:1.516, round:263.007)	b=11.00	count=12000
+08/13/2026 12:30:49 - INFO - qdiff.block_recon -   Total loss:	234.737 (rec:1.521, round:233.216)	b=10.44	count=12500
+08/13/2026 12:31:03 - INFO - qdiff.block_recon -   Total loss:	205.665 (rec:1.562, round:204.103)	b=9.88	count=13000
+08/13/2026 12:31:17 - INFO - qdiff.block_recon -   Total loss:	177.826 (rec:1.547, round:176.279)	b=9.31	count=13500
+08/13/2026 12:31:31 - INFO - qdiff.block_recon -   Total loss:	152.067 (rec:1.443, round:150.624)	b=8.75	count=14000
+08/13/2026 12:31:45 - INFO - qdiff.block_recon -   Total loss:	127.741 (rec:1.539, round:126.202)	b=8.19	count=14500
+08/13/2026 12:32:00 - INFO - qdiff.block_recon -   Total loss:	104.944 (rec:1.595, round:103.350)	b=7.62	count=15000
+08/13/2026 12:32:14 - INFO - qdiff.block_recon -   Total loss:	83.032 (rec:1.532, round:81.500)	b=7.06	count=15500
+08/13/2026 12:32:28 - INFO - qdiff.block_recon -   Total loss:	63.291 (rec:1.358, round:61.932)	b=6.50	count=16000
+08/13/2026 12:32:42 - INFO - qdiff.block_recon -   Total loss:	44.241 (rec:1.442, round:42.799)	b=5.94	count=16500
+08/13/2026 12:32:57 - INFO - qdiff.block_recon -   Total loss:	28.450 (rec:1.356, round:27.094)	b=5.38	count=17000
+08/13/2026 12:33:11 - INFO - qdiff.block_recon -   Total loss:	14.363 (rec:1.631, round:12.733)	b=4.81	count=17500
+08/13/2026 12:33:25 - INFO - qdiff.block_recon -   Total loss:	5.274 (rec:1.385, round:3.889)	b=4.25	count=18000
+08/13/2026 12:33:39 - INFO - qdiff.block_recon -   Total loss:	2.100 (rec:1.373, round:0.727)	b=3.69	count=18500
+08/13/2026 12:33:53 - INFO - qdiff.block_recon -   Total loss:	1.398 (rec:1.343, round:0.055)	b=3.12	count=19000
+08/13/2026 12:34:08 - INFO - qdiff.block_recon -   Total loss:	1.552 (rec:1.549, round:0.003)	b=2.56	count=19500
+08/13/2026 12:34:22 - INFO - qdiff.block_recon -   Total loss:	1.406 (rec:1.406, round:0.000)	b=2.00	count=20000
+08/13/2026 12:34:22 - INFO - __main__ -   model.down.0.block.1 True
+08/13/2026 12:34:22 - INFO - __main__ -   Reconstruction for block model.down.0.block.1
+08/13/2026 12:34:46 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 128, 32, 32]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 12:34:47 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 32, 32])
+08/13/2026 12:35:01 - INFO - qdiff.block_recon -   Total loss:	3.399 (rec:3.399, round:0.000)	b=0.00	count=500
+08/13/2026 12:35:15 - INFO - qdiff.block_recon -   Total loss:	3.432 (rec:3.432, round:0.000)	b=0.00	count=1000
+08/13/2026 12:35:28 - INFO - qdiff.block_recon -   Total loss:	2.903 (rec:2.903, round:0.000)	b=0.00	count=1500
+08/13/2026 12:35:42 - INFO - qdiff.block_recon -   Total loss:	3.146 (rec:3.146, round:0.000)	b=0.00	count=2000
+08/13/2026 12:35:55 - INFO - qdiff.block_recon -   Total loss:	3.575 (rec:3.575, round:0.000)	b=0.00	count=2500
+08/13/2026 12:36:08 - INFO - qdiff.block_recon -   Total loss:	2.577 (rec:2.577, round:0.000)	b=0.00	count=3000
+08/13/2026 12:36:22 - INFO - qdiff.block_recon -   Total loss:	2.856 (rec:2.856, round:0.000)	b=0.00	count=3500
+08/13/2026 12:36:35 - INFO - qdiff.block_recon -   Total loss:	2848.027 (rec:2.518, round:2845.509)	b=20.00	count=4000
+08/13/2026 12:36:50 - INFO - qdiff.block_recon -   Total loss:	1184.732 (rec:2.643, round:1182.089)	b=19.44	count=4500
+08/13/2026 12:37:04 - INFO - qdiff.block_recon -   Total loss:	1048.227 (rec:2.688, round:1045.538)	b=18.88	count=5000
+08/13/2026 12:37:18 - INFO - qdiff.block_recon -   Total loss:	948.784 (rec:2.677, round:946.106)	b=18.31	count=5500
+08/13/2026 12:37:32 - INFO - qdiff.block_recon -   Total loss:	863.861 (rec:2.668, round:861.193)	b=17.75	count=6000
+08/13/2026 12:37:47 - INFO - qdiff.block_recon -   Total loss:	788.216 (rec:2.563, round:785.654)	b=17.19	count=6500
+08/13/2026 12:38:01 - INFO - qdiff.block_recon -   Total loss:	720.715 (rec:2.862, round:717.853)	b=16.62	count=7000
+08/13/2026 12:38:15 - INFO - qdiff.block_recon -   Total loss:	659.386 (rec:2.440, round:656.946)	b=16.06	count=7500
+08/13/2026 12:38:29 - INFO - qdiff.block_recon -   Total loss:	602.362 (rec:2.495, round:599.867)	b=15.50	count=8000
+08/13/2026 12:38:43 - INFO - qdiff.block_recon -   Total loss:	549.894 (rec:2.817, round:547.077)	b=14.94	count=8500
+08/13/2026 12:38:58 - INFO - qdiff.block_recon -   Total loss:	501.072 (rec:2.753, round:498.319)	b=14.38	count=9000
+08/13/2026 12:39:12 - INFO - qdiff.block_recon -   Total loss:	456.653 (rec:2.813, round:453.840)	b=13.81	count=9500
+08/13/2026 12:39:26 - INFO - qdiff.block_recon -   Total loss:	415.054 (rec:2.735, round:412.319)	b=13.25	count=10000
+08/13/2026 12:39:40 - INFO - qdiff.block_recon -   Total loss:	376.190 (rec:2.433, round:373.757)	b=12.69	count=10500
+08/13/2026 12:39:54 - INFO - qdiff.block_recon -   Total loss:	340.749 (rec:2.563, round:338.186)	b=12.12	count=11000
+08/13/2026 12:40:09 - INFO - qdiff.block_recon -   Total loss:	306.322 (rec:2.644, round:303.679)	b=11.56	count=11500
+08/13/2026 12:40:23 - INFO - qdiff.block_recon -   Total loss:	274.102 (rec:2.659, round:271.444)	b=11.00	count=12000
+08/13/2026 12:40:37 - INFO - qdiff.block_recon -   Total loss:	243.944 (rec:2.454, round:241.490)	b=10.44	count=12500
+08/13/2026 12:40:51 - INFO - qdiff.block_recon -   Total loss:	214.776 (rec:2.662, round:212.114)	b=9.88	count=13000
+08/13/2026 12:41:06 - INFO - qdiff.block_recon -   Total loss:	188.216 (rec:2.875, round:185.342)	b=9.31	count=13500
+08/13/2026 12:41:20 - INFO - qdiff.block_recon -   Total loss:	161.636 (rec:2.626, round:159.010)	b=8.75	count=14000
+08/13/2026 12:41:34 - INFO - qdiff.block_recon -   Total loss:	137.390 (rec:2.854, round:134.536)	b=8.19	count=14500
+08/13/2026 12:41:48 - INFO - qdiff.block_recon -   Total loss:	114.381 (rec:2.797, round:111.584)	b=7.62	count=15000
+08/13/2026 12:42:03 - INFO - qdiff.block_recon -   Total loss:	92.812 (rec:2.585, round:90.227)	b=7.06	count=15500
+08/13/2026 12:42:17 - INFO - qdiff.block_recon -   Total loss:	73.238 (rec:3.030, round:70.208)	b=6.50	count=16000
+08/13/2026 12:42:31 - INFO - qdiff.block_recon -   Total loss:	54.157 (rec:2.576, round:51.581)	b=5.94	count=16500
+08/13/2026 12:42:45 - INFO - qdiff.block_recon -   Total loss:	37.342 (rec:2.643, round:34.700)	b=5.38	count=17000
+08/13/2026 12:42:59 - INFO - qdiff.block_recon -   Total loss:	23.209 (rec:2.514, round:20.695)	b=4.81	count=17500
+08/13/2026 12:43:14 - INFO - qdiff.block_recon -   Total loss:	12.241 (rec:3.134, round:9.106)	b=4.25	count=18000
+08/13/2026 12:43:28 - INFO - qdiff.block_recon -   Total loss:	5.027 (rec:2.586, round:2.441)	b=3.69	count=18500
+08/13/2026 12:43:42 - INFO - qdiff.block_recon -   Total loss:	2.716 (rec:2.422, round:0.293)	b=3.12	count=19000
+08/13/2026 12:43:56 - INFO - qdiff.block_recon -   Total loss:	2.949 (rec:2.932, round:0.017)	b=2.56	count=19500
+08/13/2026 12:44:10 - INFO - qdiff.block_recon -   Total loss:	2.713 (rec:2.713, round:0.001)	b=2.00	count=20000
+08/13/2026 12:44:11 - INFO - __main__ -   model.down.0.attn False
+08/13/2026 12:44:11 - INFO - __main__ -   model.down.0.downsample False
+08/13/2026 12:44:11 - INFO - __main__ -   model.down.0.downsample.conv False
+08/13/2026 12:44:11 - INFO - __main__ -   Reconstruction for layer model.down.0.downsample.conv
+08/13/2026 12:44:31 - INFO - qdiff.utils -   in shape: torch.Size([4608, 128, 33, 33])
+08/13/2026 12:44:31 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 16, 16])
+08/13/2026 12:44:35 - INFO - qdiff.layer_recon -   Total loss:	0.350 (rec:0.350, round:0.000)	b=0.00	count=500
+08/13/2026 12:44:39 - INFO - qdiff.layer_recon -   Total loss:	0.351 (rec:0.351, round:0.000)	b=0.00	count=1000
+08/13/2026 12:44:42 - INFO - qdiff.layer_recon -   Total loss:	0.256 (rec:0.256, round:0.000)	b=0.00	count=1500
+08/13/2026 12:44:45 - INFO - qdiff.layer_recon -   Total loss:	0.217 (rec:0.217, round:0.000)	b=0.00	count=2000
+08/13/2026 12:44:48 - INFO - qdiff.layer_recon -   Total loss:	0.195 (rec:0.195, round:0.000)	b=0.00	count=2500
+08/13/2026 12:44:52 - INFO - qdiff.layer_recon -   Total loss:	0.203 (rec:0.203, round:0.000)	b=0.00	count=3000
+08/13/2026 12:44:55 - INFO - qdiff.layer_recon -   Total loss:	0.271 (rec:0.271, round:0.000)	b=0.00	count=3500
+08/13/2026 12:44:58 - INFO - qdiff.layer_recon -   Total loss:	1033.842 (rec:0.250, round:1033.593)	b=20.00	count=4000
+08/13/2026 12:45:02 - INFO - qdiff.layer_recon -   Total loss:	394.797 (rec:0.259, round:394.538)	b=19.44	count=4500
+08/13/2026 12:45:05 - INFO - qdiff.layer_recon -   Total loss:	341.398 (rec:0.209, round:341.189)	b=18.88	count=5000
+08/13/2026 12:45:09 - INFO - qdiff.layer_recon -   Total loss:	302.343 (rec:0.244, round:302.099)	b=18.31	count=5500
+08/13/2026 12:45:13 - INFO - qdiff.layer_recon -   Total loss:	270.312 (rec:0.210, round:270.102)	b=17.75	count=6000
+08/13/2026 12:45:16 - INFO - qdiff.layer_recon -   Total loss:	242.906 (rec:0.167, round:242.739)	b=17.19	count=6500
+08/13/2026 12:45:20 - INFO - qdiff.layer_recon -   Total loss:	218.780 (rec:0.165, round:218.616)	b=16.62	count=7000
+08/13/2026 12:45:23 - INFO - qdiff.layer_recon -   Total loss:	197.790 (rec:0.220, round:197.570)	b=16.06	count=7500
+08/13/2026 12:45:27 - INFO - qdiff.layer_recon -   Total loss:	178.465 (rec:0.164, round:178.301)	b=15.50	count=8000
+08/13/2026 12:45:30 - INFO - qdiff.layer_recon -   Total loss:	161.094 (rec:0.244, round:160.850)	b=14.94	count=8500
+08/13/2026 12:45:34 - INFO - qdiff.layer_recon -   Total loss:	146.448 (rec:0.227, round:146.221)	b=14.38	count=9000
+08/13/2026 12:45:37 - INFO - qdiff.layer_recon -   Total loss:	132.871 (rec:0.245, round:132.625)	b=13.81	count=9500
+08/13/2026 12:45:41 - INFO - qdiff.layer_recon -   Total loss:	119.633 (rec:0.203, round:119.430)	b=13.25	count=10000
+08/13/2026 12:45:44 - INFO - qdiff.layer_recon -   Total loss:	107.871 (rec:0.190, round:107.680)	b=12.69	count=10500
+08/13/2026 12:45:48 - INFO - qdiff.layer_recon -   Total loss:	96.543 (rec:0.189, round:96.354)	b=12.12	count=11000
+08/13/2026 12:45:51 - INFO - qdiff.layer_recon -   Total loss:	86.040 (rec:0.176, round:85.864)	b=11.56	count=11500
+08/13/2026 12:45:55 - INFO - qdiff.layer_recon -   Total loss:	76.385 (rec:0.178, round:76.207)	b=11.00	count=12000
+08/13/2026 12:45:58 - INFO - qdiff.layer_recon -   Total loss:	66.449 (rec:0.173, round:66.277)	b=10.44	count=12500
+08/13/2026 12:46:02 - INFO - qdiff.layer_recon -   Total loss:	57.583 (rec:0.172, round:57.411)	b=9.88	count=13000
+08/13/2026 12:46:05 - INFO - qdiff.layer_recon -   Total loss:	48.905 (rec:0.224, round:48.681)	b=9.31	count=13500
+08/13/2026 12:46:09 - INFO - qdiff.layer_recon -   Total loss:	40.437 (rec:0.162, round:40.275)	b=8.75	count=14000
+08/13/2026 12:46:12 - INFO - qdiff.layer_recon -   Total loss:	32.801 (rec:0.163, round:32.638)	b=8.19	count=14500
+08/13/2026 12:46:16 - INFO - qdiff.layer_recon -   Total loss:	25.819 (rec:0.170, round:25.650)	b=7.62	count=15000
+08/13/2026 12:46:19 - INFO - qdiff.layer_recon -   Total loss:	18.917 (rec:0.217, round:18.701)	b=7.06	count=15500
+08/13/2026 12:46:23 - INFO - qdiff.layer_recon -   Total loss:	13.049 (rec:0.177, round:12.872)	b=6.50	count=16000
+08/13/2026 12:46:27 - INFO - qdiff.layer_recon -   Total loss:	8.393 (rec:0.187, round:8.206)	b=5.94	count=16500
+08/13/2026 12:46:30 - INFO - qdiff.layer_recon -   Total loss:	4.891 (rec:0.219, round:4.672)	b=5.38	count=17000
+08/13/2026 12:46:34 - INFO - qdiff.layer_recon -   Total loss:	2.551 (rec:0.204, round:2.347)	b=4.81	count=17500
+08/13/2026 12:46:37 - INFO - qdiff.layer_recon -   Total loss:	1.122 (rec:0.162, round:0.960)	b=4.25	count=18000
+08/13/2026 12:46:41 - INFO - qdiff.layer_recon -   Total loss:	0.463 (rec:0.176, round:0.287)	b=3.69	count=18500
+08/13/2026 12:46:45 - INFO - qdiff.layer_recon -   Total loss:	0.211 (rec:0.172, round:0.039)	b=3.12	count=19000
+08/13/2026 12:46:48 - INFO - qdiff.layer_recon -   Total loss:	0.195 (rec:0.193, round:0.001)	b=2.56	count=19500
+08/13/2026 12:46:52 - INFO - qdiff.layer_recon -   Total loss:	0.183 (rec:0.183, round:0.000)	b=2.00	count=20000
+08/13/2026 12:46:52 - INFO - __main__ -   model.down.1 False
+08/13/2026 12:46:52 - INFO - __main__ -   model.down.1.block False
+08/13/2026 12:46:52 - INFO - __main__ -   model.down.1.block.0 True
+08/13/2026 12:46:52 - INFO - __main__ -   Reconstruction for block model.down.1.block.0
+08/13/2026 12:47:13 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 128, 16, 16]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 12:47:13 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 12:47:22 - INFO - qdiff.block_recon -   Total loss:	6.270 (rec:6.270, round:0.000)	b=0.00	count=500
+08/13/2026 12:47:31 - INFO - qdiff.block_recon -   Total loss:	5.612 (rec:5.612, round:0.000)	b=0.00	count=1000
+08/13/2026 12:47:40 - INFO - qdiff.block_recon -   Total loss:	6.136 (rec:6.136, round:0.000)	b=0.00	count=1500
+08/13/2026 12:47:49 - INFO - qdiff.block_recon -   Total loss:	6.192 (rec:6.192, round:0.000)	b=0.00	count=2000
+08/13/2026 12:47:58 - INFO - qdiff.block_recon -   Total loss:	6.003 (rec:6.003, round:0.000)	b=0.00	count=2500
+08/13/2026 12:48:07 - INFO - qdiff.block_recon -   Total loss:	6.089 (rec:6.089, round:0.000)	b=0.00	count=3000
+08/13/2026 12:48:17 - INFO - qdiff.block_recon -   Total loss:	5.611 (rec:5.611, round:0.000)	b=0.00	count=3500
+08/13/2026 12:48:26 - INFO - qdiff.block_recon -   Total loss:	8820.930 (rec:6.089, round:8814.841)	b=20.00	count=4000
+08/13/2026 12:48:36 - INFO - qdiff.block_recon -   Total loss:	3897.581 (rec:6.082, round:3891.499)	b=19.44	count=4500
+08/13/2026 12:48:46 - INFO - qdiff.block_recon -   Total loss:	3474.141 (rec:5.650, round:3468.491)	b=18.88	count=5000
+08/13/2026 12:48:56 - INFO - qdiff.block_recon -   Total loss:	3150.973 (rec:5.841, round:3145.132)	b=18.31	count=5500
+08/13/2026 12:49:06 - INFO - qdiff.block_recon -   Total loss:	2867.724 (rec:5.376, round:2862.348)	b=17.75	count=6000
+08/13/2026 12:49:16 - INFO - qdiff.block_recon -   Total loss:	2610.481 (rec:5.639, round:2604.842)	b=17.19	count=6500
+08/13/2026 12:49:26 - INFO - qdiff.block_recon -   Total loss:	2368.407 (rec:5.965, round:2362.442)	b=16.62	count=7000
+08/13/2026 12:49:37 - INFO - qdiff.block_recon -   Total loss:	2146.201 (rec:5.811, round:2140.390)	b=16.06	count=7500
+08/13/2026 12:49:47 - INFO - qdiff.block_recon -   Total loss:	1941.786 (rec:6.025, round:1935.761)	b=15.50	count=8000
+08/13/2026 12:49:57 - INFO - qdiff.block_recon -   Total loss:	1753.260 (rec:5.747, round:1747.514)	b=14.94	count=8500
+08/13/2026 12:50:07 - INFO - qdiff.block_recon -   Total loss:	1581.595 (rec:5.867, round:1575.728)	b=14.38	count=9000
+08/13/2026 12:50:17 - INFO - qdiff.block_recon -   Total loss:	1421.270 (rec:5.356, round:1415.914)	b=13.81	count=9500
+08/13/2026 12:50:27 - INFO - qdiff.block_recon -   Total loss:	1275.887 (rec:5.614, round:1270.274)	b=13.25	count=10000
+08/13/2026 12:50:37 - INFO - qdiff.block_recon -   Total loss:	1144.102 (rec:5.868, round:1138.234)	b=12.69	count=10500
+08/13/2026 12:50:47 - INFO - qdiff.block_recon -   Total loss:	1021.909 (rec:5.888, round:1016.021)	b=12.12	count=11000
+08/13/2026 12:50:58 - INFO - qdiff.block_recon -   Total loss:	909.207 (rec:5.482, round:903.725)	b=11.56	count=11500
+08/13/2026 12:51:08 - INFO - qdiff.block_recon -   Total loss:	806.809 (rec:6.497, round:800.312)	b=11.00	count=12000
+08/13/2026 12:51:18 - INFO - qdiff.block_recon -   Total loss:	710.137 (rec:6.042, round:704.094)	b=10.44	count=12500
+08/13/2026 12:51:28 - INFO - qdiff.block_recon -   Total loss:	619.443 (rec:5.367, round:614.076)	b=9.88	count=13000
+08/13/2026 12:51:38 - INFO - qdiff.block_recon -   Total loss:	535.391 (rec:5.685, round:529.706)	b=9.31	count=13500
+08/13/2026 12:51:48 - INFO - qdiff.block_recon -   Total loss:	456.765 (rec:5.664, round:451.101)	b=8.75	count=14000
+08/13/2026 12:51:59 - INFO - qdiff.block_recon -   Total loss:	385.457 (rec:5.940, round:379.517)	b=8.19	count=14500
+08/13/2026 12:52:09 - INFO - qdiff.block_recon -   Total loss:	317.378 (rec:5.866, round:311.512)	b=7.62	count=15000
+08/13/2026 12:52:19 - INFO - qdiff.block_recon -   Total loss:	254.050 (rec:5.726, round:248.324)	b=7.06	count=15500
+08/13/2026 12:52:29 - INFO - qdiff.block_recon -   Total loss:	196.129 (rec:5.685, round:190.444)	b=6.50	count=16000
+08/13/2026 12:52:39 - INFO - qdiff.block_recon -   Total loss:	144.579 (rec:5.635, round:138.943)	b=5.94	count=16500
+08/13/2026 12:52:49 - INFO - qdiff.block_recon -   Total loss:	98.669 (rec:5.567, round:93.102)	b=5.38	count=17000
+08/13/2026 12:52:59 - INFO - qdiff.block_recon -   Total loss:	60.077 (rec:5.533, round:54.544)	b=4.81	count=17500
+08/13/2026 12:53:10 - INFO - qdiff.block_recon -   Total loss:	31.463 (rec:5.821, round:25.641)	b=4.25	count=18000
+08/13/2026 12:53:20 - INFO - qdiff.block_recon -   Total loss:	13.379 (rec:5.532, round:7.848)	b=3.69	count=18500
+08/13/2026 12:53:30 - INFO - qdiff.block_recon -   Total loss:	6.602 (rec:5.323, round:1.279)	b=3.12	count=19000
+08/13/2026 12:53:40 - INFO - qdiff.block_recon -   Total loss:	5.420 (rec:5.326, round:0.093)	b=2.56	count=19500
+08/13/2026 12:53:50 - INFO - qdiff.block_recon -   Total loss:	5.676 (rec:5.672, round:0.004)	b=2.00	count=20000
+08/13/2026 12:53:50 - INFO - __main__ -   model.down.1.block.1 True
+08/13/2026 12:53:50 - INFO - __main__ -   Reconstruction for block model.down.1.block.1
+08/13/2026 12:54:14 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 16, 16]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 12:54:14 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 12:54:25 - INFO - qdiff.block_recon -   Total loss:	9.761 (rec:9.761, round:0.000)	b=0.00	count=500
+08/13/2026 12:54:36 - INFO - qdiff.block_recon -   Total loss:	7.564 (rec:7.564, round:0.000)	b=0.00	count=1000
+08/13/2026 12:54:47 - INFO - qdiff.block_recon -   Total loss:	7.863 (rec:7.863, round:0.000)	b=0.00	count=1500
+08/13/2026 12:54:58 - INFO - qdiff.block_recon -   Total loss:	7.745 (rec:7.745, round:0.000)	b=0.00	count=2000
+08/13/2026 12:55:09 - INFO - qdiff.block_recon -   Total loss:	6.655 (rec:6.655, round:0.000)	b=0.00	count=2500
+08/13/2026 12:55:19 - INFO - qdiff.block_recon -   Total loss:	8.468 (rec:8.468, round:0.000)	b=0.00	count=3000
+08/13/2026 12:55:30 - INFO - qdiff.block_recon -   Total loss:	7.157 (rec:7.157, round:0.000)	b=0.00	count=3500
+08/13/2026 12:55:41 - INFO - qdiff.block_recon -   Total loss:	10845.617 (rec:6.834, round:10838.783)	b=20.00	count=4000
+08/13/2026 12:55:53 - INFO - qdiff.block_recon -   Total loss:	4831.725 (rec:8.829, round:4822.896)	b=19.44	count=4500
+08/13/2026 12:56:05 - INFO - qdiff.block_recon -   Total loss:	4304.633 (rec:7.377, round:4297.257)	b=18.88	count=5000
+08/13/2026 12:56:16 - INFO - qdiff.block_recon -   Total loss:	3906.207 (rec:7.823, round:3898.384)	b=18.31	count=5500
+08/13/2026 12:56:28 - INFO - qdiff.block_recon -   Total loss:	3553.591 (rec:7.587, round:3546.004)	b=17.75	count=6000
+08/13/2026 12:56:40 - INFO - qdiff.block_recon -   Total loss:	3232.468 (rec:6.993, round:3225.475)	b=17.19	count=6500
+08/13/2026 12:56:52 - INFO - qdiff.block_recon -   Total loss:	2943.156 (rec:9.372, round:2933.783)	b=16.62	count=7000
+08/13/2026 12:57:04 - INFO - qdiff.block_recon -   Total loss:	2676.267 (rec:9.185, round:2667.083)	b=16.06	count=7500
+08/13/2026 12:57:15 - INFO - qdiff.block_recon -   Total loss:	2428.305 (rec:8.139, round:2420.166)	b=15.50	count=8000
+08/13/2026 12:57:27 - INFO - qdiff.block_recon -   Total loss:	2201.595 (rec:8.957, round:2192.638)	b=14.94	count=8500
+08/13/2026 12:57:39 - INFO - qdiff.block_recon -   Total loss:	1991.802 (rec:9.390, round:1982.412)	b=14.38	count=9000
+08/13/2026 12:57:51 - INFO - qdiff.block_recon -   Total loss:	1797.477 (rec:8.712, round:1788.765)	b=13.81	count=9500
+08/13/2026 12:58:02 - INFO - qdiff.block_recon -   Total loss:	1617.381 (rec:6.902, round:1610.480)	b=13.25	count=10000
+08/13/2026 12:58:14 - INFO - qdiff.block_recon -   Total loss:	1455.430 (rec:6.556, round:1448.874)	b=12.69	count=10500
+08/13/2026 12:58:26 - INFO - qdiff.block_recon -   Total loss:	1307.855 (rec:7.810, round:1300.045)	b=12.12	count=11000
+08/13/2026 12:58:37 - INFO - qdiff.block_recon -   Total loss:	1169.419 (rec:6.858, round:1162.561)	b=11.56	count=11500
+08/13/2026 12:58:49 - INFO - qdiff.block_recon -   Total loss:	1042.937 (rec:7.957, round:1034.980)	b=11.00	count=12000
+08/13/2026 12:59:01 - INFO - qdiff.block_recon -   Total loss:	923.890 (rec:8.331, round:915.558)	b=10.44	count=12500
+08/13/2026 12:59:13 - INFO - qdiff.block_recon -   Total loss:	810.012 (rec:6.720, round:803.292)	b=9.88	count=13000
+08/13/2026 12:59:24 - INFO - qdiff.block_recon -   Total loss:	705.950 (rec:6.535, round:699.416)	b=9.31	count=13500
+08/13/2026 12:59:36 - INFO - qdiff.block_recon -   Total loss:	610.475 (rec:8.571, round:601.903)	b=8.75	count=14000
+08/13/2026 12:59:48 - INFO - qdiff.block_recon -   Total loss:	517.633 (rec:7.941, round:509.692)	b=8.19	count=14500
+08/13/2026 13:00:00 - INFO - qdiff.block_recon -   Total loss:	430.353 (rec:7.497, round:422.856)	b=7.62	count=15000
+08/13/2026 13:00:11 - INFO - qdiff.block_recon -   Total loss:	348.999 (rec:7.129, round:341.871)	b=7.06	count=15500
+08/13/2026 13:00:23 - INFO - qdiff.block_recon -   Total loss:	274.127 (rec:7.152, round:266.975)	b=6.50	count=16000
+08/13/2026 13:00:35 - INFO - qdiff.block_recon -   Total loss:	205.373 (rec:7.473, round:197.901)	b=5.94	count=16500
+08/13/2026 13:00:47 - INFO - qdiff.block_recon -   Total loss:	145.984 (rec:8.427, round:137.557)	b=5.38	count=17000
+08/13/2026 13:00:58 - INFO - qdiff.block_recon -   Total loss:	90.943 (rec:7.284, round:83.658)	b=4.81	count=17500
+08/13/2026 13:01:10 - INFO - qdiff.block_recon -   Total loss:	49.270 (rec:8.328, round:40.943)	b=4.25	count=18000
+08/13/2026 13:01:22 - INFO - qdiff.block_recon -   Total loss:	19.354 (rec:6.497, round:12.857)	b=3.69	count=18500
+08/13/2026 13:01:33 - INFO - qdiff.block_recon -   Total loss:	9.484 (rec:7.671, round:1.813)	b=3.12	count=19000
+08/13/2026 13:01:45 - INFO - qdiff.block_recon -   Total loss:	8.205 (rec:8.110, round:0.095)	b=2.56	count=19500
+08/13/2026 13:01:57 - INFO - qdiff.block_recon -   Total loss:	7.272 (rec:7.271, round:0.001)	b=2.00	count=20000
+08/13/2026 13:01:57 - INFO - __main__ -   model.down.1.attn False
+08/13/2026 13:01:57 - INFO - __main__ -   model.down.1.attn.0 True
+08/13/2026 13:01:57 - INFO - __main__ -   Reconstruction for block model.down.1.attn.0
+08/13/2026 13:02:20 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 13:02:20 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 13:02:26 - INFO - qdiff.block_recon -   Total loss:	0.144 (rec:0.144, round:0.000)	b=0.00	count=500
+08/13/2026 13:02:32 - INFO - qdiff.block_recon -   Total loss:	0.121 (rec:0.121, round:0.000)	b=0.00	count=1000
+08/13/2026 13:02:39 - INFO - qdiff.block_recon -   Total loss:	0.129 (rec:0.129, round:0.000)	b=0.00	count=1500
+08/13/2026 13:02:45 - INFO - qdiff.block_recon -   Total loss:	0.142 (rec:0.142, round:0.000)	b=0.00	count=2000
+08/13/2026 13:02:51 - INFO - qdiff.block_recon -   Total loss:	0.134 (rec:0.134, round:0.000)	b=0.00	count=2500
+08/13/2026 13:02:58 - INFO - qdiff.block_recon -   Total loss:	0.119 (rec:0.119, round:0.000)	b=0.00	count=3000
+08/13/2026 13:03:04 - INFO - qdiff.block_recon -   Total loss:	0.116 (rec:0.116, round:0.000)	b=0.00	count=3500
+08/13/2026 13:03:10 - INFO - qdiff.block_recon -   Total loss:	2242.970 (rec:0.111, round:2242.859)	b=20.00	count=4000
+08/13/2026 13:03:17 - INFO - qdiff.block_recon -   Total loss:	977.603 (rec:0.110, round:977.493)	b=19.44	count=4500
+08/13/2026 13:03:25 - INFO - qdiff.block_recon -   Total loss:	881.062 (rec:0.135, round:880.926)	b=18.88	count=5000
+08/13/2026 13:03:32 - INFO - qdiff.block_recon -   Total loss:	810.620 (rec:0.117, round:810.503)	b=18.31	count=5500
+08/13/2026 13:03:39 - INFO - qdiff.block_recon -   Total loss:	748.160 (rec:0.162, round:747.998)	b=17.75	count=6000
+08/13/2026 13:03:47 - INFO - qdiff.block_recon -   Total loss:	689.490 (rec:0.100, round:689.390)	b=17.19	count=6500
+08/13/2026 13:03:54 - INFO - qdiff.block_recon -   Total loss:	635.766 (rec:0.116, round:635.650)	b=16.62	count=7000
+08/13/2026 13:04:01 - INFO - qdiff.block_recon -   Total loss:	585.020 (rec:0.145, round:584.875)	b=16.06	count=7500
+08/13/2026 13:04:08 - INFO - qdiff.block_recon -   Total loss:	536.867 (rec:0.151, round:536.716)	b=15.50	count=8000
+08/13/2026 13:04:16 - INFO - qdiff.block_recon -   Total loss:	492.214 (rec:0.117, round:492.097)	b=14.94	count=8500
+08/13/2026 13:04:23 - INFO - qdiff.block_recon -   Total loss:	449.642 (rec:0.128, round:449.514)	b=14.38	count=9000
+08/13/2026 13:04:30 - INFO - qdiff.block_recon -   Total loss:	408.650 (rec:0.103, round:408.547)	b=13.81	count=9500
+08/13/2026 13:04:38 - INFO - qdiff.block_recon -   Total loss:	370.079 (rec:0.109, round:369.970)	b=13.25	count=10000
+08/13/2026 13:04:45 - INFO - qdiff.block_recon -   Total loss:	334.914 (rec:0.135, round:334.779)	b=12.69	count=10500
+08/13/2026 13:04:52 - INFO - qdiff.block_recon -   Total loss:	301.124 (rec:0.161, round:300.963)	b=12.12	count=11000
+08/13/2026 13:05:00 - INFO - qdiff.block_recon -   Total loss:	269.000 (rec:0.142, round:268.858)	b=11.56	count=11500
+08/13/2026 13:05:07 - INFO - qdiff.block_recon -   Total loss:	239.132 (rec:0.112, round:239.020)	b=11.00	count=12000
+08/13/2026 13:05:14 - INFO - qdiff.block_recon -   Total loss:	210.349 (rec:0.112, round:210.237)	b=10.44	count=12500
+08/13/2026 13:05:22 - INFO - qdiff.block_recon -   Total loss:	183.088 (rec:0.129, round:182.959)	b=9.88	count=13000
+08/13/2026 13:05:29 - INFO - qdiff.block_recon -   Total loss:	156.986 (rec:0.137, round:156.849)	b=9.31	count=13500
+08/13/2026 13:05:36 - INFO - qdiff.block_recon -   Total loss:	131.756 (rec:0.128, round:131.628)	b=8.75	count=14000
+08/13/2026 13:05:43 - INFO - qdiff.block_recon -   Total loss:	107.588 (rec:0.124, round:107.463)	b=8.19	count=14500
+08/13/2026 13:05:51 - INFO - qdiff.block_recon -   Total loss:	85.005 (rec:0.137, round:84.868)	b=7.62	count=15000
+08/13/2026 13:05:58 - INFO - qdiff.block_recon -   Total loss:	64.754 (rec:0.129, round:64.625)	b=7.06	count=15500
+08/13/2026 13:06:05 - INFO - qdiff.block_recon -   Total loss:	45.932 (rec:0.153, round:45.780)	b=6.50	count=16000
+08/13/2026 13:06:13 - INFO - qdiff.block_recon -   Total loss:	29.907 (rec:0.108, round:29.799)	b=5.94	count=16500
+08/13/2026 13:06:20 - INFO - qdiff.block_recon -   Total loss:	16.798 (rec:0.137, round:16.661)	b=5.38	count=17000
+08/13/2026 13:06:27 - INFO - qdiff.block_recon -   Total loss:	7.503 (rec:0.118, round:7.384)	b=4.81	count=17500
+08/13/2026 13:06:35 - INFO - qdiff.block_recon -   Total loss:	2.322 (rec:0.119, round:2.203)	b=4.25	count=18000
+08/13/2026 13:06:42 - INFO - qdiff.block_recon -   Total loss:	0.509 (rec:0.117, round:0.392)	b=3.69	count=18500
+08/13/2026 13:06:49 - INFO - qdiff.block_recon -   Total loss:	0.139 (rec:0.111, round:0.028)	b=3.12	count=19000
+08/13/2026 13:06:57 - INFO - qdiff.block_recon -   Total loss:	0.141 (rec:0.141, round:0.000)	b=2.56	count=19500
+08/13/2026 13:07:04 - INFO - qdiff.block_recon -   Total loss:	0.125 (rec:0.125, round:0.000)	b=2.00	count=20000
+08/13/2026 13:07:04 - INFO - __main__ -   model.down.1.attn.1 True
+08/13/2026 13:07:04 - INFO - __main__ -   Reconstruction for block model.down.1.attn.1
+08/13/2026 13:07:30 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 13:07:30 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 13:07:36 - INFO - qdiff.block_recon -   Total loss:	0.335 (rec:0.335, round:0.000)	b=0.00	count=500
+08/13/2026 13:07:43 - INFO - qdiff.block_recon -   Total loss:	0.269 (rec:0.269, round:0.000)	b=0.00	count=1000
+08/13/2026 13:07:49 - INFO - qdiff.block_recon -   Total loss:	0.248 (rec:0.248, round:0.000)	b=0.00	count=1500
+08/13/2026 13:07:55 - INFO - qdiff.block_recon -   Total loss:	0.234 (rec:0.234, round:0.000)	b=0.00	count=2000
+08/13/2026 13:08:01 - INFO - qdiff.block_recon -   Total loss:	0.214 (rec:0.214, round:0.000)	b=0.00	count=2500
+08/13/2026 13:08:08 - INFO - qdiff.block_recon -   Total loss:	0.260 (rec:0.260, round:0.000)	b=0.00	count=3000
+08/13/2026 13:08:14 - INFO - qdiff.block_recon -   Total loss:	0.261 (rec:0.261, round:0.000)	b=0.00	count=3500
+08/13/2026 13:08:20 - INFO - qdiff.block_recon -   Total loss:	2216.799 (rec:0.253, round:2216.546)	b=20.00	count=4000
+08/13/2026 13:08:28 - INFO - qdiff.block_recon -   Total loss:	1010.783 (rec:0.276, round:1010.507)	b=19.44	count=4500
+08/13/2026 13:08:35 - INFO - qdiff.block_recon -   Total loss:	911.278 (rec:0.252, round:911.026)	b=18.88	count=5000
+08/13/2026 13:08:42 - INFO - qdiff.block_recon -   Total loss:	838.381 (rec:0.207, round:838.174)	b=18.31	count=5500
+08/13/2026 13:08:50 - INFO - qdiff.block_recon -   Total loss:	772.889 (rec:0.207, round:772.682)	b=17.75	count=6000
+08/13/2026 13:08:57 - INFO - qdiff.block_recon -   Total loss:	712.758 (rec:0.225, round:712.533)	b=17.19	count=6500
+08/13/2026 13:09:04 - INFO - qdiff.block_recon -   Total loss:	655.388 (rec:0.277, round:655.110)	b=16.62	count=7000
+08/13/2026 13:09:11 - INFO - qdiff.block_recon -   Total loss:	601.650 (rec:0.273, round:601.377)	b=16.06	count=7500
+08/13/2026 13:09:19 - INFO - qdiff.block_recon -   Total loss:	551.648 (rec:0.231, round:551.417)	b=15.50	count=8000
+08/13/2026 13:09:26 - INFO - qdiff.block_recon -   Total loss:	504.817 (rec:0.217, round:504.600)	b=14.94	count=8500
+08/13/2026 13:09:33 - INFO - qdiff.block_recon -   Total loss:	461.109 (rec:0.259, round:460.850)	b=14.38	count=9000
+08/13/2026 13:09:41 - INFO - qdiff.block_recon -   Total loss:	419.670 (rec:0.234, round:419.436)	b=13.81	count=9500
+08/13/2026 13:09:48 - INFO - qdiff.block_recon -   Total loss:	379.536 (rec:0.285, round:379.251)	b=13.25	count=10000
+08/13/2026 13:09:55 - INFO - qdiff.block_recon -   Total loss:	343.435 (rec:0.269, round:343.166)	b=12.69	count=10500
+08/13/2026 13:10:02 - INFO - qdiff.block_recon -   Total loss:	308.047 (rec:0.171, round:307.877)	b=12.12	count=11000
+08/13/2026 13:10:10 - INFO - qdiff.block_recon -   Total loss:	275.265 (rec:0.269, round:274.996)	b=11.56	count=11500
+08/13/2026 13:10:17 - INFO - qdiff.block_recon -   Total loss:	243.426 (rec:0.210, round:243.216)	b=11.00	count=12000
+08/13/2026 13:10:24 - INFO - qdiff.block_recon -   Total loss:	214.376 (rec:0.330, round:214.046)	b=10.44	count=12500
+08/13/2026 13:10:32 - INFO - qdiff.block_recon -   Total loss:	186.962 (rec:0.319, round:186.642)	b=9.88	count=13000
+08/13/2026 13:10:39 - INFO - qdiff.block_recon -   Total loss:	160.164 (rec:0.229, round:159.935)	b=9.31	count=13500
+08/13/2026 13:10:46 - INFO - qdiff.block_recon -   Total loss:	135.808 (rec:0.249, round:135.559)	b=8.75	count=14000
+08/13/2026 13:10:53 - INFO - qdiff.block_recon -   Total loss:	112.958 (rec:0.215, round:112.743)	b=8.19	count=14500
+08/13/2026 13:11:01 - INFO - qdiff.block_recon -   Total loss:	91.058 (rec:0.248, round:90.810)	b=7.62	count=15000
+08/13/2026 13:11:08 - INFO - qdiff.block_recon -   Total loss:	70.942 (rec:0.327, round:70.615)	b=7.06	count=15500
+08/13/2026 13:11:15 - INFO - qdiff.block_recon -   Total loss:	51.890 (rec:0.198, round:51.691)	b=6.50	count=16000
+08/13/2026 13:11:22 - INFO - qdiff.block_recon -   Total loss:	35.577 (rec:0.277, round:35.300)	b=5.94	count=16500
+08/13/2026 13:11:30 - INFO - qdiff.block_recon -   Total loss:	21.927 (rec:0.283, round:21.644)	b=5.38	count=17000
+08/13/2026 13:11:37 - INFO - qdiff.block_recon -   Total loss:	11.476 (rec:0.337, round:11.139)	b=4.81	count=17500
+08/13/2026 13:11:44 - INFO - qdiff.block_recon -   Total loss:	4.502 (rec:0.264, round:4.239)	b=4.25	count=18000
+08/13/2026 13:11:52 - INFO - qdiff.block_recon -   Total loss:	1.111 (rec:0.295, round:0.816)	b=3.69	count=18500
+08/13/2026 13:11:59 - INFO - qdiff.block_recon -   Total loss:	0.381 (rec:0.328, round:0.053)	b=3.12	count=19000
+08/13/2026 13:12:06 - INFO - qdiff.block_recon -   Total loss:	0.274 (rec:0.274, round:0.000)	b=2.56	count=19500
+08/13/2026 13:12:14 - INFO - qdiff.block_recon -   Total loss:	0.226 (rec:0.226, round:0.000)	b=2.00	count=20000
+08/13/2026 13:12:14 - INFO - __main__ -   model.down.1.downsample False
+08/13/2026 13:12:14 - INFO - __main__ -   model.down.1.downsample.conv False
+08/13/2026 13:12:14 - INFO - __main__ -   Reconstruction for layer model.down.1.downsample.conv
+08/13/2026 13:12:40 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 17, 17])
+08/13/2026 13:12:40 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 8, 8])
+08/13/2026 13:12:42 - INFO - qdiff.layer_recon -   Total loss:	1.296 (rec:1.296, round:0.000)	b=0.00	count=500
+08/13/2026 13:12:45 - INFO - qdiff.layer_recon -   Total loss:	1.179 (rec:1.179, round:0.000)	b=0.00	count=1000
+08/13/2026 13:12:47 - INFO - qdiff.layer_recon -   Total loss:	1.321 (rec:1.321, round:0.000)	b=0.00	count=1500
+08/13/2026 13:12:49 - INFO - qdiff.layer_recon -   Total loss:	1.097 (rec:1.097, round:0.000)	b=0.00	count=2000
+08/13/2026 13:12:52 - INFO - qdiff.layer_recon -   Total loss:	0.832 (rec:0.832, round:0.000)	b=0.00	count=2500
+08/13/2026 13:12:54 - INFO - qdiff.layer_recon -   Total loss:	0.913 (rec:0.913, round:0.000)	b=0.00	count=3000
+08/13/2026 13:12:56 - INFO - qdiff.layer_recon -   Total loss:	0.639 (rec:0.639, round:0.000)	b=0.00	count=3500
+08/13/2026 13:12:59 - INFO - qdiff.layer_recon -   Total loss:	4729.603 (rec:0.788, round:4728.815)	b=20.00	count=4000
+08/13/2026 13:13:01 - INFO - qdiff.layer_recon -   Total loss:	2267.703 (rec:0.910, round:2266.793)	b=19.44	count=4500
+08/13/2026 13:13:04 - INFO - qdiff.layer_recon -   Total loss:	2044.098 (rec:0.815, round:2043.283)	b=18.88	count=5000
+08/13/2026 13:13:07 - INFO - qdiff.layer_recon -   Total loss:	1877.296 (rec:0.708, round:1876.588)	b=18.31	count=5500
+08/13/2026 13:13:09 - INFO - qdiff.layer_recon -   Total loss:	1732.428 (rec:0.929, round:1731.499)	b=17.75	count=6000
+08/13/2026 13:13:12 - INFO - qdiff.layer_recon -   Total loss:	1600.558 (rec:0.855, round:1599.703)	b=17.19	count=6500
+08/13/2026 13:13:14 - INFO - qdiff.layer_recon -   Total loss:	1480.055 (rec:1.215, round:1478.839)	b=16.62	count=7000
+08/13/2026 13:13:17 - INFO - qdiff.layer_recon -   Total loss:	1367.340 (rec:0.900, round:1366.439)	b=16.06	count=7500
+08/13/2026 13:13:20 - INFO - qdiff.layer_recon -   Total loss:	1261.746 (rec:0.646, round:1261.100)	b=15.50	count=8000
+08/13/2026 13:13:22 - INFO - qdiff.layer_recon -   Total loss:	1162.950 (rec:0.887, round:1162.063)	b=14.94	count=8500
+08/13/2026 13:13:25 - INFO - qdiff.layer_recon -   Total loss:	1069.620 (rec:0.749, round:1068.871)	b=14.38	count=9000
+08/13/2026 13:13:28 - INFO - qdiff.layer_recon -   Total loss:	982.768 (rec:1.026, round:981.741)	b=13.81	count=9500
+08/13/2026 13:13:30 - INFO - qdiff.layer_recon -   Total loss:	900.006 (rec:0.857, round:899.150)	b=13.25	count=10000
+08/13/2026 13:13:33 - INFO - qdiff.layer_recon -   Total loss:	823.884 (rec:0.898, round:822.986)	b=12.69	count=10500
+08/13/2026 13:13:36 - INFO - qdiff.layer_recon -   Total loss:	751.314 (rec:0.783, round:750.531)	b=12.12	count=11000
+08/13/2026 13:13:38 - INFO - qdiff.layer_recon -   Total loss:	682.840 (rec:0.799, round:682.041)	b=11.56	count=11500
+08/13/2026 13:13:41 - INFO - qdiff.layer_recon -   Total loss:	617.482 (rec:0.716, round:616.766)	b=11.00	count=12000
+08/13/2026 13:13:43 - INFO - qdiff.layer_recon -   Total loss:	554.288 (rec:0.805, round:553.483)	b=10.44	count=12500
+08/13/2026 13:13:46 - INFO - qdiff.layer_recon -   Total loss:	494.353 (rec:0.922, round:493.431)	b=9.88	count=13000
+08/13/2026 13:13:49 - INFO - qdiff.layer_recon -   Total loss:	434.397 (rec:0.881, round:433.516)	b=9.31	count=13500
+08/13/2026 13:13:51 - INFO - qdiff.layer_recon -   Total loss:	378.371 (rec:0.762, round:377.609)	b=8.75	count=14000
+08/13/2026 13:13:54 - INFO - qdiff.layer_recon -   Total loss:	324.672 (rec:0.897, round:323.775)	b=8.19	count=14500
+08/13/2026 13:13:57 - INFO - qdiff.layer_recon -   Total loss:	272.112 (rec:0.644, round:271.468)	b=7.62	count=15000
+08/13/2026 13:13:59 - INFO - qdiff.layer_recon -   Total loss:	221.433 (rec:0.772, round:220.661)	b=7.06	count=15500
+08/13/2026 13:14:02 - INFO - qdiff.layer_recon -   Total loss:	172.752 (rec:0.658, round:172.093)	b=6.50	count=16000
+08/13/2026 13:14:04 - INFO - qdiff.layer_recon -   Total loss:	128.532 (rec:0.719, round:127.813)	b=5.94	count=16500
+08/13/2026 13:14:07 - INFO - qdiff.layer_recon -   Total loss:	87.750 (rec:0.595, round:87.155)	b=5.38	count=17000
+08/13/2026 13:14:10 - INFO - qdiff.layer_recon -   Total loss:	53.265 (rec:0.884, round:52.380)	b=4.81	count=17500
+08/13/2026 13:14:12 - INFO - qdiff.layer_recon -   Total loss:	26.703 (rec:0.664, round:26.038)	b=4.25	count=18000
+08/13/2026 13:14:15 - INFO - qdiff.layer_recon -   Total loss:	9.620 (rec:0.858, round:8.761)	b=3.69	count=18500
+08/13/2026 13:14:18 - INFO - qdiff.layer_recon -   Total loss:	2.171 (rec:0.819, round:1.352)	b=3.12	count=19000
+08/13/2026 13:14:20 - INFO - qdiff.layer_recon -   Total loss:	0.821 (rec:0.781, round:0.040)	b=2.56	count=19500
+08/13/2026 13:14:23 - INFO - qdiff.layer_recon -   Total loss:	0.847 (rec:0.847, round:0.000)	b=2.00	count=20000
+08/13/2026 13:14:23 - INFO - __main__ -   model.down.2 False
+08/13/2026 13:14:23 - INFO - __main__ -   model.down.2.block False
+08/13/2026 13:14:23 - INFO - __main__ -   model.down.2.block.0 True
+08/13/2026 13:14:23 - INFO - __main__ -   Reconstruction for block model.down.2.block.0
+08/13/2026 13:14:50 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 8, 8]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:14:50 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 8, 8])
+08/13/2026 13:14:55 - INFO - qdiff.block_recon -   Total loss:	53.712 (rec:53.712, round:0.000)	b=0.00	count=500
+08/13/2026 13:14:59 - INFO - qdiff.block_recon -   Total loss:	49.981 (rec:49.981, round:0.000)	b=0.00	count=1000
+08/13/2026 13:15:03 - INFO - qdiff.block_recon -   Total loss:	51.095 (rec:51.095, round:0.000)	b=0.00	count=1500
+08/13/2026 13:15:07 - INFO - qdiff.block_recon -   Total loss:	51.866 (rec:51.866, round:0.000)	b=0.00	count=2000
+08/13/2026 13:15:12 - INFO - qdiff.block_recon -   Total loss:	51.219 (rec:51.219, round:0.000)	b=0.00	count=2500
+08/13/2026 13:15:16 - INFO - qdiff.block_recon -   Total loss:	48.251 (rec:48.251, round:0.000)	b=0.00	count=3000
+08/13/2026 13:15:20 - INFO - qdiff.block_recon -   Total loss:	52.998 (rec:52.998, round:0.000)	b=0.00	count=3500
+08/13/2026 13:15:24 - INFO - qdiff.block_recon -   Total loss:	11062.527 (rec:51.979, round:11010.548)	b=20.00	count=4000
+08/13/2026 13:15:29 - INFO - qdiff.block_recon -   Total loss:	5741.139 (rec:48.082, round:5693.057)	b=19.44	count=4500
+08/13/2026 13:15:34 - INFO - qdiff.block_recon -   Total loss:	5201.038 (rec:52.649, round:5148.389)	b=18.88	count=5000
+08/13/2026 13:15:39 - INFO - qdiff.block_recon -   Total loss:	4790.361 (rec:51.563, round:4738.799)	b=18.31	count=5500
+08/13/2026 13:15:44 - INFO - qdiff.block_recon -   Total loss:	4421.594 (rec:50.658, round:4370.936)	b=17.75	count=6000
+08/13/2026 13:15:49 - INFO - qdiff.block_recon -   Total loss:	4080.318 (rec:49.485, round:4030.833)	b=17.19	count=6500
+08/13/2026 13:15:54 - INFO - qdiff.block_recon -   Total loss:	3767.395 (rec:50.680, round:3716.715)	b=16.62	count=7000
+08/13/2026 13:16:00 - INFO - qdiff.block_recon -   Total loss:	3474.761 (rec:51.014, round:3423.748)	b=16.06	count=7500
+08/13/2026 13:16:05 - INFO - qdiff.block_recon -   Total loss:	3200.826 (rec:49.657, round:3151.168)	b=15.50	count=8000
+08/13/2026 13:16:10 - INFO - qdiff.block_recon -   Total loss:	2943.123 (rec:49.971, round:2893.152)	b=14.94	count=8500
+08/13/2026 13:16:15 - INFO - qdiff.block_recon -   Total loss:	2700.387 (rec:48.175, round:2652.212)	b=14.38	count=9000
+08/13/2026 13:16:20 - INFO - qdiff.block_recon -   Total loss:	2472.865 (rec:48.740, round:2424.125)	b=13.81	count=9500
+08/13/2026 13:16:25 - INFO - qdiff.block_recon -   Total loss:	2262.692 (rec:51.496, round:2211.195)	b=13.25	count=10000
+08/13/2026 13:16:30 - INFO - qdiff.block_recon -   Total loss:	2060.270 (rec:46.055, round:2014.215)	b=12.69	count=10500
+08/13/2026 13:16:35 - INFO - qdiff.block_recon -   Total loss:	1878.194 (rec:47.662, round:1830.531)	b=12.12	count=11000
+08/13/2026 13:16:40 - INFO - qdiff.block_recon -   Total loss:	1710.490 (rec:54.851, round:1655.639)	b=11.56	count=11500
+08/13/2026 13:16:45 - INFO - qdiff.block_recon -   Total loss:	1542.006 (rec:49.600, round:1492.406)	b=11.00	count=12000
+08/13/2026 13:16:50 - INFO - qdiff.block_recon -   Total loss:	1388.743 (rec:49.580, round:1339.163)	b=10.44	count=12500
+08/13/2026 13:16:56 - INFO - qdiff.block_recon -   Total loss:	1244.135 (rec:51.362, round:1192.773)	b=9.88	count=13000
+08/13/2026 13:17:01 - INFO - qdiff.block_recon -   Total loss:	1104.890 (rec:47.671, round:1057.218)	b=9.31	count=13500
+08/13/2026 13:17:06 - INFO - qdiff.block_recon -   Total loss:	980.442 (rec:52.541, round:927.901)	b=8.75	count=14000
+08/13/2026 13:17:11 - INFO - qdiff.block_recon -   Total loss:	856.904 (rec:51.404, round:805.500)	b=8.19	count=14500
+08/13/2026 13:17:16 - INFO - qdiff.block_recon -   Total loss:	738.166 (rec:48.347, round:689.819)	b=7.62	count=15000
+08/13/2026 13:17:21 - INFO - qdiff.block_recon -   Total loss:	630.291 (rec:51.254, round:579.037)	b=7.06	count=15500
+08/13/2026 13:17:26 - INFO - qdiff.block_recon -   Total loss:	527.532 (rec:53.147, round:474.385)	b=6.50	count=16000
+08/13/2026 13:17:31 - INFO - qdiff.block_recon -   Total loss:	426.419 (rec:50.135, round:376.284)	b=5.94	count=16500
+08/13/2026 13:17:36 - INFO - qdiff.block_recon -   Total loss:	331.982 (rec:48.294, round:283.688)	b=5.38	count=17000
+08/13/2026 13:17:41 - INFO - qdiff.block_recon -   Total loss:	250.121 (rec:49.958, round:200.163)	b=4.81	count=17500
+08/13/2026 13:17:46 - INFO - qdiff.block_recon -   Total loss:	177.384 (rec:50.682, round:126.702)	b=4.25	count=18000
+08/13/2026 13:17:51 - INFO - qdiff.block_recon -   Total loss:	115.294 (rec:51.360, round:63.934)	b=3.69	count=18500
+08/13/2026 13:17:56 - INFO - qdiff.block_recon -   Total loss:	72.002 (rec:51.666, round:20.335)	b=3.12	count=19000
+08/13/2026 13:18:01 - INFO - qdiff.block_recon -   Total loss:	50.222 (rec:47.721, round:2.501)	b=2.56	count=19500
+08/13/2026 13:18:06 - INFO - qdiff.block_recon -   Total loss:	51.995 (rec:51.918, round:0.077)	b=2.00	count=20000
+08/13/2026 13:18:06 - INFO - __main__ -   model.down.2.block.1 True
+08/13/2026 13:18:06 - INFO - __main__ -   Reconstruction for block model.down.2.block.1
+08/13/2026 13:18:36 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 8, 8]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:18:36 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 8, 8])
+08/13/2026 13:18:40 - INFO - qdiff.block_recon -   Total loss:	39.145 (rec:39.145, round:0.000)	b=0.00	count=500
+08/13/2026 13:18:44 - INFO - qdiff.block_recon -   Total loss:	41.456 (rec:41.456, round:0.000)	b=0.00	count=1000
+08/13/2026 13:18:48 - INFO - qdiff.block_recon -   Total loss:	42.740 (rec:42.740, round:0.000)	b=0.00	count=1500
+08/13/2026 13:18:52 - INFO - qdiff.block_recon -   Total loss:	42.051 (rec:42.051, round:0.000)	b=0.00	count=2000
+08/13/2026 13:18:57 - INFO - qdiff.block_recon -   Total loss:	40.353 (rec:40.353, round:0.000)	b=0.00	count=2500
+08/13/2026 13:19:01 - INFO - qdiff.block_recon -   Total loss:	40.829 (rec:40.829, round:0.000)	b=0.00	count=3000
+08/13/2026 13:19:05 - INFO - qdiff.block_recon -   Total loss:	40.206 (rec:40.206, round:0.000)	b=0.00	count=3500
+08/13/2026 13:19:09 - INFO - qdiff.block_recon -   Total loss:	11053.212 (rec:43.031, round:11010.182)	b=20.00	count=4000
+08/13/2026 13:19:14 - INFO - qdiff.block_recon -   Total loss:	5677.179 (rec:38.882, round:5638.296)	b=19.44	count=4500
+08/13/2026 13:19:19 - INFO - qdiff.block_recon -   Total loss:	5151.393 (rec:43.088, round:5108.305)	b=18.88	count=5000
+08/13/2026 13:19:24 - INFO - qdiff.block_recon -   Total loss:	4745.578 (rec:40.584, round:4704.994)	b=18.31	count=5500
+08/13/2026 13:19:30 - INFO - qdiff.block_recon -   Total loss:	4380.838 (rec:40.569, round:4340.270)	b=17.75	count=6000
+08/13/2026 13:19:35 - INFO - qdiff.block_recon -   Total loss:	4048.956 (rec:40.208, round:4008.749)	b=17.19	count=6500
+08/13/2026 13:19:40 - INFO - qdiff.block_recon -   Total loss:	3732.602 (rec:39.353, round:3693.250)	b=16.62	count=7000
+08/13/2026 13:19:45 - INFO - qdiff.block_recon -   Total loss:	3441.144 (rec:40.705, round:3400.439)	b=16.06	count=7500
+08/13/2026 13:19:50 - INFO - qdiff.block_recon -   Total loss:	3165.437 (rec:38.195, round:3127.242)	b=15.50	count=8000
+08/13/2026 13:19:55 - INFO - qdiff.block_recon -   Total loss:	2907.723 (rec:38.196, round:2869.527)	b=14.94	count=8500
+08/13/2026 13:20:00 - INFO - qdiff.block_recon -   Total loss:	2667.335 (rec:41.239, round:2626.095)	b=14.38	count=9000
+08/13/2026 13:20:05 - INFO - qdiff.block_recon -   Total loss:	2439.503 (rec:38.044, round:2401.459)	b=13.81	count=9500
+08/13/2026 13:20:10 - INFO - qdiff.block_recon -   Total loss:	2229.028 (rec:41.157, round:2187.870)	b=13.25	count=10000
+08/13/2026 13:20:15 - INFO - qdiff.block_recon -   Total loss:	2030.311 (rec:41.112, round:1989.199)	b=12.69	count=10500
+08/13/2026 13:20:20 - INFO - qdiff.block_recon -   Total loss:	1841.385 (rec:37.842, round:1803.543)	b=12.12	count=11000
+08/13/2026 13:20:25 - INFO - qdiff.block_recon -   Total loss:	1668.911 (rec:39.642, round:1629.268)	b=11.56	count=11500
+08/13/2026 13:20:30 - INFO - qdiff.block_recon -   Total loss:	1508.508 (rec:41.377, round:1467.131)	b=11.00	count=12000
+08/13/2026 13:20:35 - INFO - qdiff.block_recon -   Total loss:	1355.068 (rec:38.015, round:1317.054)	b=10.44	count=12500
+08/13/2026 13:20:40 - INFO - qdiff.block_recon -   Total loss:	1216.697 (rec:42.389, round:1174.308)	b=9.88	count=13000
+08/13/2026 13:20:45 - INFO - qdiff.block_recon -   Total loss:	1078.263 (rec:39.639, round:1038.624)	b=9.31	count=13500
+08/13/2026 13:20:50 - INFO - qdiff.block_recon -   Total loss:	952.208 (rec:41.887, round:910.320)	b=8.75	count=14000
+08/13/2026 13:20:55 - INFO - qdiff.block_recon -   Total loss:	829.002 (rec:39.548, round:789.454)	b=8.19	count=14500
+08/13/2026 13:21:00 - INFO - qdiff.block_recon -   Total loss:	717.150 (rec:41.499, round:675.651)	b=7.62	count=15000
+08/13/2026 13:21:05 - INFO - qdiff.block_recon -   Total loss:	610.786 (rec:43.126, round:567.660)	b=7.06	count=15500
+08/13/2026 13:21:10 - INFO - qdiff.block_recon -   Total loss:	503.670 (rec:39.142, round:464.529)	b=6.50	count=16000
+08/13/2026 13:21:15 - INFO - qdiff.block_recon -   Total loss:	408.897 (rec:41.940, round:366.957)	b=5.94	count=16500
+08/13/2026 13:21:20 - INFO - qdiff.block_recon -   Total loss:	320.254 (rec:44.824, round:275.431)	b=5.38	count=17000
+08/13/2026 13:21:26 - INFO - qdiff.block_recon -   Total loss:	230.639 (rec:37.764, round:192.875)	b=4.81	count=17500
+08/13/2026 13:21:31 - INFO - qdiff.block_recon -   Total loss:	158.379 (rec:38.649, round:119.730)	b=4.25	count=18000
+08/13/2026 13:21:36 - INFO - qdiff.block_recon -   Total loss:	98.667 (rec:39.133, round:59.535)	b=3.69	count=18500
+08/13/2026 13:21:41 - INFO - qdiff.block_recon -   Total loss:	58.257 (rec:39.955, round:18.302)	b=3.12	count=19000
+08/13/2026 13:21:46 - INFO - qdiff.block_recon -   Total loss:	43.778 (rec:41.731, round:2.047)	b=2.56	count=19500
+08/13/2026 13:21:51 - INFO - qdiff.block_recon -   Total loss:	40.853 (rec:40.806, round:0.047)	b=2.00	count=20000
+08/13/2026 13:21:51 - INFO - __main__ -   model.down.2.attn False
+08/13/2026 13:21:51 - INFO - __main__ -   model.down.2.downsample False
+08/13/2026 13:21:51 - INFO - __main__ -   model.down.2.downsample.conv False
+08/13/2026 13:21:51 - INFO - __main__ -   Reconstruction for layer model.down.2.downsample.conv
+08/13/2026 13:22:21 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 9, 9])
+08/13/2026 13:22:21 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:22:22 - INFO - qdiff.layer_recon -   Total loss:	21.432 (rec:21.432, round:0.000)	b=0.00	count=500
+08/13/2026 13:22:23 - INFO - qdiff.layer_recon -   Total loss:	16.604 (rec:16.604, round:0.000)	b=0.00	count=1000
+08/13/2026 13:22:25 - INFO - qdiff.layer_recon -   Total loss:	21.261 (rec:21.261, round:0.000)	b=0.00	count=1500
+08/13/2026 13:22:26 - INFO - qdiff.layer_recon -   Total loss:	16.993 (rec:16.993, round:0.000)	b=0.00	count=2000
+08/13/2026 13:22:28 - INFO - qdiff.layer_recon -   Total loss:	19.050 (rec:19.050, round:0.000)	b=0.00	count=2500
+08/13/2026 13:22:29 - INFO - qdiff.layer_recon -   Total loss:	17.508 (rec:17.508, round:0.000)	b=0.00	count=3000
+08/13/2026 13:22:30 - INFO - qdiff.layer_recon -   Total loss:	19.171 (rec:19.171, round:0.000)	b=0.00	count=3500
+08/13/2026 13:22:31 - INFO - qdiff.layer_recon -   Total loss:	4855.212 (rec:16.770, round:4838.442)	b=20.00	count=4000
+08/13/2026 13:22:33 - INFO - qdiff.layer_recon -   Total loss:	2879.311 (rec:15.054, round:2864.257)	b=19.44	count=4500
+08/13/2026 13:22:35 - INFO - qdiff.layer_recon -   Total loss:	2622.726 (rec:15.340, round:2607.386)	b=18.88	count=5000
+08/13/2026 13:22:36 - INFO - qdiff.layer_recon -   Total loss:	2433.705 (rec:16.519, round:2417.185)	b=18.31	count=5500
+08/13/2026 13:22:38 - INFO - qdiff.layer_recon -   Total loss:	2267.032 (rec:14.736, round:2252.296)	b=17.75	count=6000
+08/13/2026 13:22:40 - INFO - qdiff.layer_recon -   Total loss:	2118.900 (rec:16.031, round:2102.869)	b=17.19	count=6500
+08/13/2026 13:22:41 - INFO - qdiff.layer_recon -   Total loss:	1980.485 (rec:16.246, round:1964.239)	b=16.62	count=7000
+08/13/2026 13:22:43 - INFO - qdiff.layer_recon -   Total loss:	1852.946 (rec:16.813, round:1836.132)	b=16.06	count=7500
+08/13/2026 13:22:45 - INFO - qdiff.layer_recon -   Total loss:	1729.334 (rec:12.568, round:1716.766)	b=15.50	count=8000
+08/13/2026 13:22:46 - INFO - qdiff.layer_recon -   Total loss:	1619.233 (rec:14.213, round:1605.020)	b=14.94	count=8500
+08/13/2026 13:22:48 - INFO - qdiff.layer_recon -   Total loss:	1516.813 (rec:14.014, round:1502.799)	b=14.38	count=9000
+08/13/2026 13:22:50 - INFO - qdiff.layer_recon -   Total loss:	1419.549 (rec:15.670, round:1403.879)	b=13.81	count=9500
+08/13/2026 13:22:51 - INFO - qdiff.layer_recon -   Total loss:	1325.182 (rec:14.698, round:1310.484)	b=13.25	count=10000
+08/13/2026 13:22:53 - INFO - qdiff.layer_recon -   Total loss:	1238.007 (rec:16.274, round:1221.733)	b=12.69	count=10500
+08/13/2026 13:22:54 - INFO - qdiff.layer_recon -   Total loss:	1151.425 (rec:15.569, round:1135.856)	b=12.12	count=11000
+08/13/2026 13:22:56 - INFO - qdiff.layer_recon -   Total loss:	1068.608 (rec:15.787, round:1052.821)	b=11.56	count=11500
+08/13/2026 13:22:58 - INFO - qdiff.layer_recon -   Total loss:	987.484 (rec:15.078, round:972.407)	b=11.00	count=12000
+08/13/2026 13:22:59 - INFO - qdiff.layer_recon -   Total loss:	910.728 (rec:14.580, round:896.148)	b=10.44	count=12500
+08/13/2026 13:23:01 - INFO - qdiff.layer_recon -   Total loss:	836.405 (rec:14.672, round:821.733)	b=9.88	count=13000
+08/13/2026 13:23:03 - INFO - qdiff.layer_recon -   Total loss:	762.502 (rec:13.559, round:748.943)	b=9.31	count=13500
+08/13/2026 13:23:04 - INFO - qdiff.layer_recon -   Total loss:	692.973 (rec:15.026, round:677.947)	b=8.75	count=14000
+08/13/2026 13:23:06 - INFO - qdiff.layer_recon -   Total loss:	624.373 (rec:15.395, round:608.978)	b=8.19	count=14500
+08/13/2026 13:23:08 - INFO - qdiff.layer_recon -   Total loss:	557.435 (rec:16.395, round:541.040)	b=7.62	count=15000
+08/13/2026 13:23:09 - INFO - qdiff.layer_recon -   Total loss:	490.068 (rec:15.148, round:474.920)	b=7.06	count=15500
+08/13/2026 13:23:11 - INFO - qdiff.layer_recon -   Total loss:	424.877 (rec:16.142, round:408.736)	b=6.50	count=16000
+08/13/2026 13:23:13 - INFO - qdiff.layer_recon -   Total loss:	359.136 (rec:16.078, round:343.058)	b=5.94	count=16500
+08/13/2026 13:23:14 - INFO - qdiff.layer_recon -   Total loss:	292.463 (rec:13.286, round:279.177)	b=5.38	count=17000
+08/13/2026 13:23:16 - INFO - qdiff.layer_recon -   Total loss:	231.763 (rec:16.395, round:215.368)	b=4.81	count=17500
+08/13/2026 13:23:18 - INFO - qdiff.layer_recon -   Total loss:	168.555 (rec:14.947, round:153.608)	b=4.25	count=18000
+08/13/2026 13:23:19 - INFO - qdiff.layer_recon -   Total loss:	111.141 (rec:15.912, round:95.228)	b=3.69	count=18500
+08/13/2026 13:23:21 - INFO - qdiff.layer_recon -   Total loss:	60.907 (rec:15.421, round:45.487)	b=3.12	count=19000
+08/13/2026 13:23:22 - INFO - qdiff.layer_recon -   Total loss:	28.265 (rec:15.916, round:12.349)	b=2.56	count=19500
+08/13/2026 13:23:24 - INFO - qdiff.layer_recon -   Total loss:	16.138 (rec:14.939, round:1.199)	b=2.00	count=20000
+08/13/2026 13:23:24 - INFO - __main__ -   model.down.3 False
+08/13/2026 13:23:24 - INFO - __main__ -   model.down.3.block False
+08/13/2026 13:23:24 - INFO - __main__ -   model.down.3.block.0 True
+08/13/2026 13:23:24 - INFO - __main__ -   Reconstruction for block model.down.3.block.0
+08/13/2026 13:23:55 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 4, 4]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:23:55 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:23:58 - INFO - qdiff.block_recon -   Total loss:	414.581 (rec:414.581, round:0.000)	b=0.00	count=500
+08/13/2026 13:24:01 - INFO - qdiff.block_recon -   Total loss:	400.665 (rec:400.665, round:0.000)	b=0.00	count=1000
+08/13/2026 13:24:03 - INFO - qdiff.block_recon -   Total loss:	408.285 (rec:408.285, round:0.000)	b=0.00	count=1500
+08/13/2026 13:24:06 - INFO - qdiff.block_recon -   Total loss:	384.216 (rec:384.216, round:0.000)	b=0.00	count=2000
+08/13/2026 13:24:09 - INFO - qdiff.block_recon -   Total loss:	360.410 (rec:360.410, round:0.000)	b=0.00	count=2500
+08/13/2026 13:24:11 - INFO - qdiff.block_recon -   Total loss:	380.444 (rec:380.444, round:0.000)	b=0.00	count=3000
+08/13/2026 13:24:14 - INFO - qdiff.block_recon -   Total loss:	404.555 (rec:404.555, round:0.000)	b=0.00	count=3500
+08/13/2026 13:24:17 - INFO - qdiff.block_recon -   Total loss:	12039.580 (rec:406.143, round:11633.438)	b=20.00	count=4000
+08/13/2026 13:24:20 - INFO - qdiff.block_recon -   Total loss:	7831.755 (rec:389.573, round:7442.182)	b=19.44	count=4500
+08/13/2026 13:24:24 - INFO - qdiff.block_recon -   Total loss:	7295.782 (rec:387.669, round:6908.113)	b=18.88	count=5000
+08/13/2026 13:24:27 - INFO - qdiff.block_recon -   Total loss:	6931.870 (rec:395.740, round:6536.129)	b=18.31	count=5500
+08/13/2026 13:24:31 - INFO - qdiff.block_recon -   Total loss:	6627.274 (rec:414.812, round:6212.463)	b=17.75	count=6000
+08/13/2026 13:24:35 - INFO - qdiff.block_recon -   Total loss:	6254.386 (rec:342.428, round:5911.957)	b=17.19	count=6500
+08/13/2026 13:24:38 - INFO - qdiff.block_recon -   Total loss:	6030.398 (rec:404.513, round:5625.885)	b=16.62	count=7000
+08/13/2026 13:24:42 - INFO - qdiff.block_recon -   Total loss:	5730.644 (rec:381.839, round:5348.806)	b=16.06	count=7500
+08/13/2026 13:24:46 - INFO - qdiff.block_recon -   Total loss:	5479.518 (rec:402.213, round:5077.306)	b=15.50	count=8000
+08/13/2026 13:24:49 - INFO - qdiff.block_recon -   Total loss:	5159.767 (rec:345.497, round:4814.271)	b=14.94	count=8500
+08/13/2026 13:24:53 - INFO - qdiff.block_recon -   Total loss:	4960.159 (rec:401.847, round:4558.312)	b=14.38	count=9000
+08/13/2026 13:24:56 - INFO - qdiff.block_recon -   Total loss:	4696.786 (rec:389.660, round:4307.125)	b=13.81	count=9500
+08/13/2026 13:25:00 - INFO - qdiff.block_recon -   Total loss:	4429.580 (rec:368.901, round:4060.679)	b=13.25	count=10000
+08/13/2026 13:25:04 - INFO - qdiff.block_recon -   Total loss:	4201.505 (rec:383.751, round:3817.754)	b=12.69	count=10500
+08/13/2026 13:25:07 - INFO - qdiff.block_recon -   Total loss:	3961.883 (rec:380.819, round:3581.064)	b=12.12	count=11000
+08/13/2026 13:25:11 - INFO - qdiff.block_recon -   Total loss:	3747.787 (rec:398.284, round:3349.504)	b=11.56	count=11500
+08/13/2026 13:25:14 - INFO - qdiff.block_recon -   Total loss:	3546.123 (rec:426.157, round:3119.966)	b=11.00	count=12000
+08/13/2026 13:25:18 - INFO - qdiff.block_recon -   Total loss:	3299.173 (rec:406.099, round:2893.074)	b=10.44	count=12500
+08/13/2026 13:25:22 - INFO - qdiff.block_recon -   Total loss:	3085.583 (rec:415.731, round:2669.853)	b=9.88	count=13000
+08/13/2026 13:25:25 - INFO - qdiff.block_recon -   Total loss:	2867.637 (rec:414.915, round:2452.723)	b=9.31	count=13500
+08/13/2026 13:25:29 - INFO - qdiff.block_recon -   Total loss:	2626.075 (rec:390.576, round:2235.499)	b=8.75	count=14000
+08/13/2026 13:25:33 - INFO - qdiff.block_recon -   Total loss:	2393.037 (rec:371.123, round:2021.914)	b=8.19	count=14500
+08/13/2026 13:25:36 - INFO - qdiff.block_recon -   Total loss:	2188.391 (rec:376.187, round:1812.205)	b=7.62	count=15000
+08/13/2026 13:25:40 - INFO - qdiff.block_recon -   Total loss:	1974.469 (rec:371.202, round:1603.267)	b=7.06	count=15500
+08/13/2026 13:25:43 - INFO - qdiff.block_recon -   Total loss:	1790.214 (rec:393.504, round:1396.710)	b=6.50	count=16000
+08/13/2026 13:25:47 - INFO - qdiff.block_recon -   Total loss:	1571.080 (rec:377.366, round:1193.714)	b=5.94	count=16500
+08/13/2026 13:25:51 - INFO - qdiff.block_recon -   Total loss:	1374.744 (rec:383.877, round:990.867)	b=5.38	count=17000
+08/13/2026 13:25:54 - INFO - qdiff.block_recon -   Total loss:	1174.259 (rec:382.569, round:791.690)	b=4.81	count=17500
+08/13/2026 13:25:58 - INFO - qdiff.block_recon -   Total loss:	1010.638 (rec:417.403, round:593.235)	b=4.25	count=18000
+08/13/2026 13:26:01 - INFO - qdiff.block_recon -   Total loss:	772.441 (rec:366.579, round:405.862)	b=3.69	count=18500
+08/13/2026 13:26:05 - INFO - qdiff.block_recon -   Total loss:	604.605 (rec:372.448, round:232.157)	b=3.12	count=19000
+08/13/2026 13:26:09 - INFO - qdiff.block_recon -   Total loss:	500.832 (rec:410.447, round:90.385)	b=2.56	count=19500
+08/13/2026 13:26:12 - INFO - qdiff.block_recon -   Total loss:	390.917 (rec:375.311, round:15.606)	b=2.00	count=20000
+08/13/2026 13:26:12 - INFO - __main__ -   model.down.3.block.1 True
+08/13/2026 13:26:12 - INFO - __main__ -   Reconstruction for block model.down.3.block.1
+08/13/2026 13:26:46 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 4, 4]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:26:46 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:26:48 - INFO - qdiff.block_recon -   Total loss:	364.099 (rec:364.099, round:0.000)	b=0.00	count=500
+08/13/2026 13:26:51 - INFO - qdiff.block_recon -   Total loss:	388.311 (rec:388.311, round:0.000)	b=0.00	count=1000
+08/13/2026 13:26:54 - INFO - qdiff.block_recon -   Total loss:	369.433 (rec:369.433, round:0.000)	b=0.00	count=1500
+08/13/2026 13:26:56 - INFO - qdiff.block_recon -   Total loss:	393.201 (rec:393.201, round:0.000)	b=0.00	count=2000
+08/13/2026 13:26:59 - INFO - qdiff.block_recon -   Total loss:	415.549 (rec:415.549, round:0.000)	b=0.00	count=2500
+08/13/2026 13:27:02 - INFO - qdiff.block_recon -   Total loss:	382.206 (rec:382.206, round:0.000)	b=0.00	count=3000
+08/13/2026 13:27:04 - INFO - qdiff.block_recon -   Total loss:	363.573 (rec:363.573, round:0.000)	b=0.00	count=3500
+08/13/2026 13:27:07 - INFO - qdiff.block_recon -   Total loss:	11905.714 (rec:362.949, round:11542.765)	b=20.00	count=4000
+08/13/2026 13:27:11 - INFO - qdiff.block_recon -   Total loss:	7736.402 (rec:392.775, round:7343.626)	b=19.44	count=4500
+08/13/2026 13:27:14 - INFO - qdiff.block_recon -   Total loss:	7172.107 (rec:369.655, round:6802.452)	b=18.88	count=5000
+08/13/2026 13:27:18 - INFO - qdiff.block_recon -   Total loss:	6768.876 (rec:342.427, round:6426.450)	b=18.31	count=5500
+08/13/2026 13:27:21 - INFO - qdiff.block_recon -   Total loss:	6484.111 (rec:384.089, round:6100.021)	b=17.75	count=6000
+08/13/2026 13:27:25 - INFO - qdiff.block_recon -   Total loss:	6165.823 (rec:369.374, round:5796.449)	b=17.19	count=6500
+08/13/2026 13:27:29 - INFO - qdiff.block_recon -   Total loss:	5876.175 (rec:367.749, round:5508.426)	b=16.62	count=7000
+08/13/2026 13:27:32 - INFO - qdiff.block_recon -   Total loss:	5612.256 (rec:384.198, round:5228.058)	b=16.06	count=7500
+08/13/2026 13:27:36 - INFO - qdiff.block_recon -   Total loss:	5346.201 (rec:388.558, round:4957.644)	b=15.50	count=8000
+08/13/2026 13:27:39 - INFO - qdiff.block_recon -   Total loss:	5061.093 (rec:369.189, round:4691.904)	b=14.94	count=8500
+08/13/2026 13:27:43 - INFO - qdiff.block_recon -   Total loss:	4781.411 (rec:350.041, round:4431.370)	b=14.38	count=9000
+08/13/2026 13:27:47 - INFO - qdiff.block_recon -   Total loss:	4540.229 (rec:362.152, round:4178.076)	b=13.81	count=9500
+08/13/2026 13:27:50 - INFO - qdiff.block_recon -   Total loss:	4316.525 (rec:383.707, round:3932.818)	b=13.25	count=10000
+08/13/2026 13:27:54 - INFO - qdiff.block_recon -   Total loss:	4069.876 (rec:381.071, round:3688.805)	b=12.69	count=10500
+08/13/2026 13:27:58 - INFO - qdiff.block_recon -   Total loss:	3802.827 (rec:350.361, round:3452.467)	b=12.12	count=11000
+08/13/2026 13:28:01 - INFO - qdiff.block_recon -   Total loss:	3580.718 (rec:362.358, round:3218.360)	b=11.56	count=11500
+08/13/2026 13:28:05 - INFO - qdiff.block_recon -   Total loss:	3369.416 (rec:375.556, round:2993.861)	b=11.00	count=12000
+08/13/2026 13:28:08 - INFO - qdiff.block_recon -   Total loss:	3151.540 (rec:380.509, round:2771.031)	b=10.44	count=12500
+08/13/2026 13:28:12 - INFO - qdiff.block_recon -   Total loss:	2934.406 (rec:382.186, round:2552.219)	b=9.88	count=13000
+08/13/2026 13:28:16 - INFO - qdiff.block_recon -   Total loss:	2726.977 (rec:387.018, round:2339.958)	b=9.31	count=13500
+08/13/2026 13:28:19 - INFO - qdiff.block_recon -   Total loss:	2482.295 (rec:351.861, round:2130.434)	b=8.75	count=14000
+08/13/2026 13:28:23 - INFO - qdiff.block_recon -   Total loss:	2269.417 (rec:345.744, round:1923.672)	b=8.19	count=14500
+08/13/2026 13:28:26 - INFO - qdiff.block_recon -   Total loss:	2108.739 (rec:387.917, round:1720.823)	b=7.62	count=15000
+08/13/2026 13:28:30 - INFO - qdiff.block_recon -   Total loss:	1897.426 (rec:377.952, round:1519.473)	b=7.06	count=15500
+08/13/2026 13:28:34 - INFO - qdiff.block_recon -   Total loss:	1708.558 (rec:385.162, round:1323.396)	b=6.50	count=16000
+08/13/2026 13:28:37 - INFO - qdiff.block_recon -   Total loss:	1483.563 (rec:355.835, round:1127.729)	b=5.94	count=16500
+08/13/2026 13:28:41 - INFO - qdiff.block_recon -   Total loss:	1293.456 (rec:359.496, round:933.960)	b=5.38	count=17000
+08/13/2026 13:28:44 - INFO - qdiff.block_recon -   Total loss:	1111.978 (rec:368.309, round:743.669)	b=4.81	count=17500
+08/13/2026 13:28:48 - INFO - qdiff.block_recon -   Total loss:	944.135 (rec:386.082, round:558.053)	b=4.25	count=18000
+08/13/2026 13:28:51 - INFO - qdiff.block_recon -   Total loss:	795.833 (rec:415.341, round:380.492)	b=3.69	count=18500
+08/13/2026 13:28:55 - INFO - qdiff.block_recon -   Total loss:	576.374 (rec:357.911, round:218.464)	b=3.12	count=19000
+08/13/2026 13:28:59 - INFO - qdiff.block_recon -   Total loss:	446.856 (rec:360.892, round:85.964)	b=2.56	count=19500
+08/13/2026 13:29:02 - INFO - qdiff.block_recon -   Total loss:	366.271 (rec:351.207, round:15.064)	b=2.00	count=20000
+08/13/2026 13:29:02 - INFO - __main__ -   model.down.3.attn False
+08/13/2026 13:29:02 - INFO - __main__ -   model.mid False
+08/13/2026 13:29:02 - INFO - __main__ -   model.mid.block_1 True
+08/13/2026 13:29:02 - INFO - __main__ -   Reconstruction for block model.mid.block_1
+08/13/2026 13:29:37 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 4, 4]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:29:37 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:29:40 - INFO - qdiff.block_recon -   Total loss:	418.374 (rec:418.374, round:0.000)	b=0.00	count=500
+08/13/2026 13:29:43 - INFO - qdiff.block_recon -   Total loss:	418.964 (rec:418.964, round:0.000)	b=0.00	count=1000
+08/13/2026 13:29:45 - INFO - qdiff.block_recon -   Total loss:	437.280 (rec:437.280, round:0.000)	b=0.00	count=1500
+08/13/2026 13:29:48 - INFO - qdiff.block_recon -   Total loss:	397.935 (rec:397.935, round:0.000)	b=0.00	count=2000
+08/13/2026 13:29:50 - INFO - qdiff.block_recon -   Total loss:	411.344 (rec:411.344, round:0.000)	b=0.00	count=2500
+08/13/2026 13:29:53 - INFO - qdiff.block_recon -   Total loss:	380.693 (rec:380.693, round:0.000)	b=0.00	count=3000
+08/13/2026 13:29:56 - INFO - qdiff.block_recon -   Total loss:	404.798 (rec:404.798, round:0.000)	b=0.00	count=3500
+08/13/2026 13:29:58 - INFO - qdiff.block_recon -   Total loss:	11952.176 (rec:388.202, round:11563.974)	b=20.00	count=4000
+08/13/2026 13:30:02 - INFO - qdiff.block_recon -   Total loss:	7821.524 (rec:402.477, round:7419.047)	b=19.44	count=4500
+08/13/2026 13:30:06 - INFO - qdiff.block_recon -   Total loss:	7305.032 (rec:421.819, round:6883.213)	b=18.88	count=5000
+08/13/2026 13:30:09 - INFO - qdiff.block_recon -   Total loss:	6887.001 (rec:380.024, round:6506.977)	b=18.31	count=5500
+08/13/2026 13:30:13 - INFO - qdiff.block_recon -   Total loss:	6612.371 (rec:433.434, round:6178.937)	b=17.75	count=6000
+08/13/2026 13:30:16 - INFO - qdiff.block_recon -   Total loss:	6266.632 (rec:396.702, round:5869.930)	b=17.19	count=6500
+08/13/2026 13:30:20 - INFO - qdiff.block_recon -   Total loss:	5961.337 (rec:384.470, round:5576.867)	b=16.62	count=7000
+08/13/2026 13:30:23 - INFO - qdiff.block_recon -   Total loss:	5699.415 (rec:405.844, round:5293.571)	b=16.06	count=7500
+08/13/2026 13:30:27 - INFO - qdiff.block_recon -   Total loss:	5409.746 (rec:389.480, round:5020.266)	b=15.50	count=8000
+08/13/2026 13:30:31 - INFO - qdiff.block_recon -   Total loss:	5166.194 (rec:413.623, round:4752.571)	b=14.94	count=8500
+08/13/2026 13:30:34 - INFO - qdiff.block_recon -   Total loss:	4897.746 (rec:403.651, round:4494.096)	b=14.38	count=9000
+08/13/2026 13:30:38 - INFO - qdiff.block_recon -   Total loss:	4678.337 (rec:439.380, round:4238.957)	b=13.81	count=9500
+08/13/2026 13:30:42 - INFO - qdiff.block_recon -   Total loss:	4387.480 (rec:394.953, round:3992.527)	b=13.25	count=10000
+08/13/2026 13:30:45 - INFO - qdiff.block_recon -   Total loss:	4141.826 (rec:392.029, round:3749.797)	b=12.69	count=10500
+08/13/2026 13:30:49 - INFO - qdiff.block_recon -   Total loss:	3905.216 (rec:392.157, round:3513.060)	b=12.12	count=11000
+08/13/2026 13:30:52 - INFO - qdiff.block_recon -   Total loss:	3677.266 (rec:397.155, round:3280.111)	b=11.56	count=11500
+08/13/2026 13:30:56 - INFO - qdiff.block_recon -   Total loss:	3460.866 (rec:410.633, round:3050.234)	b=11.00	count=12000
+08/13/2026 13:31:00 - INFO - qdiff.block_recon -   Total loss:	3232.624 (rec:405.547, round:2827.077)	b=10.44	count=12500
+08/13/2026 13:31:03 - INFO - qdiff.block_recon -   Total loss:	3028.156 (rec:416.614, round:2611.542)	b=9.88	count=13000
+08/13/2026 13:31:07 - INFO - qdiff.block_recon -   Total loss:	2815.261 (rec:418.106, round:2397.155)	b=9.31	count=13500
+08/13/2026 13:31:10 - INFO - qdiff.block_recon -   Total loss:	2579.187 (rec:395.059, round:2184.127)	b=8.75	count=14000
+08/13/2026 13:31:14 - INFO - qdiff.block_recon -   Total loss:	2346.654 (rec:369.901, round:1976.753)	b=8.19	count=14500
+08/13/2026 13:31:18 - INFO - qdiff.block_recon -   Total loss:	2228.124 (rec:457.659, round:1770.466)	b=7.62	count=15000
+08/13/2026 13:31:21 - INFO - qdiff.block_recon -   Total loss:	1969.910 (rec:401.813, round:1568.097)	b=7.06	count=15500
+08/13/2026 13:31:25 - INFO - qdiff.block_recon -   Total loss:	1775.056 (rec:405.563, round:1369.493)	b=6.50	count=16000
+08/13/2026 13:31:29 - INFO - qdiff.block_recon -   Total loss:	1567.736 (rec:393.835, round:1173.901)	b=5.94	count=16500
+08/13/2026 13:31:32 - INFO - qdiff.block_recon -   Total loss:	1355.510 (rec:377.917, round:977.593)	b=5.38	count=17000
+08/13/2026 13:31:36 - INFO - qdiff.block_recon -   Total loss:	1215.374 (rec:432.680, round:782.694)	b=4.81	count=17500
+08/13/2026 13:31:40 - INFO - qdiff.block_recon -   Total loss:	1017.239 (rec:425.803, round:591.435)	b=4.25	count=18000
+08/13/2026 13:31:43 - INFO - qdiff.block_recon -   Total loss:	829.690 (rec:421.230, round:408.460)	b=3.69	count=18500
+08/13/2026 13:31:47 - INFO - qdiff.block_recon -   Total loss:	621.818 (rec:381.794, round:240.024)	b=3.12	count=19000
+08/13/2026 13:31:51 - INFO - qdiff.block_recon -   Total loss:	483.413 (rec:385.301, round:98.112)	b=2.56	count=19500
+08/13/2026 13:31:54 - INFO - qdiff.block_recon -   Total loss:	431.336 (rec:412.726, round:18.609)	b=2.00	count=20000
+08/13/2026 13:31:54 - INFO - __main__ -   model.mid.attn_1 True
+08/13/2026 13:31:54 - INFO - __main__ -   Reconstruction for block model.mid.attn_1
+08/13/2026 13:32:32 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:32:32 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:32:34 - INFO - qdiff.block_recon -   Total loss:	38.558 (rec:38.558, round:0.000)	b=0.00	count=500
+08/13/2026 13:32:37 - INFO - qdiff.block_recon -   Total loss:	39.445 (rec:39.445, round:0.000)	b=0.00	count=1000
+08/13/2026 13:32:40 - INFO - qdiff.block_recon -   Total loss:	37.263 (rec:37.263, round:0.000)	b=0.00	count=1500
+08/13/2026 13:32:43 - INFO - qdiff.block_recon -   Total loss:	35.451 (rec:35.451, round:0.000)	b=0.00	count=2000
+08/13/2026 13:32:46 - INFO - qdiff.block_recon -   Total loss:	39.007 (rec:39.007, round:0.000)	b=0.00	count=2500
+08/13/2026 13:32:49 - INFO - qdiff.block_recon -   Total loss:	36.037 (rec:36.037, round:0.000)	b=0.00	count=3000
+08/13/2026 13:32:51 - INFO - qdiff.block_recon -   Total loss:	39.158 (rec:39.158, round:0.000)	b=0.00	count=3500
+08/13/2026 13:32:54 - INFO - qdiff.block_recon -   Total loss:	2303.231 (rec:38.093, round:2265.138)	b=20.00	count=4000
+08/13/2026 13:32:58 - INFO - qdiff.block_recon -   Total loss:	1352.907 (rec:39.845, round:1313.061)	b=19.44	count=4500
+08/13/2026 13:33:02 - INFO - qdiff.block_recon -   Total loss:	1243.164 (rec:38.964, round:1204.200)	b=18.88	count=5000
+08/13/2026 13:33:07 - INFO - qdiff.block_recon -   Total loss:	1162.050 (rec:34.716, round:1127.334)	b=18.31	count=5500
+08/13/2026 13:33:11 - INFO - qdiff.block_recon -   Total loss:	1097.574 (rec:37.610, round:1059.964)	b=17.75	count=6000
+08/13/2026 13:33:15 - INFO - qdiff.block_recon -   Total loss:	1035.674 (rec:38.788, round:996.886)	b=17.19	count=6500
+08/13/2026 13:33:19 - INFO - qdiff.block_recon -   Total loss:	976.721 (rec:38.820, round:937.901)	b=16.62	count=7000
+08/13/2026 13:33:24 - INFO - qdiff.block_recon -   Total loss:	917.985 (rec:37.606, round:880.378)	b=16.06	count=7500
+08/13/2026 13:33:28 - INFO - qdiff.block_recon -   Total loss:	862.870 (rec:37.576, round:825.294)	b=15.50	count=8000
+08/13/2026 13:33:32 - INFO - qdiff.block_recon -   Total loss:	806.827 (rec:34.437, round:772.390)	b=14.94	count=8500
+08/13/2026 13:33:37 - INFO - qdiff.block_recon -   Total loss:	758.744 (rec:37.146, round:721.598)	b=14.38	count=9000
+08/13/2026 13:33:41 - INFO - qdiff.block_recon -   Total loss:	711.055 (rec:37.622, round:673.432)	b=13.81	count=9500
+08/13/2026 13:33:45 - INFO - qdiff.block_recon -   Total loss:	659.144 (rec:32.822, round:626.322)	b=13.25	count=10000
+08/13/2026 13:33:49 - INFO - qdiff.block_recon -   Total loss:	616.971 (rec:36.371, round:580.599)	b=12.69	count=10500
+08/13/2026 13:33:53 - INFO - qdiff.block_recon -   Total loss:	575.351 (rec:38.474, round:536.877)	b=12.12	count=11000
+08/13/2026 13:33:58 - INFO - qdiff.block_recon -   Total loss:	532.091 (rec:37.349, round:494.742)	b=11.56	count=11500
+08/13/2026 13:34:02 - INFO - qdiff.block_recon -   Total loss:	487.375 (rec:33.737, round:453.638)	b=11.00	count=12000
+08/13/2026 13:34:06 - INFO - qdiff.block_recon -   Total loss:	448.569 (rec:35.576, round:412.993)	b=10.44	count=12500
+08/13/2026 13:34:10 - INFO - qdiff.block_recon -   Total loss:	412.909 (rec:38.148, round:374.761)	b=9.88	count=13000
+08/13/2026 13:34:15 - INFO - qdiff.block_recon -   Total loss:	377.539 (rec:39.838, round:337.701)	b=9.31	count=13500
+08/13/2026 13:34:19 - INFO - qdiff.block_recon -   Total loss:	339.328 (rec:37.599, round:301.730)	b=8.75	count=14000
+08/13/2026 13:34:23 - INFO - qdiff.block_recon -   Total loss:	304.298 (rec:37.223, round:267.075)	b=8.19	count=14500
+08/13/2026 13:34:27 - INFO - qdiff.block_recon -   Total loss:	271.568 (rec:38.142, round:233.426)	b=7.62	count=15000
+08/13/2026 13:34:31 - INFO - qdiff.block_recon -   Total loss:	238.347 (rec:37.471, round:200.876)	b=7.06	count=15500
+08/13/2026 13:34:36 - INFO - qdiff.block_recon -   Total loss:	207.704 (rec:38.977, round:168.728)	b=6.50	count=16000
+08/13/2026 13:34:40 - INFO - qdiff.block_recon -   Total loss:	173.203 (rec:35.585, round:137.618)	b=5.94	count=16500
+08/13/2026 13:34:44 - INFO - qdiff.block_recon -   Total loss:	149.252 (rec:42.075, round:107.178)	b=5.38	count=17000
+08/13/2026 13:34:48 - INFO - qdiff.block_recon -   Total loss:	118.604 (rec:39.420, round:79.184)	b=4.81	count=17500
+08/13/2026 13:34:52 - INFO - qdiff.block_recon -   Total loss:	90.269 (rec:36.627, round:53.642)	b=4.25	count=18000
+08/13/2026 13:34:57 - INFO - qdiff.block_recon -   Total loss:	66.564 (rec:35.950, round:30.614)	b=3.69	count=18500
+08/13/2026 13:35:01 - INFO - qdiff.block_recon -   Total loss:	49.536 (rec:37.096, round:12.440)	b=3.12	count=19000
+08/13/2026 13:35:05 - INFO - qdiff.block_recon -   Total loss:	39.116 (rec:36.643, round:2.473)	b=2.56	count=19500
+08/13/2026 13:35:09 - INFO - qdiff.block_recon -   Total loss:	33.787 (rec:33.632, round:0.155)	b=2.00	count=20000
+08/13/2026 13:35:09 - INFO - __main__ -   model.mid.block_2 True
+08/13/2026 13:35:09 - INFO - __main__ -   Reconstruction for block model.mid.block_2
+08/13/2026 13:35:48 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 4, 4]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:35:48 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 4, 4])
+08/13/2026 13:35:51 - INFO - qdiff.block_recon -   Total loss:	387.835 (rec:387.835, round:0.000)	b=0.00	count=500
+08/13/2026 13:35:53 - INFO - qdiff.block_recon -   Total loss:	365.288 (rec:365.288, round:0.000)	b=0.00	count=1000
+08/13/2026 13:35:56 - INFO - qdiff.block_recon -   Total loss:	395.837 (rec:395.837, round:0.000)	b=0.00	count=1500
+08/13/2026 13:35:59 - INFO - qdiff.block_recon -   Total loss:	401.097 (rec:401.097, round:0.000)	b=0.00	count=2000
+08/13/2026 13:36:01 - INFO - qdiff.block_recon -   Total loss:	360.888 (rec:360.888, round:0.000)	b=0.00	count=2500
+08/13/2026 13:36:04 - INFO - qdiff.block_recon -   Total loss:	386.539 (rec:386.539, round:0.000)	b=0.00	count=3000
+08/13/2026 13:36:06 - INFO - qdiff.block_recon -   Total loss:	379.861 (rec:379.861, round:0.000)	b=0.00	count=3500
+08/13/2026 13:36:09 - INFO - qdiff.block_recon -   Total loss:	12014.201 (rec:392.228, round:11621.973)	b=20.00	count=4000
+08/13/2026 13:36:13 - INFO - qdiff.block_recon -   Total loss:	7851.486 (rec:374.705, round:7476.781)	b=19.44	count=4500
+08/13/2026 13:36:16 - INFO - qdiff.block_recon -   Total loss:	7317.540 (rec:378.410, round:6939.130)	b=18.88	count=5000
+08/13/2026 13:36:20 - INFO - qdiff.block_recon -   Total loss:	6968.014 (rec:398.032, round:6569.982)	b=18.31	count=5500
+08/13/2026 13:36:23 - INFO - qdiff.block_recon -   Total loss:	6606.283 (rec:356.726, round:6249.558)	b=17.75	count=6000
+08/13/2026 13:36:27 - INFO - qdiff.block_recon -   Total loss:	6326.562 (rec:379.426, round:5947.135)	b=17.19	count=6500
+08/13/2026 13:36:31 - INFO - qdiff.block_recon -   Total loss:	6024.143 (rec:366.950, round:5657.192)	b=16.62	count=7000
+08/13/2026 13:36:34 - INFO - qdiff.block_recon -   Total loss:	5771.808 (rec:390.946, round:5380.862)	b=16.06	count=7500
+08/13/2026 13:36:38 - INFO - qdiff.block_recon -   Total loss:	5493.229 (rec:380.678, round:5112.551)	b=15.50	count=8000
+08/13/2026 13:36:42 - INFO - qdiff.block_recon -   Total loss:	5213.831 (rec:362.416, round:4851.414)	b=14.94	count=8500
+08/13/2026 13:36:45 - INFO - qdiff.block_recon -   Total loss:	4953.901 (rec:357.226, round:4596.675)	b=14.38	count=9000
+08/13/2026 13:36:49 - INFO - qdiff.block_recon -   Total loss:	4700.688 (rec:353.104, round:4347.584)	b=13.81	count=9500
+08/13/2026 13:36:53 - INFO - qdiff.block_recon -   Total loss:	4416.460 (rec:314.854, round:4101.606)	b=13.25	count=10000
+08/13/2026 13:36:56 - INFO - qdiff.block_recon -   Total loss:	4194.580 (rec:334.064, round:3860.516)	b=12.69	count=10500
+08/13/2026 13:37:00 - INFO - qdiff.block_recon -   Total loss:	4011.473 (rec:386.848, round:3624.625)	b=12.12	count=11000
+08/13/2026 13:37:04 - INFO - qdiff.block_recon -   Total loss:	3748.490 (rec:356.345, round:3392.145)	b=11.56	count=11500
+08/13/2026 13:37:07 - INFO - qdiff.block_recon -   Total loss:	3517.383 (rec:353.580, round:3163.802)	b=11.00	count=12000
+08/13/2026 13:37:11 - INFO - qdiff.block_recon -   Total loss:	3295.685 (rec:354.784, round:2940.902)	b=10.44	count=12500
+08/13/2026 13:37:15 - INFO - qdiff.block_recon -   Total loss:	3075.703 (rec:355.162, round:2720.541)	b=9.88	count=13000
+08/13/2026 13:37:18 - INFO - qdiff.block_recon -   Total loss:	2895.947 (rec:392.753, round:2503.194)	b=9.31	count=13500
+08/13/2026 13:37:22 - INFO - qdiff.block_recon -   Total loss:	2663.827 (rec:374.800, round:2289.026)	b=8.75	count=14000
+08/13/2026 13:37:26 - INFO - qdiff.block_recon -   Total loss:	2444.249 (rec:368.932, round:2075.316)	b=8.19	count=14500
+08/13/2026 13:37:29 - INFO - qdiff.block_recon -   Total loss:	2216.590 (rec:350.376, round:1866.213)	b=7.62	count=15000
+08/13/2026 13:37:33 - INFO - qdiff.block_recon -   Total loss:	2019.859 (rec:364.023, round:1655.836)	b=7.06	count=15500
+08/13/2026 13:37:37 - INFO - qdiff.block_recon -   Total loss:	1836.525 (rec:388.608, round:1447.917)	b=6.50	count=16000
+08/13/2026 13:37:40 - INFO - qdiff.block_recon -   Total loss:	1593.519 (rec:351.612, round:1241.906)	b=5.94	count=16500
+08/13/2026 13:37:45 - INFO - qdiff.block_recon -   Total loss:	1379.445 (rec:343.419, round:1036.026)	b=5.38	count=17000
+08/13/2026 13:37:49 - INFO - qdiff.block_recon -   Total loss:	1221.087 (rec:388.567, round:832.520)	b=4.81	count=17500
+08/13/2026 13:37:53 - INFO - qdiff.block_recon -   Total loss:	1037.057 (rec:404.494, round:632.563)	b=4.25	count=18000
+08/13/2026 13:37:57 - INFO - qdiff.block_recon -   Total loss:	781.213 (rec:341.436, round:439.777)	b=3.69	count=18500
+08/13/2026 13:38:00 - INFO - qdiff.block_recon -   Total loss:	631.739 (rec:371.174, round:260.565)	b=3.12	count=19000
+08/13/2026 13:38:04 - INFO - qdiff.block_recon -   Total loss:	483.712 (rec:374.624, round:109.088)	b=2.56	count=19500
+08/13/2026 13:38:08 - INFO - qdiff.block_recon -   Total loss:	351.043 (rec:329.070, round:21.972)	b=2.00	count=20000
+08/13/2026 13:38:08 - INFO - __main__ -   model.up False
+08/13/2026 13:38:08 - INFO - __main__ -   model.up.0 False
+08/13/2026 13:38:08 - INFO - __main__ -   model.up.0.block False
+08/13/2026 13:38:08 - INFO - __main__ -   model.up.0.block.0 True
+08/13/2026 13:38:08 - INFO - __main__ -   Reconstruction for block model.up.0.block.0
+08/13/2026 13:40:06 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 384, 32, 32]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 13:40:06 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 32, 32])
+08/13/2026 13:40:41 - INFO - qdiff.block_recon -   Total loss:	439.067 (rec:439.067, round:0.000)	b=0.00	count=500
+08/13/2026 13:41:11 - INFO - qdiff.block_recon -   Total loss:	416.962 (rec:416.962, round:0.000)	b=0.00	count=1000
+08/13/2026 13:41:46 - INFO - qdiff.block_recon -   Total loss:	444.027 (rec:444.027, round:0.000)	b=0.00	count=1500
+08/13/2026 13:42:19 - INFO - qdiff.block_recon -   Total loss:	455.855 (rec:455.855, round:0.000)	b=0.00	count=2000
+08/13/2026 13:42:59 - INFO - qdiff.block_recon -   Total loss:	446.432 (rec:446.432, round:0.000)	b=0.00	count=2500
+08/13/2026 13:43:35 - INFO - qdiff.block_recon -   Total loss:	483.496 (rec:483.496, round:0.000)	b=0.00	count=3000
+08/13/2026 13:44:09 - INFO - qdiff.block_recon -   Total loss:	433.802 (rec:433.802, round:0.000)	b=0.00	count=3500
+08/13/2026 13:44:42 - INFO - qdiff.block_recon -   Total loss:	6064.865 (rec:441.783, round:5623.083)	b=20.00	count=4000
+08/13/2026 13:45:14 - INFO - qdiff.block_recon -   Total loss:	3840.722 (rec:426.749, round:3413.973)	b=19.44	count=4500
+08/13/2026 13:45:50 - INFO - qdiff.block_recon -   Total loss:	3550.119 (rec:438.143, round:3111.977)	b=18.88	count=5000
+08/13/2026 13:46:20 - INFO - qdiff.block_recon -   Total loss:	3323.801 (rec:429.717, round:2894.083)	b=18.31	count=5500
+08/13/2026 13:46:54 - INFO - qdiff.block_recon -   Total loss:	3139.055 (rec:431.659, round:2707.396)	b=17.75	count=6000
+08/13/2026 13:47:31 - INFO - qdiff.block_recon -   Total loss:	2933.370 (rec:392.383, round:2540.988)	b=17.19	count=6500
+08/13/2026 13:48:04 - INFO - qdiff.block_recon -   Total loss:	2842.696 (rec:455.176, round:2387.520)	b=16.62	count=7000
+08/13/2026 13:48:36 - INFO - qdiff.block_recon -   Total loss:	2663.295 (rec:417.357, round:2245.938)	b=16.06	count=7500
+08/13/2026 13:49:09 - INFO - qdiff.block_recon -   Total loss:	2464.476 (rec:348.898, round:2115.578)	b=15.50	count=8000
+08/13/2026 13:49:43 - INFO - qdiff.block_recon -   Total loss:	2411.703 (rec:419.818, round:1991.885)	b=14.94	count=8500
+08/13/2026 13:50:18 - INFO - qdiff.block_recon -   Total loss:	2245.578 (rec:368.908, round:1876.670)	b=14.38	count=9000
+08/13/2026 13:50:53 - INFO - qdiff.block_recon -   Total loss:	2246.174 (rec:481.349, round:1764.825)	b=13.81	count=9500
+08/13/2026 13:51:30 - INFO - qdiff.block_recon -   Total loss:	2039.624 (rec:379.117, round:1660.506)	b=13.25	count=10000
+08/13/2026 13:52:05 - INFO - qdiff.block_recon -   Total loss:	2042.970 (rec:483.084, round:1559.886)	b=12.69	count=10500
+08/13/2026 13:52:39 - INFO - qdiff.block_recon -   Total loss:	1900.615 (rec:438.314, round:1462.301)	b=12.12	count=11000
+08/13/2026 13:53:12 - INFO - qdiff.block_recon -   Total loss:	1829.746 (rec:461.032, round:1368.713)	b=11.56	count=11500
+08/13/2026 13:53:43 - INFO - qdiff.block_recon -   Total loss:	1719.526 (rec:441.671, round:1277.855)	b=11.00	count=12000
+08/13/2026 13:54:22 - INFO - qdiff.block_recon -   Total loss:	1616.909 (rec:427.849, round:1189.060)	b=10.44	count=12500
+08/13/2026 13:54:55 - INFO - qdiff.block_recon -   Total loss:	1514.568 (rec:409.683, round:1104.885)	b=9.88	count=13000
+08/13/2026 13:55:26 - INFO - qdiff.block_recon -   Total loss:	1433.741 (rec:412.762, round:1020.979)	b=9.31	count=13500
+08/13/2026 13:55:58 - INFO - qdiff.block_recon -   Total loss:	1376.804 (rec:439.917, round:936.887)	b=8.75	count=14000
+08/13/2026 13:56:30 - INFO - qdiff.block_recon -   Total loss:	1265.557 (rec:412.789, round:852.769)	b=8.19	count=14500
+08/13/2026 13:57:02 - INFO - qdiff.block_recon -   Total loss:	1223.700 (rec:455.291, round:768.409)	b=7.62	count=15000
+08/13/2026 13:57:38 - INFO - qdiff.block_recon -   Total loss:	1029.564 (rec:344.406, round:685.158)	b=7.06	count=15500
+08/13/2026 13:58:12 - INFO - qdiff.block_recon -   Total loss:	1010.475 (rec:407.453, round:603.022)	b=6.50	count=16000
+08/13/2026 13:58:45 - INFO - qdiff.block_recon -   Total loss:	995.312 (rec:475.400, round:519.912)	b=5.94	count=16500
+08/13/2026 13:59:18 - INFO - qdiff.block_recon -   Total loss:	882.408 (rec:447.075, round:435.333)	b=5.38	count=17000
+08/13/2026 13:59:50 - INFO - qdiff.block_recon -   Total loss:	799.043 (rec:447.724, round:351.319)	b=4.81	count=17500
+08/13/2026 14:00:23 - INFO - qdiff.block_recon -   Total loss:	674.492 (rec:407.147, round:267.345)	b=4.25	count=18000
+08/13/2026 14:00:55 - INFO - qdiff.block_recon -   Total loss:	622.584 (rec:436.707, round:185.877)	b=3.69	count=18500
+08/13/2026 14:01:27 - INFO - qdiff.block_recon -   Total loss:	493.303 (rec:383.977, round:109.326)	b=3.12	count=19000
+08/13/2026 14:02:01 - INFO - qdiff.block_recon -   Total loss:	445.510 (rec:401.135, round:44.375)	b=2.56	count=19500
+08/13/2026 14:02:35 - INFO - qdiff.block_recon -   Total loss:	425.163 (rec:416.076, round:9.087)	b=2.00	count=20000
+08/13/2026 14:02:36 - INFO - __main__ -   model.up.0.block.1 True
+08/13/2026 14:02:36 - INFO - __main__ -   Reconstruction for block model.up.0.block.1
+08/13/2026 14:04:07 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 32, 32]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 14:04:07 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 32, 32])
+08/13/2026 14:04:29 - INFO - qdiff.block_recon -   Total loss:	109.839 (rec:109.839, round:0.000)	b=0.00	count=500
+08/13/2026 14:04:49 - INFO - qdiff.block_recon -   Total loss:	113.879 (rec:113.879, round:0.000)	b=0.00	count=1000
+08/13/2026 14:05:09 - INFO - qdiff.block_recon -   Total loss:	92.483 (rec:92.483, round:0.000)	b=0.00	count=1500
+08/13/2026 14:05:29 - INFO - qdiff.block_recon -   Total loss:	102.853 (rec:102.853, round:0.000)	b=0.00	count=2000
+08/13/2026 14:05:49 - INFO - qdiff.block_recon -   Total loss:	103.263 (rec:103.263, round:0.000)	b=0.00	count=2500
+08/13/2026 14:06:09 - INFO - qdiff.block_recon -   Total loss:	97.309 (rec:97.309, round:0.000)	b=0.00	count=3000
+08/13/2026 14:06:29 - INFO - qdiff.block_recon -   Total loss:	108.191 (rec:108.191, round:0.000)	b=0.00	count=3500
+08/13/2026 14:06:49 - INFO - qdiff.block_recon -   Total loss:	4313.273 (rec:113.832, round:4199.442)	b=20.00	count=4000
+08/13/2026 14:07:11 - INFO - qdiff.block_recon -   Total loss:	2414.914 (rec:92.154, round:2322.760)	b=19.44	count=4500
+08/13/2026 14:07:32 - INFO - qdiff.block_recon -   Total loss:	2205.904 (rec:103.713, round:2102.191)	b=18.88	count=5000
+08/13/2026 14:07:53 - INFO - qdiff.block_recon -   Total loss:	2044.230 (rec:101.689, round:1942.542)	b=18.31	count=5500
+08/13/2026 14:08:14 - INFO - qdiff.block_recon -   Total loss:	1907.558 (rec:99.958, round:1807.600)	b=17.75	count=6000
+08/13/2026 14:08:35 - INFO - qdiff.block_recon -   Total loss:	1784.070 (rec:94.985, round:1689.084)	b=17.19	count=6500
+08/13/2026 14:08:56 - INFO - qdiff.block_recon -   Total loss:	1686.886 (rec:107.029, round:1579.857)	b=16.62	count=7000
+08/13/2026 14:09:18 - INFO - qdiff.block_recon -   Total loss:	1593.772 (rec:113.630, round:1480.142)	b=16.06	count=7500
+08/13/2026 14:09:39 - INFO - qdiff.block_recon -   Total loss:	1471.645 (rec:85.773, round:1385.872)	b=15.50	count=8000
+08/13/2026 14:10:00 - INFO - qdiff.block_recon -   Total loss:	1407.414 (rec:108.757, round:1298.658)	b=14.94	count=8500
+08/13/2026 14:10:21 - INFO - qdiff.block_recon -   Total loss:	1319.068 (rec:101.019, round:1218.049)	b=14.38	count=9000
+08/13/2026 14:10:42 - INFO - qdiff.block_recon -   Total loss:	1250.901 (rec:110.513, round:1140.388)	b=13.81	count=9500
+08/13/2026 14:11:04 - INFO - qdiff.block_recon -   Total loss:	1167.996 (rec:102.327, round:1065.669)	b=13.25	count=10000
+08/13/2026 14:11:25 - INFO - qdiff.block_recon -   Total loss:	1080.670 (rec:85.620, round:995.050)	b=12.69	count=10500
+08/13/2026 14:11:46 - INFO - qdiff.block_recon -   Total loss:	1020.785 (rec:93.072, round:927.713)	b=12.12	count=11000
+08/13/2026 14:12:07 - INFO - qdiff.block_recon -   Total loss:	956.066 (rec:92.320, round:863.746)	b=11.56	count=11500
+08/13/2026 14:12:29 - INFO - qdiff.block_recon -   Total loss:	912.468 (rec:110.624, round:801.844)	b=11.00	count=12000
+08/13/2026 14:12:50 - INFO - qdiff.block_recon -   Total loss:	836.195 (rec:96.542, round:739.653)	b=10.44	count=12500
+08/13/2026 14:13:11 - INFO - qdiff.block_recon -   Total loss:	778.988 (rec:97.704, round:681.284)	b=9.88	count=13000
+08/13/2026 14:13:32 - INFO - qdiff.block_recon -   Total loss:	758.952 (rec:135.300, round:623.652)	b=9.31	count=13500
+08/13/2026 14:13:53 - INFO - qdiff.block_recon -   Total loss:	664.752 (rec:98.003, round:566.749)	b=8.75	count=14000
+08/13/2026 14:14:14 - INFO - qdiff.block_recon -   Total loss:	617.090 (rec:106.626, round:510.464)	b=8.19	count=14500
+08/13/2026 14:14:35 - INFO - qdiff.block_recon -   Total loss:	555.545 (rec:100.432, round:455.114)	b=7.62	count=15000
+08/13/2026 14:14:57 - INFO - qdiff.block_recon -   Total loss:	505.851 (rec:107.623, round:398.227)	b=7.06	count=15500
+08/13/2026 14:15:18 - INFO - qdiff.block_recon -   Total loss:	433.683 (rec:90.288, round:343.394)	b=6.50	count=16000
+08/13/2026 14:15:39 - INFO - qdiff.block_recon -   Total loss:	409.406 (rec:120.916, round:288.490)	b=5.94	count=16500
+08/13/2026 14:16:00 - INFO - qdiff.block_recon -   Total loss:	350.427 (rec:116.692, round:233.736)	b=5.38	count=17000
+08/13/2026 14:16:21 - INFO - qdiff.block_recon -   Total loss:	277.732 (rec:97.457, round:180.274)	b=4.81	count=17500
+08/13/2026 14:16:43 - INFO - qdiff.block_recon -   Total loss:	229.942 (rec:101.061, round:128.881)	b=4.25	count=18000
+08/13/2026 14:17:05 - INFO - qdiff.block_recon -   Total loss:	174.335 (rec:94.754, round:79.582)	b=3.69	count=18500
+08/13/2026 14:17:26 - INFO - qdiff.block_recon -   Total loss:	134.261 (rec:97.660, round:36.601)	b=3.12	count=19000
+08/13/2026 14:17:48 - INFO - qdiff.block_recon -   Total loss:	128.624 (rec:119.380, round:9.244)	b=2.56	count=19500
+08/13/2026 14:18:09 - INFO - qdiff.block_recon -   Total loss:	98.419 (rec:97.376, round:1.043)	b=2.00	count=20000
+08/13/2026 14:18:09 - INFO - __main__ -   model.up.0.block.2 True
+08/13/2026 14:18:09 - INFO - __main__ -   Reconstruction for block model.up.0.block.2
+08/13/2026 14:19:43 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 256, 32, 32]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 14:19:43 - INFO - qdiff.utils -   out shape: torch.Size([4608, 128, 32, 32])
+08/13/2026 14:20:05 - INFO - qdiff.block_recon -   Total loss:	196.157 (rec:196.157, round:0.000)	b=0.00	count=500
+08/13/2026 14:20:26 - INFO - qdiff.block_recon -   Total loss:	194.959 (rec:194.959, round:0.000)	b=0.00	count=1000
+08/13/2026 14:20:46 - INFO - qdiff.block_recon -   Total loss:	222.121 (rec:222.121, round:0.000)	b=0.00	count=1500
+08/13/2026 14:21:06 - INFO - qdiff.block_recon -   Total loss:	196.365 (rec:196.365, round:0.000)	b=0.00	count=2000
+08/13/2026 14:21:26 - INFO - qdiff.block_recon -   Total loss:	201.048 (rec:201.048, round:0.000)	b=0.00	count=2500
+08/13/2026 14:21:46 - INFO - qdiff.block_recon -   Total loss:	202.866 (rec:202.866, round:0.000)	b=0.00	count=3000
+08/13/2026 14:22:06 - INFO - qdiff.block_recon -   Total loss:	186.042 (rec:186.042, round:0.000)	b=0.00	count=3500
+08/13/2026 14:22:26 - INFO - qdiff.block_recon -   Total loss:	4503.868 (rec:196.812, round:4307.055)	b=20.00	count=4000
+08/13/2026 14:22:47 - INFO - qdiff.block_recon -   Total loss:	2756.319 (rec:187.964, round:2568.355)	b=19.44	count=4500
+08/13/2026 14:23:08 - INFO - qdiff.block_recon -   Total loss:	2551.016 (rec:203.865, round:2347.152)	b=18.88	count=5000
+08/13/2026 14:23:30 - INFO - qdiff.block_recon -   Total loss:	2381.359 (rec:193.205, round:2188.154)	b=18.31	count=5500
+08/13/2026 14:23:51 - INFO - qdiff.block_recon -   Total loss:	2260.048 (rec:204.614, round:2055.434)	b=17.75	count=6000
+08/13/2026 14:24:12 - INFO - qdiff.block_recon -   Total loss:	2132.510 (rec:196.147, round:1936.363)	b=17.19	count=6500
+08/13/2026 14:24:33 - INFO - qdiff.block_recon -   Total loss:	2008.545 (rec:181.412, round:1827.133)	b=16.62	count=7000
+08/13/2026 14:24:54 - INFO - qdiff.block_recon -   Total loss:	1933.914 (rec:207.937, round:1725.977)	b=16.06	count=7500
+08/13/2026 14:25:15 - INFO - qdiff.block_recon -   Total loss:	1814.552 (rec:182.003, round:1632.548)	b=15.50	count=8000
+08/13/2026 14:25:36 - INFO - qdiff.block_recon -   Total loss:	1745.551 (rec:201.237, round:1544.315)	b=14.94	count=8500
+08/13/2026 14:25:58 - INFO - qdiff.block_recon -   Total loss:	1644.882 (rec:184.889, round:1459.993)	b=14.38	count=9000
+08/13/2026 14:26:19 - INFO - qdiff.block_recon -   Total loss:	1576.979 (rec:197.547, round:1379.433)	b=13.81	count=9500
+08/13/2026 14:26:40 - INFO - qdiff.block_recon -   Total loss:	1505.649 (rec:201.406, round:1304.243)	b=13.25	count=10000
+08/13/2026 14:27:01 - INFO - qdiff.block_recon -   Total loss:	1426.864 (rec:195.330, round:1231.534)	b=12.69	count=10500
+08/13/2026 14:27:22 - INFO - qdiff.block_recon -   Total loss:	1334.860 (rec:173.811, round:1161.049)	b=12.12	count=11000
+08/13/2026 14:27:44 - INFO - qdiff.block_recon -   Total loss:	1279.654 (rec:188.040, round:1091.614)	b=11.56	count=11500
+08/13/2026 14:28:05 - INFO - qdiff.block_recon -   Total loss:	1218.335 (rec:194.510, round:1023.825)	b=11.00	count=12000
+08/13/2026 14:28:26 - INFO - qdiff.block_recon -   Total loss:	1153.515 (rec:196.111, round:957.404)	b=10.44	count=12500
+08/13/2026 14:28:47 - INFO - qdiff.block_recon -   Total loss:	1079.919 (rec:187.347, round:892.572)	b=9.88	count=13000
+08/13/2026 14:29:08 - INFO - qdiff.block_recon -   Total loss:	1012.855 (rec:185.746, round:827.109)	b=9.31	count=13500
+08/13/2026 14:29:29 - INFO - qdiff.block_recon -   Total loss:	941.518 (rec:177.686, round:763.832)	b=8.75	count=14000
+08/13/2026 14:29:50 - INFO - qdiff.block_recon -   Total loss:	897.359 (rec:199.565, round:697.794)	b=8.19	count=14500
+08/13/2026 14:30:12 - INFO - qdiff.block_recon -   Total loss:	803.462 (rec:171.940, round:631.522)	b=7.62	count=15000
+08/13/2026 14:30:33 - INFO - qdiff.block_recon -   Total loss:	745.149 (rec:180.452, round:564.697)	b=7.06	count=15500
+08/13/2026 14:30:54 - INFO - qdiff.block_recon -   Total loss:	684.193 (rec:186.625, round:497.568)	b=6.50	count=16000
+08/13/2026 14:31:15 - INFO - qdiff.block_recon -   Total loss:	619.817 (rec:190.063, round:429.754)	b=5.94	count=16500
+08/13/2026 14:31:36 - INFO - qdiff.block_recon -   Total loss:	541.299 (rec:179.932, round:361.368)	b=5.38	count=17000
+08/13/2026 14:31:58 - INFO - qdiff.block_recon -   Total loss:	491.192 (rec:199.362, round:291.830)	b=4.81	count=17500
+08/13/2026 14:32:19 - INFO - qdiff.block_recon -   Total loss:	412.433 (rec:191.117, round:221.316)	b=4.25	count=18000
+08/13/2026 14:32:40 - INFO - qdiff.block_recon -   Total loss:	323.220 (rec:171.936, round:151.284)	b=3.69	count=18500
+08/13/2026 14:33:01 - INFO - qdiff.block_recon -   Total loss:	276.889 (rec:190.062, round:86.827)	b=3.12	count=19000
+08/13/2026 14:33:22 - INFO - qdiff.block_recon -   Total loss:	223.917 (rec:189.510, round:34.407)	b=2.56	count=19500
+08/13/2026 14:33:44 - INFO - qdiff.block_recon -   Total loss:	200.652 (rec:193.487, round:7.165)	b=2.00	count=20000
+08/13/2026 14:33:44 - INFO - __main__ -   model.up.0.attn False
+08/13/2026 14:33:44 - INFO - __main__ -   model.up.1 False
+08/13/2026 14:33:44 - INFO - __main__ -   model.up.1.block False
+08/13/2026 14:33:44 - INFO - __main__ -   model.up.1.block.0 True
+08/13/2026 14:33:44 - INFO - __main__ -   Reconstruction for block model.up.1.block.0
+08/13/2026 14:34:43 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 512, 16, 16]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 14:34:43 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 14:35:00 - INFO - qdiff.block_recon -   Total loss:	413.874 (rec:413.874, round:0.000)	b=0.00	count=500
+08/13/2026 14:35:16 - INFO - qdiff.block_recon -   Total loss:	433.893 (rec:433.893, round:0.000)	b=0.00	count=1000
+08/13/2026 14:35:33 - INFO - qdiff.block_recon -   Total loss:	399.395 (rec:399.395, round:0.000)	b=0.00	count=1500
+08/13/2026 14:35:49 - INFO - qdiff.block_recon -   Total loss:	410.900 (rec:410.900, round:0.000)	b=0.00	count=2000
+08/13/2026 14:36:06 - INFO - qdiff.block_recon -   Total loss:	379.377 (rec:379.377, round:0.000)	b=0.00	count=2500
+08/13/2026 14:36:22 - INFO - qdiff.block_recon -   Total loss:	370.593 (rec:370.593, round:0.000)	b=0.00	count=3000
+08/13/2026 14:36:38 - INFO - qdiff.block_recon -   Total loss:	388.231 (rec:388.231, round:0.000)	b=0.00	count=3500
+08/13/2026 14:36:55 - INFO - qdiff.block_recon -   Total loss:	16831.625 (rec:381.564, round:16450.061)	b=20.00	count=4000
+08/13/2026 14:37:12 - INFO - qdiff.block_recon -   Total loss:	9939.766 (rec:389.258, round:9550.508)	b=19.44	count=4500
+08/13/2026 14:37:30 - INFO - qdiff.block_recon -   Total loss:	9127.199 (rec:427.224, round:8699.976)	b=18.88	count=5000
+08/13/2026 14:37:48 - INFO - qdiff.block_recon -   Total loss:	8506.419 (rec:421.257, round:8085.162)	b=18.31	count=5500
+08/13/2026 14:38:05 - INFO - qdiff.block_recon -   Total loss:	7963.396 (rec:408.779, round:7554.617)	b=17.75	count=6000
+08/13/2026 14:38:23 - INFO - qdiff.block_recon -   Total loss:	7452.355 (rec:380.726, round:7071.630)	b=17.19	count=6500
+08/13/2026 14:38:40 - INFO - qdiff.block_recon -   Total loss:	7025.063 (rec:401.075, round:6623.988)	b=16.62	count=7000
+08/13/2026 14:38:58 - INFO - qdiff.block_recon -   Total loss:	6622.820 (rec:414.984, round:6207.836)	b=16.06	count=7500
+08/13/2026 14:39:16 - INFO - qdiff.block_recon -   Total loss:	6187.895 (rec:370.689, round:5817.206)	b=15.50	count=8000
+08/13/2026 14:39:33 - INFO - qdiff.block_recon -   Total loss:	5858.678 (rec:411.758, round:5446.919)	b=14.94	count=8500
+08/13/2026 14:39:51 - INFO - qdiff.block_recon -   Total loss:	5506.824 (rec:407.572, round:5099.252)	b=14.38	count=9000
+08/13/2026 14:40:08 - INFO - qdiff.block_recon -   Total loss:	5174.994 (rec:410.595, round:4764.399)	b=13.81	count=9500
+08/13/2026 14:40:26 - INFO - qdiff.block_recon -   Total loss:	4830.676 (rec:387.087, round:4443.589)	b=13.25	count=10000
+08/13/2026 14:40:44 - INFO - qdiff.block_recon -   Total loss:	4561.749 (rec:417.813, round:4143.936)	b=12.69	count=10500
+08/13/2026 14:41:01 - INFO - qdiff.block_recon -   Total loss:	4290.528 (rec:438.932, round:3851.596)	b=12.12	count=11000
+08/13/2026 14:41:19 - INFO - qdiff.block_recon -   Total loss:	3987.382 (rec:418.109, round:3569.273)	b=11.56	count=11500
+08/13/2026 14:41:36 - INFO - qdiff.block_recon -   Total loss:	3730.836 (rec:430.024, round:3300.812)	b=11.00	count=12000
+08/13/2026 14:41:54 - INFO - qdiff.block_recon -   Total loss:	3504.695 (rec:464.950, round:3039.745)	b=10.44	count=12500
+08/13/2026 14:42:12 - INFO - qdiff.block_recon -   Total loss:	3203.644 (rec:418.137, round:2785.507)	b=9.88	count=13000
+08/13/2026 14:42:29 - INFO - qdiff.block_recon -   Total loss:	2918.361 (rec:378.231, round:2540.129)	b=9.31	count=13500
+08/13/2026 14:42:47 - INFO - qdiff.block_recon -   Total loss:	2672.149 (rec:373.589, round:2298.560)	b=8.75	count=14000
+08/13/2026 14:43:04 - INFO - qdiff.block_recon -   Total loss:	2480.164 (rec:419.571, round:2060.593)	b=8.19	count=14500
+08/13/2026 14:43:22 - INFO - qdiff.block_recon -   Total loss:	2246.677 (rec:418.399, round:1828.277)	b=7.62	count=15000
+08/13/2026 14:43:40 - INFO - qdiff.block_recon -   Total loss:	1978.266 (rec:379.835, round:1598.431)	b=7.06	count=15500
+08/13/2026 14:43:57 - INFO - qdiff.block_recon -   Total loss:	1738.232 (rec:364.695, round:1373.537)	b=6.50	count=16000
+08/13/2026 14:44:15 - INFO - qdiff.block_recon -   Total loss:	1551.057 (rec:399.285, round:1151.772)	b=5.94	count=16500
+08/13/2026 14:44:32 - INFO - qdiff.block_recon -   Total loss:	1349.581 (rec:414.678, round:934.903)	b=5.38	count=17000
+08/13/2026 14:44:50 - INFO - qdiff.block_recon -   Total loss:	1076.238 (rec:354.157, round:722.081)	b=4.81	count=17500
+08/13/2026 14:45:08 - INFO - qdiff.block_recon -   Total loss:	931.574 (rec:414.927, round:516.647)	b=4.25	count=18000
+08/13/2026 14:45:25 - INFO - qdiff.block_recon -   Total loss:	719.862 (rec:391.754, round:328.108)	b=3.69	count=18500
+08/13/2026 14:45:43 - INFO - qdiff.block_recon -   Total loss:	586.774 (rec:421.934, round:164.839)	b=3.12	count=19000
+08/13/2026 14:46:00 - INFO - qdiff.block_recon -   Total loss:	434.737 (rec:386.074, round:48.663)	b=2.56	count=19500
+08/13/2026 14:46:18 - INFO - qdiff.block_recon -   Total loss:	421.009 (rec:415.224, round:5.785)	b=2.00	count=20000
+08/13/2026 14:46:18 - INFO - __main__ -   model.up.1.block.1 True
+08/13/2026 14:46:18 - INFO - __main__ -   Reconstruction for block model.up.1.block.1
+08/13/2026 14:47:23 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 512, 16, 16]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 14:47:23 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 14:47:40 - INFO - qdiff.block_recon -   Total loss:	329.219 (rec:329.219, round:0.000)	b=0.00	count=500
+08/13/2026 14:47:57 - INFO - qdiff.block_recon -   Total loss:	311.545 (rec:311.545, round:0.000)	b=0.00	count=1000
+08/13/2026 14:48:13 - INFO - qdiff.block_recon -   Total loss:	295.750 (rec:295.750, round:0.000)	b=0.00	count=1500
+08/13/2026 14:48:30 - INFO - qdiff.block_recon -   Total loss:	284.829 (rec:284.829, round:0.000)	b=0.00	count=2000
+08/13/2026 14:48:46 - INFO - qdiff.block_recon -   Total loss:	252.871 (rec:252.871, round:0.000)	b=0.00	count=2500
+08/13/2026 14:49:02 - INFO - qdiff.block_recon -   Total loss:	230.937 (rec:230.937, round:0.000)	b=0.00	count=3000
+08/13/2026 14:49:19 - INFO - qdiff.block_recon -   Total loss:	274.035 (rec:274.035, round:0.000)	b=0.00	count=3500
+08/13/2026 14:49:35 - INFO - qdiff.block_recon -   Total loss:	16763.006 (rec:302.018, round:16460.988)	b=20.00	count=4000
+08/13/2026 14:49:53 - INFO - qdiff.block_recon -   Total loss:	9682.045 (rec:262.127, round:9419.918)	b=19.44	count=4500
+08/13/2026 14:50:11 - INFO - qdiff.block_recon -   Total loss:	8827.715 (rec:242.452, round:8585.263)	b=18.88	count=5000
+08/13/2026 14:50:28 - INFO - qdiff.block_recon -   Total loss:	8264.184 (rec:287.926, round:7976.258)	b=18.31	count=5500
+08/13/2026 14:50:46 - INFO - qdiff.block_recon -   Total loss:	7695.897 (rec:255.202, round:7440.696)	b=17.75	count=6000
+08/13/2026 14:51:03 - INFO - qdiff.block_recon -   Total loss:	7217.446 (rec:268.424, round:6949.022)	b=17.19	count=6500
+08/13/2026 14:51:21 - INFO - qdiff.block_recon -   Total loss:	6744.283 (rec:245.635, round:6498.648)	b=16.62	count=7000
+08/13/2026 14:51:39 - INFO - qdiff.block_recon -   Total loss:	6375.430 (rec:302.929, round:6072.501)	b=16.06	count=7500
+08/13/2026 14:51:56 - INFO - qdiff.block_recon -   Total loss:	5970.273 (rec:297.745, round:5672.528)	b=15.50	count=8000
+08/13/2026 14:52:14 - INFO - qdiff.block_recon -   Total loss:	5589.575 (rec:290.769, round:5298.806)	b=14.94	count=8500
+08/13/2026 14:52:31 - INFO - qdiff.block_recon -   Total loss:	5219.455 (rec:276.082, round:4943.373)	b=14.38	count=9000
+08/13/2026 14:52:49 - INFO - qdiff.block_recon -   Total loss:	4905.728 (rec:299.696, round:4606.032)	b=13.81	count=9500
+08/13/2026 14:53:07 - INFO - qdiff.block_recon -   Total loss:	4541.473 (rec:254.711, round:4286.762)	b=13.25	count=10000
+08/13/2026 14:53:24 - INFO - qdiff.block_recon -   Total loss:	4316.484 (rec:334.686, round:3981.799)	b=12.69	count=10500
+08/13/2026 14:53:42 - INFO - qdiff.block_recon -   Total loss:	3983.736 (rec:292.066, round:3691.671)	b=12.12	count=11000
+08/13/2026 14:54:00 - INFO - qdiff.block_recon -   Total loss:	3651.757 (rec:243.814, round:3407.943)	b=11.56	count=11500
+08/13/2026 14:54:17 - INFO - qdiff.block_recon -   Total loss:	3434.951 (rec:295.543, round:3139.408)	b=11.00	count=12000
+08/13/2026 14:54:35 - INFO - qdiff.block_recon -   Total loss:	3192.312 (rec:311.770, round:2880.543)	b=10.44	count=12500
+08/13/2026 14:54:52 - INFO - qdiff.block_recon -   Total loss:	2928.891 (rec:297.092, round:2631.798)	b=9.88	count=13000
+08/13/2026 14:55:10 - INFO - qdiff.block_recon -   Total loss:	2618.487 (rec:229.708, round:2388.779)	b=9.31	count=13500
+08/13/2026 14:55:28 - INFO - qdiff.block_recon -   Total loss:	2402.627 (rec:250.155, round:2152.472)	b=8.75	count=14000
+08/13/2026 14:55:45 - INFO - qdiff.block_recon -   Total loss:	2181.022 (rec:259.084, round:1921.939)	b=8.19	count=14500
+08/13/2026 14:56:03 - INFO - qdiff.block_recon -   Total loss:	2012.935 (rec:316.153, round:1696.782)	b=7.62	count=15000
+08/13/2026 14:56:20 - INFO - qdiff.block_recon -   Total loss:	1788.628 (rec:311.179, round:1477.449)	b=7.06	count=15500
+08/13/2026 14:56:38 - INFO - qdiff.block_recon -   Total loss:	1523.407 (rec:261.101, round:1262.306)	b=6.50	count=16000
+08/13/2026 14:56:56 - INFO - qdiff.block_recon -   Total loss:	1307.127 (rec:258.116, round:1049.011)	b=5.94	count=16500
+08/13/2026 14:57:13 - INFO - qdiff.block_recon -   Total loss:	1115.402 (rec:271.956, round:843.446)	b=5.38	count=17000
+08/13/2026 14:57:31 - INFO - qdiff.block_recon -   Total loss:	944.502 (rec:299.905, round:644.597)	b=4.81	count=17500
+08/13/2026 14:57:48 - INFO - qdiff.block_recon -   Total loss:	725.364 (rec:269.860, round:455.504)	b=4.25	count=18000
+08/13/2026 14:58:06 - INFO - qdiff.block_recon -   Total loss:	503.503 (rec:220.446, round:283.057)	b=3.69	count=18500
+08/13/2026 14:58:23 - INFO - qdiff.block_recon -   Total loss:	428.096 (rec:292.605, round:135.491)	b=3.12	count=19000
+08/13/2026 14:58:41 - INFO - qdiff.block_recon -   Total loss:	335.681 (rec:298.472, round:37.209)	b=2.56	count=19500
+08/13/2026 14:58:59 - INFO - qdiff.block_recon -   Total loss:	265.633 (rec:261.436, round:4.197)	b=2.00	count=20000
+08/13/2026 14:58:59 - INFO - __main__ -   model.up.1.block.2 True
+08/13/2026 14:58:59 - INFO - __main__ -   Reconstruction for block model.up.1.block.2
+08/13/2026 15:00:07 - INFO - qdiff.utils -   in 1 shape: torch.Size([4608, 384, 16, 16]), in 2 shape: torch.Size([4608, 512])
+08/13/2026 15:00:07 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:00:22 - INFO - qdiff.block_recon -   Total loss:	191.754 (rec:191.754, round:0.000)	b=0.00	count=500
+08/13/2026 15:00:36 - INFO - qdiff.block_recon -   Total loss:	188.853 (rec:188.853, round:0.000)	b=0.00	count=1000
+08/13/2026 15:00:50 - INFO - qdiff.block_recon -   Total loss:	175.860 (rec:175.860, round:0.000)	b=0.00	count=1500
+08/13/2026 15:01:04 - INFO - qdiff.block_recon -   Total loss:	167.569 (rec:167.569, round:0.000)	b=0.00	count=2000
+08/13/2026 15:01:18 - INFO - qdiff.block_recon -   Total loss:	179.494 (rec:179.494, round:0.000)	b=0.00	count=2500
+08/13/2026 15:01:32 - INFO - qdiff.block_recon -   Total loss:	187.967 (rec:187.967, round:0.000)	b=0.00	count=3000
+08/13/2026 15:01:46 - INFO - qdiff.block_recon -   Total loss:	195.856 (rec:195.856, round:0.000)	b=0.00	count=3500
+08/13/2026 15:02:00 - INFO - qdiff.block_recon -   Total loss:	14114.866 (rec:202.156, round:13912.710)	b=20.00	count=4000
+08/13/2026 15:02:15 - INFO - qdiff.block_recon -   Total loss:	7979.339 (rec:162.632, round:7816.707)	b=19.44	count=4500
+08/13/2026 15:02:30 - INFO - qdiff.block_recon -   Total loss:	7282.201 (rec:183.886, round:7098.314)	b=18.88	count=5000
+08/13/2026 15:02:45 - INFO - qdiff.block_recon -   Total loss:	6745.177 (rec:173.729, round:6571.447)	b=18.31	count=5500
+08/13/2026 15:03:01 - INFO - qdiff.block_recon -   Total loss:	6281.270 (rec:176.199, round:6105.070)	b=17.75	count=6000
+08/13/2026 15:03:16 - INFO - qdiff.block_recon -   Total loss:	5862.320 (rec:179.656, round:5682.665)	b=17.19	count=6500
+08/13/2026 15:03:31 - INFO - qdiff.block_recon -   Total loss:	5465.165 (rec:177.202, round:5287.963)	b=16.62	count=7000
+08/13/2026 15:03:46 - INFO - qdiff.block_recon -   Total loss:	5104.263 (rec:179.899, round:4924.365)	b=16.06	count=7500
+08/13/2026 15:04:01 - INFO - qdiff.block_recon -   Total loss:	4759.519 (rec:176.347, round:4583.172)	b=15.50	count=8000
+08/13/2026 15:04:16 - INFO - qdiff.block_recon -   Total loss:	4441.065 (rec:175.081, round:4265.984)	b=14.94	count=8500
+08/13/2026 15:04:31 - INFO - qdiff.block_recon -   Total loss:	4143.751 (rec:178.368, round:3965.384)	b=14.38	count=9000
+08/13/2026 15:04:47 - INFO - qdiff.block_recon -   Total loss:	3863.849 (rec:183.857, round:3679.992)	b=13.81	count=9500
+08/13/2026 15:05:02 - INFO - qdiff.block_recon -   Total loss:	3610.717 (rec:199.541, round:3411.177)	b=13.25	count=10000
+08/13/2026 15:05:17 - INFO - qdiff.block_recon -   Total loss:	3333.088 (rec:178.364, round:3154.724)	b=12.69	count=10500
+08/13/2026 15:05:32 - INFO - qdiff.block_recon -   Total loss:	3087.778 (rec:176.895, round:2910.883)	b=12.12	count=11000
+08/13/2026 15:05:47 - INFO - qdiff.block_recon -   Total loss:	2858.118 (rec:174.886, round:2683.233)	b=11.56	count=11500
+08/13/2026 15:06:02 - INFO - qdiff.block_recon -   Total loss:	2646.396 (rec:182.796, round:2463.600)	b=11.00	count=12000
+08/13/2026 15:06:18 - INFO - qdiff.block_recon -   Total loss:	2426.814 (rec:175.974, round:2250.839)	b=10.44	count=12500
+08/13/2026 15:06:33 - INFO - qdiff.block_recon -   Total loss:	2228.151 (rec:181.691, round:2046.460)	b=9.88	count=13000
+08/13/2026 15:06:48 - INFO - qdiff.block_recon -   Total loss:	2022.130 (rec:172.782, round:1849.348)	b=9.31	count=13500
+08/13/2026 15:07:03 - INFO - qdiff.block_recon -   Total loss:	1853.532 (rec:194.091, round:1659.442)	b=8.75	count=14000
+08/13/2026 15:07:18 - INFO - qdiff.block_recon -   Total loss:	1642.863 (rec:168.181, round:1474.682)	b=8.19	count=14500
+08/13/2026 15:07:33 - INFO - qdiff.block_recon -   Total loss:	1465.343 (rec:166.285, round:1299.058)	b=7.62	count=15000
+08/13/2026 15:07:49 - INFO - qdiff.block_recon -   Total loss:	1306.425 (rec:180.226, round:1126.199)	b=7.06	count=15500
+08/13/2026 15:08:04 - INFO - qdiff.block_recon -   Total loss:	1138.995 (rec:181.074, round:957.921)	b=6.50	count=16000
+08/13/2026 15:08:19 - INFO - qdiff.block_recon -   Total loss:	971.791 (rec:177.766, round:794.026)	b=5.94	count=16500
+08/13/2026 15:08:34 - INFO - qdiff.block_recon -   Total loss:	813.709 (rec:179.023, round:634.686)	b=5.38	count=17000
+08/13/2026 15:08:49 - INFO - qdiff.block_recon -   Total loss:	661.826 (rec:180.960, round:480.866)	b=4.81	count=17500
+08/13/2026 15:09:04 - INFO - qdiff.block_recon -   Total loss:	507.625 (rec:171.428, round:336.197)	b=4.25	count=18000
+08/13/2026 15:09:20 - INFO - qdiff.block_recon -   Total loss:	378.314 (rec:174.912, round:203.402)	b=3.69	count=18500
+08/13/2026 15:09:35 - INFO - qdiff.block_recon -   Total loss:	273.279 (rec:178.545, round:94.734)	b=3.12	count=19000
+08/13/2026 15:09:50 - INFO - qdiff.block_recon -   Total loss:	219.615 (rec:194.150, round:25.465)	b=2.56	count=19500
+08/13/2026 15:10:05 - INFO - qdiff.block_recon -   Total loss:	163.329 (rec:160.427, round:2.902)	b=2.00	count=20000
+08/13/2026 15:10:05 - INFO - __main__ -   model.up.1.attn False
+08/13/2026 15:10:05 - INFO - __main__ -   model.up.1.attn.0 True
+08/13/2026 15:10:05 - INFO - __main__ -   Reconstruction for block model.up.1.attn.0
+08/13/2026 15:11:05 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:11:05 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:11:11 - INFO - qdiff.block_recon -   Total loss:	19.272 (rec:19.272, round:0.000)	b=0.00	count=500
+08/13/2026 15:11:17 - INFO - qdiff.block_recon -   Total loss:	20.748 (rec:20.748, round:0.000)	b=0.00	count=1000
+08/13/2026 15:11:24 - INFO - qdiff.block_recon -   Total loss:	21.593 (rec:21.593, round:0.000)	b=0.00	count=1500
+08/13/2026 15:11:30 - INFO - qdiff.block_recon -   Total loss:	20.062 (rec:20.062, round:0.000)	b=0.00	count=2000
+08/13/2026 15:11:36 - INFO - qdiff.block_recon -   Total loss:	18.344 (rec:18.344, round:0.000)	b=0.00	count=2500
+08/13/2026 15:11:43 - INFO - qdiff.block_recon -   Total loss:	20.509 (rec:20.509, round:0.000)	b=0.00	count=3000
+08/13/2026 15:11:49 - INFO - qdiff.block_recon -   Total loss:	19.758 (rec:19.758, round:0.000)	b=0.00	count=3500
+08/13/2026 15:11:55 - INFO - qdiff.block_recon -   Total loss:	2235.756 (rec:15.864, round:2219.892)	b=20.00	count=4000
+08/13/2026 15:12:02 - INFO - qdiff.block_recon -   Total loss:	1307.622 (rec:17.097, round:1290.525)	b=19.44	count=4500
+08/13/2026 15:12:10 - INFO - qdiff.block_recon -   Total loss:	1201.870 (rec:19.714, round:1182.157)	b=18.88	count=5000
+08/13/2026 15:12:17 - INFO - qdiff.block_recon -   Total loss:	1124.393 (rec:18.836, round:1105.557)	b=18.31	count=5500
+08/13/2026 15:12:24 - INFO - qdiff.block_recon -   Total loss:	1057.311 (rec:18.788, round:1038.522)	b=17.75	count=6000
+08/13/2026 15:12:31 - INFO - qdiff.block_recon -   Total loss:	992.823 (rec:16.013, round:976.810)	b=17.19	count=6500
+08/13/2026 15:12:39 - INFO - qdiff.block_recon -   Total loss:	935.477 (rec:18.228, round:917.250)	b=16.62	count=7000
+08/13/2026 15:12:46 - INFO - qdiff.block_recon -   Total loss:	881.168 (rec:19.217, round:861.951)	b=16.06	count=7500
+08/13/2026 15:12:53 - INFO - qdiff.block_recon -   Total loss:	829.661 (rec:19.781, round:809.879)	b=15.50	count=8000
+08/13/2026 15:13:00 - INFO - qdiff.block_recon -   Total loss:	778.275 (rec:18.478, round:759.797)	b=14.94	count=8500
+08/13/2026 15:13:08 - INFO - qdiff.block_recon -   Total loss:	729.516 (rec:18.671, round:710.845)	b=14.38	count=9000
+08/13/2026 15:13:15 - INFO - qdiff.block_recon -   Total loss:	682.062 (rec:17.844, round:664.218)	b=13.81	count=9500
+08/13/2026 15:13:22 - INFO - qdiff.block_recon -   Total loss:	639.311 (rec:19.911, round:619.401)	b=13.25	count=10000
+08/13/2026 15:13:29 - INFO - qdiff.block_recon -   Total loss:	594.695 (rec:18.298, round:576.397)	b=12.69	count=10500
+08/13/2026 15:13:37 - INFO - qdiff.block_recon -   Total loss:	551.849 (rec:18.017, round:533.831)	b=12.12	count=11000
+08/13/2026 15:13:44 - INFO - qdiff.block_recon -   Total loss:	514.041 (rec:20.240, round:493.800)	b=11.56	count=11500
+08/13/2026 15:13:51 - INFO - qdiff.block_recon -   Total loss:	472.699 (rec:17.962, round:454.737)	b=11.00	count=12000
+08/13/2026 15:13:59 - INFO - qdiff.block_recon -   Total loss:	435.221 (rec:18.275, round:416.946)	b=10.44	count=12500
+08/13/2026 15:14:06 - INFO - qdiff.block_recon -   Total loss:	398.912 (rec:18.636, round:380.276)	b=9.88	count=13000
+08/13/2026 15:14:13 - INFO - qdiff.block_recon -   Total loss:	362.077 (rec:18.085, round:343.992)	b=9.31	count=13500
+08/13/2026 15:14:20 - INFO - qdiff.block_recon -   Total loss:	326.441 (rec:17.965, round:308.476)	b=8.75	count=14000
+08/13/2026 15:14:28 - INFO - qdiff.block_recon -   Total loss:	291.282 (rec:17.869, round:273.413)	b=8.19	count=14500
+08/13/2026 15:14:35 - INFO - qdiff.block_recon -   Total loss:	258.843 (rec:19.418, round:239.426)	b=7.62	count=15000
+08/13/2026 15:14:42 - INFO - qdiff.block_recon -   Total loss:	225.314 (rec:19.347, round:205.967)	b=7.06	count=15500
+08/13/2026 15:14:49 - INFO - qdiff.block_recon -   Total loss:	192.809 (rec:18.458, round:174.351)	b=6.50	count=16000
+08/13/2026 15:14:57 - INFO - qdiff.block_recon -   Total loss:	162.923 (rec:18.895, round:144.028)	b=5.94	count=16500
+08/13/2026 15:15:04 - INFO - qdiff.block_recon -   Total loss:	135.093 (rec:21.421, round:113.673)	b=5.38	count=17000
+08/13/2026 15:15:11 - INFO - qdiff.block_recon -   Total loss:	103.905 (rec:19.007, round:84.898)	b=4.81	count=17500
+08/13/2026 15:15:18 - INFO - qdiff.block_recon -   Total loss:	75.883 (rec:19.030, round:56.853)	b=4.25	count=18000
+08/13/2026 15:15:26 - INFO - qdiff.block_recon -   Total loss:	51.123 (rec:19.570, round:31.554)	b=3.69	count=18500
+08/13/2026 15:15:33 - INFO - qdiff.block_recon -   Total loss:	31.142 (rec:18.553, round:12.589)	b=3.12	count=19000
+08/13/2026 15:15:40 - INFO - qdiff.block_recon -   Total loss:	19.992 (rec:17.574, round:2.418)	b=2.56	count=19500
+08/13/2026 15:15:47 - INFO - qdiff.block_recon -   Total loss:	18.349 (rec:18.208, round:0.141)	b=2.00	count=20000
+08/13/2026 15:15:47 - INFO - __main__ -   model.up.1.attn.1 True
+08/13/2026 15:15:47 - INFO - __main__ -   Reconstruction for block model.up.1.attn.1
+08/13/2026 15:16:52 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:16:52 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:16:59 - INFO - qdiff.block_recon -   Total loss:	17.293 (rec:17.293, round:0.000)	b=0.00	count=500
+08/13/2026 15:17:05 - INFO - qdiff.block_recon -   Total loss:	20.762 (rec:20.762, round:0.000)	b=0.00	count=1000
+08/13/2026 15:17:11 - INFO - qdiff.block_recon -   Total loss:	19.164 (rec:19.164, round:0.000)	b=0.00	count=1500
+08/13/2026 15:17:18 - INFO - qdiff.block_recon -   Total loss:	17.068 (rec:17.068, round:0.000)	b=0.00	count=2000
+08/13/2026 15:17:24 - INFO - qdiff.block_recon -   Total loss:	18.241 (rec:18.241, round:0.000)	b=0.00	count=2500
+08/13/2026 15:17:30 - INFO - qdiff.block_recon -   Total loss:	19.350 (rec:19.350, round:0.000)	b=0.00	count=3000
+08/13/2026 15:17:37 - INFO - qdiff.block_recon -   Total loss:	21.174 (rec:21.174, round:0.000)	b=0.00	count=3500
+08/13/2026 15:17:43 - INFO - qdiff.block_recon -   Total loss:	2259.445 (rec:19.251, round:2240.194)	b=20.00	count=4000
+08/13/2026 15:17:50 - INFO - qdiff.block_recon -   Total loss:	1314.984 (rec:20.751, round:1294.232)	b=19.44	count=4500
+08/13/2026 15:17:58 - INFO - qdiff.block_recon -   Total loss:	1208.622 (rec:20.488, round:1188.134)	b=18.88	count=5000
+08/13/2026 15:18:05 - INFO - qdiff.block_recon -   Total loss:	1125.971 (rec:16.717, round:1109.254)	b=18.31	count=5500
+08/13/2026 15:18:12 - INFO - qdiff.block_recon -   Total loss:	1057.661 (rec:18.265, round:1039.396)	b=17.75	count=6000
+08/13/2026 15:18:20 - INFO - qdiff.block_recon -   Total loss:	992.788 (rec:17.616, round:975.172)	b=17.19	count=6500
+08/13/2026 15:18:27 - INFO - qdiff.block_recon -   Total loss:	932.014 (rec:18.415, round:913.599)	b=16.62	count=7000
+08/13/2026 15:18:34 - INFO - qdiff.block_recon -   Total loss:	875.407 (rec:19.574, round:855.833)	b=16.06	count=7500
+08/13/2026 15:18:42 - INFO - qdiff.block_recon -   Total loss:	819.463 (rec:19.094, round:800.369)	b=15.50	count=8000
+08/13/2026 15:18:49 - INFO - qdiff.block_recon -   Total loss:	764.745 (rec:16.729, round:748.016)	b=14.94	count=8500
+08/13/2026 15:18:56 - INFO - qdiff.block_recon -   Total loss:	715.005 (rec:17.543, round:697.463)	b=14.38	count=9000
+08/13/2026 15:19:03 - INFO - qdiff.block_recon -   Total loss:	668.907 (rec:20.116, round:648.790)	b=13.81	count=9500
+08/13/2026 15:19:11 - INFO - qdiff.block_recon -   Total loss:	619.906 (rec:18.762, round:601.144)	b=13.25	count=10000
+08/13/2026 15:19:18 - INFO - qdiff.block_recon -   Total loss:	571.471 (rec:15.669, round:555.802)	b=12.69	count=10500
+08/13/2026 15:19:25 - INFO - qdiff.block_recon -   Total loss:	530.099 (rec:17.245, round:512.854)	b=12.12	count=11000
+08/13/2026 15:19:32 - INFO - qdiff.block_recon -   Total loss:	490.080 (rec:19.096, round:470.984)	b=11.56	count=11500
+08/13/2026 15:19:40 - INFO - qdiff.block_recon -   Total loss:	449.994 (rec:18.120, round:431.874)	b=11.00	count=12000
+08/13/2026 15:19:47 - INFO - qdiff.block_recon -   Total loss:	414.612 (rec:21.041, round:393.571)	b=10.44	count=12500
+08/13/2026 15:19:54 - INFO - qdiff.block_recon -   Total loss:	375.026 (rec:17.997, round:357.030)	b=9.88	count=13000
+08/13/2026 15:20:02 - INFO - qdiff.block_recon -   Total loss:	340.372 (rec:18.519, round:321.853)	b=9.31	count=13500
+08/13/2026 15:20:09 - INFO - qdiff.block_recon -   Total loss:	304.421 (rec:17.515, round:286.906)	b=8.75	count=14000
+08/13/2026 15:20:16 - INFO - qdiff.block_recon -   Total loss:	271.765 (rec:18.154, round:253.611)	b=8.19	count=14500
+08/13/2026 15:20:23 - INFO - qdiff.block_recon -   Total loss:	236.452 (rec:15.668, round:220.784)	b=7.62	count=15000
+08/13/2026 15:20:31 - INFO - qdiff.block_recon -   Total loss:	207.803 (rec:18.693, round:189.110)	b=7.06	count=15500
+08/13/2026 15:20:38 - INFO - qdiff.block_recon -   Total loss:	174.967 (rec:16.211, round:158.755)	b=6.50	count=16000
+08/13/2026 15:20:45 - INFO - qdiff.block_recon -   Total loss:	149.892 (rec:20.173, round:129.718)	b=5.94	count=16500
+08/13/2026 15:20:52 - INFO - qdiff.block_recon -   Total loss:	118.702 (rec:17.816, round:100.886)	b=5.38	count=17000
+08/13/2026 15:21:00 - INFO - qdiff.block_recon -   Total loss:	89.210 (rec:16.085, round:73.126)	b=4.81	count=17500
+08/13/2026 15:21:07 - INFO - qdiff.block_recon -   Total loss:	63.723 (rec:16.702, round:47.021)	b=4.25	count=18000
+08/13/2026 15:21:14 - INFO - qdiff.block_recon -   Total loss:	41.257 (rec:16.404, round:24.853)	b=3.69	count=18500
+08/13/2026 15:21:22 - INFO - qdiff.block_recon -   Total loss:	24.159 (rec:15.543, round:8.616)	b=3.12	count=19000
+08/13/2026 15:21:29 - INFO - qdiff.block_recon -   Total loss:	21.179 (rec:19.829, round:1.349)	b=2.56	count=19500
+08/13/2026 15:21:36 - INFO - qdiff.block_recon -   Total loss:	21.224 (rec:21.152, round:0.072)	b=2.00	count=20000
+08/13/2026 15:21:36 - INFO - __main__ -   model.up.1.attn.2 True
+08/13/2026 15:21:36 - INFO - __main__ -   Reconstruction for block model.up.1.attn.2
+08/13/2026 15:22:46 - INFO - qdiff.utils -   in shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:22:46 - INFO - qdiff.utils -   out shape: torch.Size([4608, 256, 16, 16])
+08/13/2026 15:22:53 - INFO - qdiff.block_recon -   Total loss:	13.044 (rec:13.044, round:0.000)	b=0.00	count=500
+08/13/2026 15:22:59 - INFO - qdiff.block_recon -   Total loss:	15.087 (rec:15.087, round:0.000)	b=0.00	count=1000
+08/13/2026 15:23:05 - INFO - qdiff.block_recon -   Total loss:	15.233 (rec:15.233, round:0.000)	b=0.00	count=1500
+08/13/2026 15:23:11 - INFO - qdiff.block_recon -   Total loss:	13.861 (rec:13.861, round:0.000)	b=0.00	count=2000
+08/13/2026 15:23:18 - INFO - qdiff.block_recon -   Total loss:	13.263 (rec:13.263, round:0.000)	b=0.00	count=2500
+08/13/2026 15:23:24 - INFO - qdiff.block_recon -   Total loss:	14.165 (rec:14.165, round:0.000)	b=0.00	count=3000
+08/13/2026 15:23:30 - INFO - qdiff.block_recon -   Total loss:	14.404 (rec:14.404, round:0.000)	b=0.00	count=3500
+08/13/2026 15:23:36 - INFO - qdiff.block_recon -   Total loss:	2270.047 (rec:13.326, round:2256.721)	b=20.00	count=4000
+08/13/2026 15:23:44 - INFO - qdiff.block_recon -   Total loss:	1299.659 (rec:13.461, round:1286.198)	b=19.44	count=4500
+08/13/2026 15:23:51 - INFO - qdiff.block_recon -   Total loss:	1195.751 (rec:13.668, round:1182.083)	b=18.88	count=5000
+08/13/2026 15:23:58 - INFO - qdiff.block_recon -   Total loss:	1121.167 (rec:14.805, round:1106.362)	b=18.31	count=5500
+08/13/2026 15:24:06 - INFO - qdiff.block_recon -   Total loss:	1050.779 (rec:12.042, round:1038.737)	b=17.75	count=6000
+08/13/2026 15:24:13 - INFO - qdiff.block_recon -   Total loss:	990.854 (rec:16.386, round:974.467)	b=17.19	count=6500
+08/13/2026 15:24:20 - INFO - qdiff.block_recon -   Total loss:	928.725 (rec:13.976, round:914.750)	b=16.62	count=7000
+08/13/2026 15:24:27 - INFO - qdiff.block_recon -   Total loss:	870.339 (rec:13.792, round:856.547)	b=16.06	count=7500
+08/13/2026 15:24:35 - INFO - qdiff.block_recon -   Total loss:	815.797 (rec:14.318, round:801.480)	b=15.50	count=8000
+08/13/2026 15:24:42 - INFO - qdiff.block_recon -   Total loss:	762.999 (rec:14.783, round:748.216)	b=14.94	count=8500
+08/13/2026 15:24:49 - INFO - qdiff.block_recon -   Total loss:	713.538 (rec:17.017, round:696.521)	b=14.38	count=9000
+08/13/2026 15:24:56 - INFO - qdiff.block_recon -   Total loss:	660.886 (rec:12.887, round:647.999)	b=13.81	count=9500
+08/13/2026 15:25:04 - INFO - qdiff.block_recon -   Total loss:	615.820 (rec:13.545, round:602.274)	b=13.25	count=10000
+08/13/2026 15:25:11 - INFO - qdiff.block_recon -   Total loss:	569.702 (rec:13.111, round:556.591)	b=12.69	count=10500
+08/13/2026 15:25:18 - INFO - qdiff.block_recon -   Total loss:	528.322 (rec:14.376, round:513.946)	b=12.12	count=11000
+08/13/2026 15:25:25 - INFO - qdiff.block_recon -   Total loss:	483.889 (rec:12.061, round:471.828)	b=11.56	count=11500
+08/13/2026 15:25:33 - INFO - qdiff.block_recon -   Total loss:	446.824 (rec:15.276, round:431.548)	b=11.00	count=12000
+08/13/2026 15:25:40 - INFO - qdiff.block_recon -   Total loss:	406.382 (rec:13.335, round:393.047)	b=10.44	count=12500
+08/13/2026 15:25:47 - INFO - qdiff.block_recon -   Total loss:	370.994 (rec:14.510, round:356.484)	b=9.88	count=13000
+08/13/2026 15:25:55 - INFO - qdiff.block_recon -   Total loss:	334.583 (rec:12.625, round:321.958)	b=9.31	count=13500
+08/13/2026 15:26:02 - INFO - qdiff.block_recon -   Total loss:	301.800 (rec:13.463, round:288.337)	b=8.75	count=14000
+08/13/2026 15:26:09 - INFO - qdiff.block_recon -   Total loss:	266.676 (rec:11.942, round:254.734)	b=8.19	count=14500
+08/13/2026 15:26:16 - INFO - qdiff.block_recon -   Total loss:	234.818 (rec:13.222, round:221.597)	b=7.62	count=15000
+08/13/2026 15:26:24 - INFO - qdiff.block_recon -   Total loss:	204.722 (rec:15.807, round:188.916)	b=7.06	count=15500
+08/13/2026 15:26:31 - INFO - qdiff.block_recon -   Total loss:	171.511 (rec:13.041, round:158.470)	b=6.50	count=16000
+08/13/2026 15:26:38 - INFO - qdiff.block_recon -   Total loss:	146.540 (rec:18.792, round:127.749)	b=5.94	count=16500
+08/13/2026 15:26:46 - INFO - qdiff.block_recon -   Total loss:	112.068 (rec:14.422, round:97.646)	b=5.38	count=17000
+08/13/2026 15:26:53 - INFO - qdiff.block_recon -   Total loss:	84.405 (rec:14.816, round:69.590)	b=4.81	count=17500
+08/13/2026 15:27:00 - INFO - qdiff.block_recon -   Total loss:	57.540 (rec:13.039, round:44.501)	b=4.25	count=18000
+08/13/2026 15:27:07 - INFO - qdiff.block_recon -   Total loss:	38.281 (rec:16.237, round:22.044)	b=3.69	count=18500
+08/13/2026 15:27:15 - INFO - qdiff.block_recon -   Total loss:	20.941 (rec:14.644, round:6.297)	b=3.12	count=19000
+08/13/2026 15:27:22 - INFO - qdiff.block_recon -   Total loss:	13.646 (rec:12.878, round:0.768)	b=2.56	count=19500
+08/13/2026 15:27:29 - INFO - qdiff.block_recon -   Total loss:	16.400 (rec:16.363, round:0.037)	b=2.00	count=20000
+08/13/2026 15:27:29 - INFO - __main__ -   model.up.1.upsample False
+08/13/2026 15:27:29 - INFO - __main__ -   model.up.1.upsample.conv False
+08/13/2026 15:27:29 - INFO - __main__ -   Reconstruction for layer model.up.1.upsample.conv

@@ -1,0 +1,15 @@
+{
+  "_comment": "BRECQ 重建曲线：仅下列层会记录 loss/grad 并出图。可增删改名；短名会自动补 model. 前缀。",
+  "layers": [
+    "model.conv_in",
+    "model.down.0.block.0",
+    "model.down.1.block.0",
+    "model.down.1.attn.0",
+    "model.mid.block_1",
+    "model.mid.attn_1",
+    "model.mid.block_2",
+    "model.up.1.block.0",
+    "model.up.3.block.0",
+    "model.conv_out"
+  ]
+}

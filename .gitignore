@@ -1,0 +1,18 @@
+__pycache__/
+*.zip
+*.ckpt
+*.egg-info/
+*.png
+*.pth
+*.pt
+*.pdf
+.ipynb_checkpoints/
+
+# Large datasets and artifacts (exceed GitHub 100MB limit)
+*.tar.gz
+data/cifar-10-python.tar.gz
+cifar-10-batches-py/
+data/cifar-10-batches-py/
+stats/VIRTUAL_lsun_bedroom256.npz
+activation_max_avg_stats.json
+layerwise_activation_statistics.json

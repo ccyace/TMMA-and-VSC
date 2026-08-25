@@ -1,0 +1,12 @@
+Global seed set to 1234
+07/25/2026 18:43:27 - INFO - __main__ -   ============================================================
+07/25/2026 18:43:27 - INFO - __main__ -   ckpt              : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/25/2026 18:43:27 - INFO - __main__ -   intermediate      : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images_250steps.pt
+07/25/2026 18:43:27 - INFO - __main__ -   image output      : C:\Users\wsh\Desktop\q-diffusion-master\w8a8_ours_splitrun_250steps
+07/25/2026 18:43:27 - INFO - __main__ -   image mode        : custom folder
+07/25/2026 18:43:27 - INFO - __main__ -   DDIM 250-step(quad): 前半 125步(800->198), 后半 125步(198->0)
+07/25/2026 18:43:27 - INFO - __main__ -   ============================================================
+07/25/2026 18:43:28 - INFO - __main__ -   Loading FP checkpoint: C:\Users\wsh/.cache\diffusion_models_converted\ema_diffusion_cifar10_model/model-790000.ckpt
+scripts/split_sampling_from_ckpt.py:193: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(fp_ckpt, map_location=device))
+07/25/2026 18:43:28 - INFO - __main__ -   Loading quantized ckpt: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth

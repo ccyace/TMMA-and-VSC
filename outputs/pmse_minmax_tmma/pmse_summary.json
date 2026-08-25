@@ -1,0 +1,50 @@
+{
+  "protocol": {
+    "metric": "PMSE = mean (1/d)||eps_Q(x_t,t)-eps_FP(x_t,t)||_2^2",
+    "same_input": true,
+    "n_pairs": 400,
+    "sample_start": 1024,
+    "n_samples_pool": 256,
+    "step_stride": 1,
+    "a_sym": true,
+    "split": true,
+    "minmax_ckpt": "C:\\Users\\ASUS\\Desktop\\ODE-scale\\cifar_w8a8_ckpt.pth",
+    "tmma_ckpt": "C:\\Users\\ASUS\\Desktop\\q-diffusion-master\\two_quant_output_w8a8(50000\uff0cFID3.6413)\\samples\\2025-11-27-11-39-41\\ckpt.pth",
+    "traj_path": "C:\\Users\\ASUS\\Desktop\\ODE-scale\\cifar_sd1236_sample2048_allst.pt",
+    "seed": 1234
+  },
+  "methods": {
+    "minmax": {
+      "ckpt": "C:\\Users\\ASUS\\Desktop\\ODE-scale\\cifar_w8a8_ckpt.pth",
+      "pmse": 0.017010115087032318,
+      "pmse_std": 0.05381986126303673,
+      "pmse_se": 0.0026909930631518362,
+      "n": 400,
+      "pmse_early_t": 0.00017151189967989922,
+      "pmse_late_t": 0.02388785406947136,
+      "n_early": 116,
+      "n_late": 284
+    },
+    "tmma": {
+      "ckpt": "C:\\Users\\ASUS\\Desktop\\q-diffusion-master\\two_quant_output_w8a8(50000\uff0cFID3.6413)\\samples\\2025-11-27-11-39-41\\ckpt.pth",
+      "pmse": 0.017414383590221405,
+      "pmse_std": 0.05510244891047478,
+      "pmse_se": 0.002755122445523739,
+      "n": 400,
+      "pmse_early_t": 0.00015791325131431222,
+      "pmse_late_t": 0.024462802335619926,
+      "n_early": 116,
+      "n_late": 284
+    }
+  },
+  "summary": {
+    "minmax_pmse": 0.017010115087032318,
+    "tmma_pmse": 0.017414383590221405,
+    "relative_reduction": -0.023766359082266382,
+    "tmma_lower": false,
+    "paired_mean_diff_tmma_minus_minmax": 0.00040426935847790444,
+    "paired_diff_se": 8.38894733917301e-05,
+    "paired_t_stat": 4.819071358215937,
+    "note": "Same-input PMSE supports finite-budget initialization sensitivity / error transmission; it does not by itself prove nonlinear amplification."
+  }
+}

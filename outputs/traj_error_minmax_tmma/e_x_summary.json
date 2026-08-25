@@ -1,0 +1,36 @@
+{
+  "protocol": {
+    "metric": "E_x(t)=(1/d)||x_t^Q - x_t^FP||_2^2",
+    "same_x_T": true,
+    "independent_ddim_updates": true,
+    "n_samples": 32,
+    "timesteps": 100,
+    "skip_type": "quad",
+    "eta": 0.0,
+    "seed": 1234,
+    "a_sym": true,
+    "split": true,
+    "minmax_ckpt": "C:\\Users\\ASUS\\Desktop\\ODE-scale\\cifar_w8a8_ckpt.pth",
+    "tmma_ckpt": "C:\\Users\\ASUS\\Desktop\\q-diffusion-master\\two_quant_output_w8a8(50000\uff0cFID3.6413)\\samples\\2025-11-27-11-39-41\\ckpt.pth"
+  },
+  "methods": {
+    "minmax": {
+      "ckpt": "C:\\Users\\ASUS\\Desktop\\ODE-scale\\cifar_w8a8_ckpt.pth",
+      "e_x_final": 0.00579585088416934,
+      "e_x_final_se": 0.001272787805646658,
+      "e_x_mean_over_steps": 0.0034238609950989485
+    },
+    "tmma": {
+      "ckpt": "C:\\Users\\ASUS\\Desktop\\q-diffusion-master\\two_quant_output_w8a8(50000\uff0cFID3.6413)\\samples\\2025-11-27-11-39-41\\ckpt.pth",
+      "e_x_final": 0.004117525182664394,
+      "e_x_final_se": 0.0009144688374362886,
+      "e_x_mean_over_steps": 0.0024818889796733856
+    }
+  },
+  "summary": {
+    "minmax_e_x_final": 0.00579585088416934,
+    "tmma_e_x_final": 0.004117525182664394,
+    "relative_reduction_final": 0.28957365105598004,
+    "tmma_lower_final": true
+  }
+}

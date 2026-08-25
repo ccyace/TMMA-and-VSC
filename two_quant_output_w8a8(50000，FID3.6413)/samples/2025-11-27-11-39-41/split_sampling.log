@@ -1,0 +1,85 @@
+07/13/2026 20:30:04 - INFO - __main__ -   ============================================================
+07/13/2026 20:30:04 - INFO - __main__ -   ckpt              : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/13/2026 20:30:04 - INFO - __main__ -   intermediate      : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images.pt
+07/13/2026 20:30:04 - INFO - __main__ -   image output      : C:\Users\wsh\Desktop\q-diffusion-master\w8a8test
+07/13/2026 20:30:04 - INFO - __main__ -   image mode        : custom folder
+07/13/2026 20:30:04 - INFO - __main__ -   DDIM 100-step(quad): 前半 50步(800->195), 后半 50步(195->0)
+07/13/2026 20:30:04 - INFO - __main__ -   ============================================================
+07/13/2026 20:30:05 - INFO - __main__ -   Loading FP checkpoint: C:\Users\wsh/.cache\diffusion_models_converted\ema_diffusion_cifar10_model/model-790000.ckpt
+07/13/2026 20:30:06 - INFO - __main__ -   Loading quantized ckpt: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/13/2026 20:30:18 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:19 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:20 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:22 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:23 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:24 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:25 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:27 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:29 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:31 - INFO - qdiff.quant_layer -   split at 256!
+07/13/2026 20:30:32 - INFO - qdiff.quant_layer -   split at 128!
+07/13/2026 20:30:33 - INFO - qdiff.quant_layer -   split at 128!
+07/13/2026 22:17:08 - INFO - __main__ -   已保存中间态: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images.pt
+07/13/2026 22:17:08 - INFO - __main__ -   后半段 PNG 输出目录: C:\Users\wsh\Desktop\q-diffusion-master\w8a8test
+07/13/2026 22:17:08 - INFO - __main__ -   本次生成编号范围: 0 ~ 49999
+07/14/2026 00:11:27 - INFO - __main__ -   后半段完成，共写入 50000 张 PNG -> C:\Users\wsh\Desktop\q-diffusion-master\w8a8test
+07/25/2026 18:43:27 - INFO - __main__ -   ============================================================
+07/25/2026 18:43:27 - INFO - __main__ -   ckpt              : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/25/2026 18:43:27 - INFO - __main__ -   intermediate      : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images_250steps.pt
+07/25/2026 18:43:27 - INFO - __main__ -   image output      : C:\Users\wsh\Desktop\q-diffusion-master\w8a8_ours_splitrun_250steps
+07/25/2026 18:43:27 - INFO - __main__ -   image mode        : custom folder
+07/25/2026 18:43:27 - INFO - __main__ -   DDIM 250-step(quad): 前半 125步(800->198), 后半 125步(198->0)
+07/25/2026 18:43:27 - INFO - __main__ -   ============================================================
+07/25/2026 18:43:28 - INFO - __main__ -   Loading FP checkpoint: C:\Users\wsh/.cache\diffusion_models_converted\ema_diffusion_cifar10_model/model-790000.ckpt
+07/25/2026 18:43:28 - INFO - __main__ -   Loading quantized ckpt: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/25/2026 18:48:15 - INFO - __main__ -   ============================================================
+07/25/2026 18:48:15 - INFO - __main__ -   ckpt              : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/25/2026 18:48:15 - INFO - __main__ -   intermediate      : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images_250steps.pt
+07/25/2026 18:48:15 - INFO - __main__ -   image output      : C:\Users\wsh\Desktop\q-diffusion-master\w8a8_ours_splitrun_250steps
+07/25/2026 18:48:15 - INFO - __main__ -   image mode        : custom folder
+07/25/2026 18:48:15 - INFO - __main__ -   DDIM 250-step(quad): 前半 125步(800->198), 后半 125步(198->0)
+07/25/2026 18:48:15 - INFO - __main__ -   ============================================================
+07/25/2026 18:48:16 - INFO - __main__ -   Loading FP checkpoint: C:\Users\wsh/.cache\diffusion_models_converted\ema_diffusion_cifar10_model/model-790000.ckpt
+07/25/2026 18:48:16 - INFO - __main__ -   Loading quantized ckpt: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/25/2026 18:48:26 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:27 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:29 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:30 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:31 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:32 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:33 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:36 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:38 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:39 - INFO - qdiff.quant_layer -   split at 256!
+07/25/2026 18:48:40 - INFO - qdiff.quant_layer -   split at 128!
+07/25/2026 18:48:41 - INFO - qdiff.quant_layer -   split at 128!
+07/25/2026 22:54:24 - INFO - __main__ -   已保存中间态: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images_250steps.pt
+07/25/2026 22:54:24 - INFO - __main__ -   后半段 PNG 输出目录: C:\Users\wsh\Desktop\q-diffusion-master\w8a8_ours_splitrun_250steps
+07/25/2026 22:54:24 - INFO - __main__ -   本次生成编号范围: 0 ~ 49999
+07/26/2026 03:00:21 - INFO - __main__ -   后半段完成，共写入 50000 张 PNG -> C:\Users\wsh\Desktop\q-diffusion-master\w8a8_ours_splitrun_250steps
+07/27/2026 20:50:08 - INFO - __main__ -   ============================================================
+07/27/2026 20:50:08 - INFO - __main__ -   ckpt              : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/27/2026 20:50:08 - INFO - __main__ -   intermediate      : C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images_250steps.pt
+07/27/2026 20:50:08 - INFO - __main__ -   image output      : C:\Users\wsh\Desktop\q-diffusion-master\w4a8_ours_splitrun_250steps
+07/27/2026 20:50:08 - INFO - __main__ -   image mode        : custom folder
+07/27/2026 20:50:08 - INFO - __main__ -   DDIM 250-step(quad): 前半 125步(800->198), 后半 125步(198->0)
+07/27/2026 20:50:08 - INFO - __main__ -   ============================================================
+07/27/2026 20:50:08 - INFO - __main__ -   Loading FP checkpoint: C:\Users\wsh/.cache\diffusion_models_converted\ema_diffusion_cifar10_model/model-790000.ckpt
+07/27/2026 20:50:09 - INFO - __main__ -   Loading quantized ckpt: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\ckpt.pth
+07/27/2026 20:50:18 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:19 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:20 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:22 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:23 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:24 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:25 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:27 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:29 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:30 - INFO - qdiff.quant_layer -   split at 256!
+07/27/2026 20:50:31 - INFO - qdiff.quant_layer -   split at 128!
+07/27/2026 20:50:32 - INFO - qdiff.quant_layer -   split at 128!
+07/27/2026 20:50:33 - INFO - __main__ -   中间态已存在，跳过前半段: C:\Users\wsh\Desktop\q-diffusion-master\two_quant_output_w8a8(50000，FID3.6413)\samples\2025-11-27-11-39-41\intermediate_noise_images_250steps.pt
+07/27/2026 20:50:33 - INFO - __main__ -   若上次分段采样失真，请加 --overwrite_intermediate 重新生成中间态
+07/27/2026 20:50:33 - INFO - __main__ -   后半段 PNG 输出目录: C:\Users\wsh\Desktop\q-diffusion-master\w4a8_ours_splitrun_250steps
+07/27/2026 20:50:33 - INFO - __main__ -   本次生成编号范围: 0 ~ 49999
+07/28/2026 00:57:10 - INFO - __main__ -   后半段完成，共写入 50000 张 PNG -> C:\Users\wsh\Desktop\q-diffusion-master\w4a8_ours_splitrun_250steps
