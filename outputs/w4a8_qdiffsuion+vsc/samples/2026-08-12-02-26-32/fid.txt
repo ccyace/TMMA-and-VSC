@@ -1,5 +1,0 @@
-﻿FID (torch_fidelity, vs ODE-scale/real_images 50k): 4.610116
-gen: C:\Users\ASUS\Desktop\q-diffusion-master\outputs\w4a8_nongroup_n512_a7000\samples\2026-08-12-02-26-32\img
-ref: C:\Users\ASUS\Desktop\ODE-scale\real_images
-n_images: 50000
-batch_size: 64

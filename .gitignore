@@ -8,11 +8,30 @@ __pycache__/
 *.pdf
 .ipynb_checkpoints/
 
+# IDE
+.idea/
+.vscode/
+
 # Large datasets and artifacts (exceed GitHub 100MB limit)
 *.tar.gz
 data/cifar-10-python.tar.gz
 cifar-10-batches-py/
 data/cifar-10-batches-py/
-stats/VIRTUAL_lsun_bedroom256.npz
+stats/
 activation_max_avg_stats.json
 layerwise_activation_statistics.json
+
+# Experiment outputs and logs
+outputs/
+baseline_recon_curves_run/
+bedroom_ddim/
+bedroom_w8_lite_brecq/
+two_quant_output*/
+qdiffusion_w8a8*/
+get_calibrations/cali_vs_ref_figs/
+get_calibrations/two_stage_group_cali/
+church_LDM_sample/w*/
+*.log
+*.bat
+*_is.txt
+*.baiduyun.uploading.cfg
