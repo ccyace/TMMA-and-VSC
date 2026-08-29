@@ -3,4 +3,6 @@ cifar10 on ddim:
 
  采样 python scripts/split_sampling_from_ckpt.py --config configs/cifar10.yml --cali_ckpt  --weight_bit 4 --act_bit 8 --quant_act --a_sym --split --skip_type quad --eta 0 --max_images 50000 --seed 1234
 
- 
+ LDM_church权重通过网盘分享的文件：LDM_church
+链接: https://pan.baidu.com/s/1jLthCHD01XNBgsxLACGbjg?pwd=nnm7 提取码: nnm7 
+--来自百度网盘超级会员v1的分享
