@@ -84,25 +84,33 @@ def get_beta_schedule(beta_schedule, *, beta_start, beta_end, num_diffusion_time
 
 def load_max_avg_statistics(json_path: str) -> dict:
     """
-    从JSON文件加载max_avg统计信息
-    
-    Args:
-        json_path: JSON文件路径
-    
-    Returns:
-        max_avg_stats: 字典 {layer_name: {0: max_avg_group0, 1: max_avg_group1}}
+    从JSON文件加载max_avg统计信息。
+
+    兼容两种格式：
+      1) {"layers": {layer: {"0": {"max_avg": ...}, "1": {...}}, ...}}
+      2) {layer: {"0": {"max_avg": ...}, "1": {...}}, ...}  # layerwise_activation_statistics.json
     """
     with open(json_path, 'r', encoding='utf-8') as f:
         statistics = json.load(f)
-    
-    max_avg_stats = {}
-    layers = statistics.get("layers", {})
-    for layer_name, groups in layers.items():
-        max_avg_stats[layer_name] = {
-            0: groups.get('0', {}).get('max_avg', None),
-            1: groups.get('1', {}).get('max_avg', None)
+
+    if isinstance(statistics, dict) and "layers" in statistics:
+        layer_blob = statistics["layers"]
+    else:
+        layer_blob = {
+            k: v
+            for k, v in statistics.items()
+            if isinstance(v, dict) and ("0" in v or "1" in v)
         }
-    
+
+    max_avg_stats = {}
+    for layer_name, groups in layer_blob.items():
+        if not isinstance(groups, dict):
+            continue
+        max_avg_stats[layer_name] = {
+            0: groups.get('0', {}).get('max_avg', None) if isinstance(groups.get('0'), dict) else None,
+            1: groups.get('1', {}).get('max_avg', None) if isinstance(groups.get('1'), dict) else None,
+        }
+
     logger.info(f"从 {json_path} 加载了 {len(max_avg_stats)} 层的max_avg统计信息")
     return max_avg_stats
 
@@ -547,9 +555,12 @@ class Diffusion(object):
         qnn.to(self.device)
         qnn.eval()
 
+        # Bedroom 256 等大分辨率：初始化前向 batch 不能用 8，否则 8GB 卡直接 OOM
+        spatial = int(cali_xs.shape[-1]) if cali_xs.ndim >= 4 else 32
+        init_bs = 1 if spatial >= 128 else min(8, int(cali_xs.shape[0]))
         qnn.set_quant_state(True, False)
-        _ = qnn(cali_xs[:8].to(self.device), cali_ts[:8].to(self.device))
-        logger.info("[%s] 权重量化初始化完成", stage_tag)
+        _ = qnn(cali_xs[:init_bs].to(self.device), cali_ts[:init_bs].to(self.device))
+        logger.info("[%s] 权重量化初始化完成 (init_bs=%d, spatial=%d)", stage_tag, init_bs, spatial)
 
         def recon_model(root_model, kwargs, recon_stage):
             """Run BRECQ and, when requested, record early Adam diagnostics."""
@@ -598,7 +609,8 @@ class Diffusion(object):
                 fp_hooks = apply_max_avg_clipping_to_fp_model(fp_model, max_avg_stats, group_id)
 
             with torch.no_grad():
-                init_n = min(64, cali_xs.shape[0])
+                spatial = int(cali_xs.shape[-1]) if cali_xs.ndim >= 4 else 32
+                init_n = 1 if spatial >= 128 else min(64, int(cali_xs.shape[0]))
                 _ = qnn(cali_xs[:init_n].to(self.device), cali_ts[:init_n].to(self.device))
                 if perturb_enabled:
                     # The preceding forward is the ordinary Min--Max start.  We
