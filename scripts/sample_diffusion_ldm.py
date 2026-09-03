@@ -473,6 +473,11 @@ def _finalize_qnn_params(qnn, quant_act):
                     m.zero_point = nn.Parameter(m.zero_point)
 
 
+def _cali_init_bs(n, preferred=1):
+    """权重量化 / 激活初始化用的安全 batch（8GB 上避免硬编码 8/64 OOM）。"""
+    return max(1, min(int(preferred), int(n)))
+
+
 def _ldm_stage_brecq(fp_unet, opt, cali_data, cali_xs, cali_ts, max_avg_stats, group_id):
     """单阶段：权重 BRECQ + 组 group_id 激活 BRECQ；返回 (qnn, fp_unet)。"""
     a_scale_method = "mse" if not opt.a_min_max else "max"
@@ -493,9 +498,13 @@ def _ldm_stage_brecq(fp_unet, opt, cali_data, cali_xs, cali_ts, max_avg_stats, g
     qnn.cuda()
     qnn.eval()
 
+    cali_bs = max(1, int(opt.cali_batch_size))
+    init_bs = _cali_init_bs(cali_xs.size(0), preferred=min(cali_bs, 1))
+    act_init_bs = _cali_init_bs(cali_xs.size(0), preferred=cali_bs)
+
     kwargs_w = dict(
         cali_data=cali_data,
-        batch_size=opt.cali_batch_size,
+        batch_size=cali_bs,
         iters=opt.cali_iters,
         weight=0.01,
         asym=True,
@@ -504,30 +513,31 @@ def _ldm_stage_brecq(fp_unet, opt, cali_data, cali_xs, cali_ts, max_avg_stats, g
         act_quant=False,
         opt_mode="mse",
     )
-    logger.info("组 %d：权重量化初始化", group_id)
+    logger.info("组 %d：权重量化初始化 (bs=%d)", group_id, init_bs)
     qnn.set_quant_state(True, False)
     with torch.no_grad():
-        _ = qnn(cali_xs[:8].cuda(), cali_ts[:8].cuda())
-    logger.info("组 %d：权重 BRECQ", group_id)
+        _ = qnn(cali_xs[:init_bs].cuda(), cali_ts[:init_bs].cuda())
+    logger.info("组 %d：权重 BRECQ (cali_batch_size=%d)", group_id, cali_bs)
     _walk_brecq(qnn, qnn, kwargs_w)
     qnn.set_quant_state(weight_quant=True, act_quant=False)
 
     if opt.quant_act:
-        logger.info("组 %d：激活量化（max_avg 截断）", group_id)
+        logger.info("组 %d：激活量化（max_avg 截断, init_bs=%d）", group_id, act_init_bs)
         qnn.set_quant_state(True, True)
         hooks = apply_max_avg_clipping_to_fp_model(fp_unet, max_avg_stats, group_id)
         with torch.no_grad():
-            _ = qnn(cali_xs[:64].cuda(), cali_ts[:64].cuda())
+            _ = qnn(cali_xs[:act_init_bs].cuda(), cali_ts[:act_init_bs].cuda())
         if opt.running_stat:
             qnn.set_running_stat(True)
-            for i in range(int(cali_xs.size(0) / 64)):
+            for i in range(int(cali_xs.size(0) / act_init_bs)):
                 _ = qnn(
-                    cali_xs[i * 64 : (i + 1) * 64].cuda(),
-                    cali_ts[i * 64 : (i + 1) * 64].cuda(),
+                    cali_xs[i * act_init_bs : (i + 1) * act_init_bs].cuda(),
+                    cali_ts[i * act_init_bs : (i + 1) * act_init_bs].cuda(),
                 )
             qnn.set_running_stat(False)
         kwargs_a = dict(
             cali_data=cali_data,
+            batch_size=cali_bs,
             iters=opt.cali_iters_a,
             act_quant=True,
             opt_mode="mse",
@@ -825,7 +835,8 @@ if __name__ == "__main__":
                                 hooks.append(module.register_forward_pre_hook(_make_hook(name)))
 
                     with torch.no_grad():
-                        _ = qnn(cali_xs[:8].cuda(), cali_ts[:8].cuda())
+                        init_bs = _cali_init_bs(cali_xs.size(0), preferred=min(max(1, int(opt.cali_batch_size)), 1))
+                        _ = qnn(cali_xs[:init_bs].cuda(), cali_ts[:init_bs].cuda())
                     for hook in hooks:
                         hook.remove()
                     inited_weight_quantizers = sum(
@@ -834,7 +845,8 @@ if __name__ == "__main__":
                     )
                     logger.info(
                         f"Weight init completed in {time.time() - init_start:.2f}s; "
-                        f"initialized quantizers: {inited_weight_quantizers}/{len(quant_modules)}"
+                        f"initialized quantizers: {inited_weight_quantizers}/{len(quant_modules)} "
+                        f"(init_bs={init_bs})"
                     )
                     logger.info("Initializing has done!")
 
@@ -877,6 +889,9 @@ if __name__ == "__main__":
                     qnn.set_quant_state(True, True)
                     max_avg_hooks = []
                     max_avg_stats = None
+                    act_init_bs = _cali_init_bs(
+                        cali_xs.size(0), preferred=max(1, int(opt.cali_batch_size))
+                    )
                     if opt.max_avg_json and str(opt.max_avg_json).strip():
                         logger.info(
                             "激活 BRECQ：max_avg 截断 group=%d",
@@ -887,18 +902,19 @@ if __name__ == "__main__":
                             qnn.model, max_avg_stats, opt.max_avg_group
                         )
                     with torch.no_grad():
-                        _ = qnn(cali_xs[:64].cuda(), cali_ts[:64].cuda())
+                        _ = qnn(cali_xs[:act_init_bs].cuda(), cali_ts[:act_init_bs].cuda())
                         if opt.running_stat:
                             logger.info('Running stat for activation quantization')
                             qnn.set_running_stat(True)
-                            for i in trange(int(cali_xs.size(0) / 64)):
+                            for i in trange(int(cali_xs.size(0) / act_init_bs)):
                                 _ = qnn(
-                                    cali_xs[i * 64:(i + 1) * 64].cuda(),
-                                    cali_ts[i * 64:(i + 1) * 64].cuda(),
+                                    cali_xs[i * act_init_bs:(i + 1) * act_init_bs].cuda(),
+                                    cali_ts[i * act_init_bs:(i + 1) * act_init_bs].cuda(),
                                 )
                             qnn.set_running_stat(False)
                     kwargs = dict(
-                        cali_data=cali_data, iters=opt.cali_iters_a, act_quant=True,
+                        cali_data=cali_data, batch_size=opt.cali_batch_size,
+                        iters=opt.cali_iters_a, act_quant=True,
                         opt_mode='mse', lr=opt.cali_lr, p=opt.cali_p)
                     recon_model(qnn)
                     if max_avg_hooks:
