@@ -20,6 +20,7 @@ from qdiff import (
     block_reconstruction, layer_reconstruction,
 )
 from qdiff.adaptive_rounding import AdaRoundQuantizer
+from qdiff.quant_block import QuantQKMatMul, QuantSMVMatMul
 from qdiff.quant_layer import UniformAffineQuantizer
 from qdiff.utils import resume_cali_model, get_train_samples
 from qdiff.max_avg_truncation import (
@@ -31,6 +32,7 @@ from qdiff.max_avg_truncation import (
 )
 
 logger = logging.getLogger(__name__)
+
 
 rescale = lambda x: (x + 1.) / 2.
 
@@ -286,7 +288,7 @@ def get_parser():
     # qdiff specific configs
     parser.add_argument(
         "--cali_st", type=int, default=1, 
-        help="number of timesteps used for calibration"
+        help="number of timesteps used for calibration; two-stage reads this many steps from each slice"
     )
     parser.add_argument(
         "--cali_batch_size", type=int, default=32, 
@@ -294,7 +296,7 @@ def get_parser():
     )
     parser.add_argument(
         "--cali_n", type=int, default=1024, 
-        help="number of samples for each timestep for qdiff reconstruction"
+        help="samples kept at each selected timestep; two-stage total per group is cali_st * cali_n"
     )
     parser.add_argument(
         "--cali_iters", type=int, default=20000, 
@@ -312,7 +314,19 @@ def get_parser():
     )
     parser.add_argument(
         "--cali_data_path", type=str, default="sd_coco_sample1024_allst.pt",
-        help="calibration dataset name"
+        help="单阶段 PTQ 的校准集路径",
+    )
+    parser.add_argument(
+        "--cali_data_path_group0",
+        type=str,
+        default="",
+        help="两阶段组0（前半段高噪声）扁平校准集，须与 group1 同时给出",
+    )
+    parser.add_argument(
+        "--cali_data_path_group1",
+        type=str,
+        default="",
+        help="两阶段组1（后半段低噪声）扁平校准集，须与 group0 同时给出",
     )
     parser.add_argument(
         "--resume", action="store_true",
@@ -366,6 +380,11 @@ def get_parser():
         "--two_stage",
         action="store_true",
         help="两阶段 TMMA：组0 BRECQ+前半采样，组1 BRECQ+后半采样（需 --max_avg_json）",
+    )
+    parser.add_argument(
+        "--recon_only",
+        action="store_true",
+        help="两阶段只做 BRECQ 并保存/合并权重，跳过前后半采样和 VAE 解码",
     )
     parser.add_argument(
         "--max_avg_json",
@@ -446,14 +465,169 @@ def _half_ddim_seq(num_timesteps, custom_steps, skip_type, first_half=True):
     return reversed_seq[half_steps:]
 
 
+def _pick_exact_steps(nsteps, num_st):
+    """在一组的时间步里均匀抽出正好 num_st 个下标（含两端）。"""
+    num_st = int(num_st)
+    if num_st <= 0 or num_st >= nsteps:
+        return list(range(nsteps))
+    if num_st == 1:
+        return [0]
+    picked = []
+    used = set()
+    for i in range(num_st):
+        j = int(round(i * (nsteps - 1) / (num_st - 1)))
+        if j in used:
+            for delta in range(1, nsteps):
+                if j + delta < nsteps and (j + delta) not in used:
+                    j = j + delta
+                    break
+                if j - delta >= 0 and (j - delta) not in used:
+                    j = j - delta
+                    break
+        used.add(j)
+        picked.append(j)
+    picked.sort()
+    return picked
+
+
+def _subset_row_index(ts, cali_st, cali_n):
+    """按连续相同时间步分块，只给出要拷贝的行号，不碰 xs。"""
+    ts = ts.detach().reshape(-1)
+    if ts.numel() == 0:
+        raise ValueError("校准集 ts 为空")
+    changed = torch.ones(ts.numel(), dtype=torch.bool)
+    changed[1:] = ts[1:] != ts[:-1]
+    starts = torch.nonzero(changed, as_tuple=False).flatten()
+    ends = torch.empty_like(starts)
+    ends[:-1] = starts[1:]
+    ends[-1] = ts.numel()
+    step_ids = _pick_exact_steps(int(starts.numel()), cali_st)
+    take = int(cali_n)
+    rows = []
+    for s in step_ids:
+        a = int(starts[s])
+        b = int(ends[s])
+        n = min(take, b - a)
+        rows.append(torch.arange(a, a + n, dtype=torch.long))
+    return torch.cat(rows), len(step_ids), int(starts.numel())
+
+
+def _load_group_slice(path, stage_tag, group_id, cali_st, cali_n):
+    """内存映射打开切片，只把选中的行拷进内存。"""
+    if not path or not os.path.isfile(path):
+        raise FileNotFoundError(
+            f"[{stage_tag}] 找不到校准集: {path}\n"
+            "请同时传入 --cali_data_path_group0 与 --cali_data_path_group1"
+        )
+    logger.info("[%s] 加载校准数据: %s (group_id=%d)", stage_tag, path, group_id)
+    data = torch.load(path, map_location="cpu", mmap=True)
+    xs, ts = data["xs"], data["ts"]
+    if not torch.is_tensor(xs):
+        raise ValueError(f"[{stage_tag}] xs 不是 Tensor: {path}")
+    if not torch.is_tensor(ts):
+        ts = torch.as_tensor(ts)
+    if xs.shape[0] != ts.reshape(-1).shape[0]:
+        raise ValueError(
+            f"[{stage_tag}] xs/ts 数量不一致: {xs.shape[0]} vs {ts.reshape(-1).shape[0]}"
+        )
+    row_index, n_picked, n_steps = _subset_row_index(ts, cali_st, cali_n)
+    xs_out = xs.index_select(0, row_index).clone().float()
+    ts_out = ts.reshape(-1).index_select(0, row_index).clone().float()
+    del data, xs, ts, row_index
+    gc.collect()
+    logger.info(
+        "[%s] 切片共 %d 个时间步，抽取 %d 步 × 每步最多 %d = %d 条，形状 %s %s，时间步 [%.1f, %.1f]",
+        stage_tag,
+        n_steps,
+        n_picked,
+        int(cali_n),
+        int(xs_out.shape[0]),
+        tuple(xs_out.shape),
+        tuple(ts_out.shape),
+        float(ts_out.min()),
+        float(ts_out.max()),
+    )
+    return xs_out, ts_out
+
+
+def _resolve_two_stage_cali_paths(opt):
+    g0 = (getattr(opt, "cali_data_path_group0", None) or "").strip()
+    g1 = (getattr(opt, "cali_data_path_group1", None) or "").strip()
+    if not g0 or not g1:
+        raise ValueError("两阶段须同时提供 --cali_data_path_group0 与 --cali_data_path_group1")
+    return g0, g1
+
+
+def _skip_memory_heavy_attn_recon(qnn, x, t, min_spatial_side=16):
+    """
+    跳过空间边长 >= min_spatial_side 的注意力相关层的 BRECQ。
+    这些层缓存 5120 条激活会撑爆主机内存（qkv≈12GB，QK≈160GB）。
+    仍保留 min-max / 一次前向得到的量化刻度，只是不做 AdaRound / 激活重建。
+    """
+    token_thr = int(min_spatial_side) ** 2
+    skipped = []
+    handles = []
+
+    def _mark(mod, name, tokens, kind):
+        if tokens < token_thr or getattr(mod, "ignore_reconstruction", False):
+            return
+        mod.ignore_reconstruction = True
+        skipped.append((name, kind, int(tokens)))
+
+    for name, mod in qnn.named_modules():
+        leaf = name.rsplit(".", 1)[-1]
+        if isinstance(mod, (QuantQKMatMul, QuantSMVMatMul)):
+            def hook(module, inp, out, n=name):
+                if torch.is_tensor(out) and out.ndim == 3:
+                    # QK: [BH,T,T]；SMV: [BH,C,T]
+                    tokens = int(out.shape[-1])
+                    kind = "qk" if out.shape[-2] == out.shape[-1] else "smv"
+                    _mark(module, n, tokens, kind)
+                elif inp and torch.is_tensor(inp[0]) and inp[0].ndim == 3:
+                    tokens = int(inp[0].shape[-1])
+                    _mark(module, n, tokens, "attn_in")
+
+            handles.append(mod.register_forward_hook(hook))
+        elif isinstance(mod, QuantModule) and leaf in ("qkv", "proj_out"):
+            def hook(module, inp, out, n=name, leaf=leaf):
+                if torch.is_tensor(out) and out.ndim == 3:
+                    _mark(module, n, int(out.shape[-1]), leaf)
+                elif inp and torch.is_tensor(inp[0]) and inp[0].ndim == 3:
+                    _mark(module, n, int(inp[0].shape[-1]), leaf)
+
+            handles.append(mod.register_forward_hook(hook))
+
+    with torch.no_grad():
+        _ = qnn(x, t)
+    for h in handles:
+        h.remove()
+
+    if skipped:
+        logger.info(
+            "跳过 %d 个大内存注意力层的重建（token>=%d，约 >=%dx%d）：",
+            len(skipped),
+            token_thr,
+            min_spatial_side,
+            min_spatial_side,
+        )
+        for name, kind, tokens in skipped:
+            side = int(round(tokens ** 0.5))
+            logger.info("  - %s (%s, tokens=%d ≈ %dx%d)", name, kind, tokens, side, side)
+    else:
+        logger.info("未发现需跳过的大内存注意力层")
+    return skipped
+
+
 def _walk_brecq(qnn, root, kwargs):
     for name, module in root.named_children():
         if isinstance(module, QuantModule):
             if module.ignore_reconstruction:
+                logger.info("跳过 QuantModule 重建: %s", name)
                 continue
             layer_reconstruction(qnn, module, **kwargs)
         elif isinstance(module, BaseQuantBlock):
             if module.ignore_reconstruction:
+                logger.info("跳过 BaseQuantBlock 重建: %s", name)
                 continue
             block_reconstruction(qnn, module, **kwargs)
         else:
@@ -494,7 +668,8 @@ def _save_combined_two_stage_ckpt(opt, stage1_path, stage2_path, stage2_state):
         k: v.detach().cpu() if torch.is_tensor(v) else v
         for k, v in stage2_state.items()
     }
-    cali_path = getattr(opt, "cali_data_path", None)
+    g0_path = getattr(opt, "cali_data_path_group0", None)
+    g1_path = getattr(opt, "cali_data_path_group1", None)
     combined = {
         "stage1_group0": stage1_sd,
         "stage2_group1": stage2_sd,
@@ -504,8 +679,9 @@ def _save_combined_two_stage_ckpt(opt, stage1_path, stage2_path, stage2_state):
             "quant_act": bool(opt.quant_act),
             "a_sym": bool(opt.a_sym),
             "split": bool(getattr(opt, "split", False)),
-            "cali_data_path_group0": cali_path,
-            "cali_data_path_group1": cali_path,
+            "cali_data_path_group0": g0_path,
+            "cali_data_path_group1": g1_path,
+            "cali_split": "allst_first_half_g0_second_half_g1",
             "max_avg_json": getattr(opt, "max_avg_json", None),
             "stage1_ckpt": os.path.basename(stage1_path),
             "stage2_ckpt": os.path.basename(stage2_path),
@@ -561,8 +737,12 @@ def _ldm_stage_brecq(fp_unet, opt, cali_data, cali_xs, cali_ts, max_avg_stats, g
     )
     logger.info("组 %d：权重量化初始化 (bs=%d)", group_id, init_bs)
     qnn.set_quant_state(True, False)
-    with torch.no_grad():
-        _ = qnn(cali_xs[:init_bs].cuda(), cali_ts[:init_bs].cuda())
+    _skip_memory_heavy_attn_recon(
+        qnn,
+        cali_xs[:init_bs].cuda(),
+        cali_ts[:init_bs].cuda(),
+        min_spatial_side=16,
+    )
     logger.info("组 %d：权重 BRECQ (cali_batch_size=%d)", group_id, cali_bs)
     _walk_brecq(qnn, qnn, kwargs_w)
     qnn.set_quant_state(weight_quant=True, act_quant=False)
@@ -651,14 +831,16 @@ def two_stage_ldm_quantization(ldm_model, opt, config, logdir, imglogdir):
     if opt.resume or opt.resume_w:
         raise ValueError("两阶段模式不支持 --resume / --resume_w")
 
-    logger.info("开始 LDM 两阶段量化采样")
+    recon_only = bool(getattr(opt, "recon_only", False))
+    if recon_only:
+        logger.info("开始 LDM 两阶段重建（--recon_only：不采样、不解码）")
+    else:
+        logger.info("开始 LDM 两阶段量化采样")
     max_avg_stats = load_max_avg_statistics(opt.max_avg_json.strip())
-    sample_data = torch.load(opt.cali_data_path)
-    cali_data = get_train_samples(opt, sample_data)
-    del sample_data
-    gc.collect()
-    cali_xs, cali_ts = cali_data
-    logger.info("校准数据: %s %s", cali_xs.shape, cali_ts.shape)
+    g0_path, g1_path = _resolve_two_stage_cali_paths(opt)
+    opt.cali_data_path_group0 = g0_path
+    opt.cali_data_path_group1 = g1_path
+    cali_g0 = _load_group_slice(g0_path, "stage1_group0", 0, opt.cali_st, opt.cali_n)
 
     betas = ldm_model.betas.float().cuda()
     num_timesteps = int(ldm_model.num_timesteps)
@@ -670,64 +852,82 @@ def two_stage_ldm_quantization(ldm_model, opt, config, logdir, imglogdir):
 
     # ---------- 阶段 1：组 0 ----------
     logger.info("=" * 75)
-    logger.info("第一阶段：组 0 max_avg + BRECQ + 前半采样")
+    logger.info(
+        "第一阶段：组 0 max_avg + BRECQ%s",
+        "" if recon_only else " + 前半采样",
+    )
     logger.info("=" * 75)
     fp_unet1 = _clone_ldm_unet(ldm_model, config)
-    qnn_stage1 = _ldm_stage_brecq(fp_unet1, opt, cali_data, cali_xs, cali_ts, max_avg_stats, 0)
+    qnn_stage1 = _ldm_stage_brecq(
+        fp_unet1, opt, cali_g0, cali_g0[0], cali_g0[1], max_avg_stats, 0
+    )
     stage1_ckpt = os.path.join(logdir, "ckpt_stage1_group0.pth")
     _save_stage_ckpt(qnn_stage1, opt.quant_act, stage1_ckpt, "stage1_group0")
-    intermediate = _first_half_sampling_ldm(
-        qnn_stage1,
-        opt.n_samples,
-        betas,
-        num_timesteps,
-        opt.custom_steps,
-        skip_type,
-        opt.eta,
-        channels,
-        image_size,
-        device,
-        batch_size,
-    )
-    torch.save(intermediate, os.path.join(logdir, "intermediate_noise_images.pt"))
-    del qnn_stage1, fp_unet1
+    intermediate = None
+    if not recon_only:
+        intermediate = _first_half_sampling_ldm(
+            qnn_stage1,
+            opt.n_samples,
+            betas,
+            num_timesteps,
+            opt.custom_steps,
+            skip_type,
+            opt.eta,
+            channels,
+            image_size,
+            device,
+            batch_size,
+        )
+        torch.save(intermediate, os.path.join(logdir, "intermediate_noise_images.pt"))
+    del qnn_stage1, fp_unet1, cali_g0
     torch.cuda.empty_cache()
     gc.collect()
 
     # ---------- 阶段 2：组 1 ----------
-
+    logger.info("=" * 75)
+    logger.info(
+        "第二阶段：组 1 max_avg + BRECQ%s",
+        "" if recon_only else " + 后半采样",
+    )
+    logger.info("=" * 75)
+    cali_g1 = _load_group_slice(g1_path, "stage2_group1", 1, opt.cali_st, opt.cali_n)
     fp_unet2 = _clone_ldm_unet(ldm_model, config)
-    qnn_stage2 = _ldm_stage_brecq(fp_unet2, opt, cali_data, cali_xs, cali_ts, max_avg_stats, 1)
+    qnn_stage2 = _ldm_stage_brecq(
+        fp_unet2, opt, cali_g1, cali_g1[0], cali_g1[1], max_avg_stats, 1
+    )
     stage2_ckpt = os.path.join(logdir, "ckpt_stage2_group1.pth")
     _save_stage_ckpt(qnn_stage2, opt.quant_act, stage2_ckpt, "stage2_group1")
     _save_combined_two_stage_ckpt(
         opt, stage1_ckpt, stage2_ckpt, qnn_stage2.state_dict()
     )
-    final_latents = _second_half_sampling_ldm(
-        qnn_stage2,
-        intermediate,
-        betas,
-        num_timesteps,
-        opt.custom_steps,
-        skip_type,
-        opt.eta,
-        device,
-        batch_size,
-    )
-    torch.save(final_latents, os.path.join(logdir, "final_latents.pt"))
-    _save_ldm_decoded_png(ldm_model, final_latents, imglogdir)
+    if not recon_only:
+        final_latents = _second_half_sampling_ldm(
+            qnn_stage2,
+            intermediate,
+            betas,
+            num_timesteps,
+            opt.custom_steps,
+            skip_type,
+            opt.eta,
+            device,
+            batch_size,
+        )
+        torch.save(final_latents, os.path.join(logdir, "final_latents.pt"))
+        _save_ldm_decoded_png(ldm_model, final_latents, imglogdir)
+    else:
+        logger.info("已跳过前后半采样与 VAE 解码")
 
     del fp_unet2
     return qnn_stage2
 
 
 if __name__ == "__main__":
-    now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     sys.path.append(os.getcwd())
     command = " ".join(sys.argv)
 
     parser = get_parser()
     opt, unknown = parser.parse_known_args()
+    now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     ckpt = None
 
     # fix random seed
@@ -771,13 +971,13 @@ if __name__ == "__main__":
     os.makedirs(logdir)
     log_path = os.path.join(logdir, "run.log")
     logging.basicConfig(
-        format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-        datefmt='%m/%d/%Y %H:%M:%S',
+        format="%(asctime)s - %(levelname)s - %(name)s -   %(message)s",
+        datefmt="%m/%d/%Y %H:%M:%S",
         level=logging.INFO,
         handlers=[
             logging.FileHandler(log_path),
-            logging.StreamHandler()
-        ]
+            logging.StreamHandler(),
+        ],
     )
     logger = logging.getLogger(__name__)
     print(config)
@@ -1012,6 +1212,8 @@ if __name__ == "__main__":
         run(model, imglogdir, eta=opt.eta,
             vanilla=opt.vanilla_sample, n_samples=opt.n_samples, custom_steps=opt.custom_steps,
             batch_size=opt.batch_size, nplog=numpylogdir, dpm=opt.dpm)
+    elif getattr(opt, "recon_only", False):
+        logger.info("两阶段仅重建，已保存权重，跳过采样与解码")
     else:
         logger.info("两阶段已生成图像至 %s，跳过常规 run() 采样", imglogdir)
 
