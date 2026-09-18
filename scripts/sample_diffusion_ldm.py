@@ -473,6 +473,52 @@ def _finalize_qnn_params(qnn, quant_act):
                     m.zero_point = nn.Parameter(m.zero_point)
 
 
+def _cpu_state_dict(qnn):
+    return {
+        k: v.detach().cpu() if torch.is_tensor(v) else v
+        for k, v in qnn.state_dict().items()
+    }
+
+
+def _save_stage_ckpt(qnn, quant_act, path, stage_tag):
+    """固化量化参数后保存单阶段 state_dict（对齐 CIFAR ckpt_stage*.pth）。"""
+    _finalize_qnn_params(qnn, quant_act)
+    torch.save(_cpu_state_dict(qnn), path)
+    logger.info("[%s] 保存量化模型: %s", stage_tag, path)
+
+
+def _save_combined_two_stage_ckpt(opt, stage1_path, stage2_path, stage2_state):
+    """将两阶段权重合并保存为 ckpt_two_stage.pth。"""
+    stage1_sd = torch.load(stage1_path, map_location="cpu")
+    stage2_sd = {
+        k: v.detach().cpu() if torch.is_tensor(v) else v
+        for k, v in stage2_state.items()
+    }
+    cali_path = getattr(opt, "cali_data_path", None)
+    combined = {
+        "stage1_group0": stage1_sd,
+        "stage2_group1": stage2_sd,
+        "meta": {
+            "weight_bit": opt.weight_bit,
+            "act_bit": opt.act_bit,
+            "quant_act": bool(opt.quant_act),
+            "a_sym": bool(opt.a_sym),
+            "split": bool(getattr(opt, "split", False)),
+            "cali_data_path_group0": cali_path,
+            "cali_data_path_group1": cali_path,
+            "max_avg_json": getattr(opt, "max_avg_json", None),
+            "stage1_ckpt": os.path.basename(stage1_path),
+            "stage2_ckpt": os.path.basename(stage2_path),
+        },
+    }
+    out = os.path.join(os.path.dirname(stage1_path), "ckpt_two_stage.pth")
+    torch.save(combined, out)
+    logger.info(
+        "已合并保存两阶段权重: %s (keys: stage1_group0, stage2_group1, meta)", out
+    )
+    return out
+
+
 def _cali_init_bs(n, preferred=1):
     """权重量化 / 激活初始化用的安全 batch（8GB 上避免硬编码 8/64 OOM）。"""
     return max(1, min(int(preferred), int(n)))
@@ -596,8 +642,9 @@ def _save_ldm_decoded_png(ldm_model, latents, out_dir):
 
 def two_stage_ldm_quantization(ldm_model, opt, config, logdir, imglogdir):
     """
-    两阶段 TMMA：组0 BRECQ + 前半采样 -> 组1 BRECQ + 后半采样 -> VAE 解码存图。
-    逻辑对齐 two_stage_quantized_sampling.py。
+    两阶段 TMMA：组0 BRECQ 存 ckpt → 前半采样 → 组1 BRECQ 存 ckpt →
+    合并 ckpt_two_stage.pth → 后半采样 → VAE 解码。
+    权重保存对齐 two_stage_quantized_sampling.py。
     """
     if not (opt.max_avg_json and str(opt.max_avg_json).strip()):
         raise ValueError("两阶段模式需要 --max_avg_json")
@@ -627,6 +674,8 @@ def two_stage_ldm_quantization(ldm_model, opt, config, logdir, imglogdir):
     logger.info("=" * 75)
     fp_unet1 = _clone_ldm_unet(ldm_model, config)
     qnn_stage1 = _ldm_stage_brecq(fp_unet1, opt, cali_data, cali_xs, cali_ts, max_avg_stats, 0)
+    stage1_ckpt = os.path.join(logdir, "ckpt_stage1_group0.pth")
+    _save_stage_ckpt(qnn_stage1, opt.quant_act, stage1_ckpt, "stage1_group0")
     intermediate = _first_half_sampling_ldm(
         qnn_stage1,
         opt.n_samples,
@@ -649,6 +698,11 @@ def two_stage_ldm_quantization(ldm_model, opt, config, logdir, imglogdir):
 
     fp_unet2 = _clone_ldm_unet(ldm_model, config)
     qnn_stage2 = _ldm_stage_brecq(fp_unet2, opt, cali_data, cali_xs, cali_ts, max_avg_stats, 1)
+    stage2_ckpt = os.path.join(logdir, "ckpt_stage2_group1.pth")
+    _save_stage_ckpt(qnn_stage2, opt.quant_act, stage2_ckpt, "stage2_group1")
+    _save_combined_two_stage_ckpt(
+        opt, stage1_ckpt, stage2_ckpt, qnn_stage2.state_dict()
+    )
     final_latents = _second_half_sampling_ldm(
         qnn_stage2,
         intermediate,
@@ -662,8 +716,6 @@ def two_stage_ldm_quantization(ldm_model, opt, config, logdir, imglogdir):
     )
     torch.save(final_latents, os.path.join(logdir, "final_latents.pt"))
     _save_ldm_decoded_png(ldm_model, final_latents, imglogdir)
-    _finalize_qnn_params(qnn_stage2, opt.quant_act)
-    torch.save(qnn_stage2.state_dict(), os.path.join(logdir, "ckpt.pth"))
 
     del fp_unet2
     return qnn_stage2
